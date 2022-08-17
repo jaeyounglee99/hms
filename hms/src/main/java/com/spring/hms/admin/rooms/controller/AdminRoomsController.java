@@ -2,6 +2,7 @@ package com.spring.hms.admin.rooms.controller;
 
 import java.io.File;
 import java.io.UnsupportedEncodingException;
+import java.text.SimpleDateFormat;
 import java.util.Iterator;
 import java.util.UUID;
 
@@ -17,6 +18,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.spring.hms.admin.rooms.service.AdminRoomsService;
+import com.spring.hms.rooms.dto.RoomsDto;
 
 @Controller
 @RequestMapping("/admin/rooms")
@@ -24,7 +26,6 @@ public class AdminRoomsController {
 
 	@Autowired
 	private AdminRoomsService adminRoomsService;
-	
 	
 	
 	private static final String CURR_IMAGE_REPO_PATH = "//Users//ijaeyeong//file_repo";
@@ -38,9 +39,6 @@ public class AdminRoomsController {
 		
 		return mv;
 	}
-
-	
-	
 	
 	@RequestMapping(value="/adminRoomsAdd" , method=RequestMethod.GET)
 	public String addNewRooms() {
@@ -52,23 +50,28 @@ public class AdminRoomsController {
 		
 		multipartRequest.setCharacterEncoding("utf-8");
 		
-		Iterator<String> file = multipartRequest.getFileNames();
+		SimpleDateFormat fm = new SimpleDateFormat("yyyy-MM-dd");
 		
-		if (file.hasNext()) {
-			
-			MultipartFile uploadFile = multipartRequest.getFile(file.next()); 	
-			
+		RoomsDto roomsDto = new RoomsDto();
+		roomsDto.setRoomsNm(multipartRequest.getParameter("roomsNm"));
+		roomsDto.setView(multipartRequest.getParameter("view"));
+		roomsDto.setPrice(Integer.parseInt( multipartRequest.getParameter("price")));
+		roomsDto.setDiscountRate(Integer.parseInt( multipartRequest.getParameter("discountRate")));
+		roomsDto.setPoint(Integer.parseInt( multipartRequest.getParameter("point")));
+		
+		
+//		Iterator<String> file = multipartRequest.getFileNames();
+//		if (file.hasNext()) {
+//			
+//			MultipartFile uploadFile = multipartRequest.getFile(file.next()); 	
+//			
 //			if (!uploadFile.getOriginalFilename().isEmpty()) {
 //				String uploadFileName = UUID.randomUUID() + "_" + uploadFile.getOriginalFilename();
 //				File f = new File(CURR_IMAGE_REPO_PATH + SEPERATOR + uploadFileName);	
 //				uploadFile.transferTo(f); 
 //				roomsDto.setGoodsFileName(uploadFileName);
-//				
-//				new File(CURR_IMAGE_REPO_PATH + SEPERATOR + goodsService.getGoodsDetail(Integer.parseInt(multipartRequest.getParameter("goodsCd"))).getGoodsFileName()).delete();
-//				
 //			}
-		
-		}
+//		}
 	
 		String jsScript = "<script>";
 			   jsScript += "alert('상춤을 등록하였습니다.');";

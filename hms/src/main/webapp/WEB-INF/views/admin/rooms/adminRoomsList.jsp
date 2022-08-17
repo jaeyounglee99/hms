@@ -32,24 +32,32 @@
 			</div>
 		</div>
 		<div align="center">
-		<div class="row block-9" style="width:80%">
-			<form action="#" method="post" class="bg-white p-5 contact-form">
-				<div class="form-group">
-					<p align="left">침대 개수 <span style="color: red;">*</span></p>
-					<input type="text" name="" class="form-control">
-				</div>
-				<div class="form-group">
-					<p align="left">객실 면적 <span style="color: red;">*</span></p>
-					<input type="text" name="" class="form-control">
-				</div>
-				<div class="form-group">
-					<p align="left">방 개수 <span style="color: red;">*</span></p>
-					<input type="text" name="" class="form-control">
-				</div>
-				<div class="form-group" align="right">
-						<input type="submit" value="등록" class="btn btn-primary py-3 px-5">
-				</div>
-			</form>
+		<div class="container">
+			<table>
+				<thead>
+					<tr>
+						<th width="10%">코드</th>
+						<th width="65%">객실정보</th>
+						<th width="15%">등록날짜</th>
+						<th width="10%">수정/삭제</th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:choose>
+						<c:when test="${empty goodsList }">
+							<tr>
+								<td colspan="3" align="center"><h6>조회된 상품이 없습니다.</h6></td>
+							</tr>
+						</c:when>
+						<c:otherwise>
+							
+						</c:otherwise>
+					</c:choose>				
+				</tbody>
+			</table>
+		</div>
+		<div align="right">
+			<button type="button" onclick="javascript:location.href='${contextPath}/admin/rooms/adminRoomsAdd'" class="btn btn-primary py-3 px-5"><span>등록</span></button>
 		</div>
 	</div>
 	</div>

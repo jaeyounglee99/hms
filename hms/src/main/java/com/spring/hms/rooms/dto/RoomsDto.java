@@ -18,11 +18,9 @@ public class RoomsDto {
 	private int stoke;
 	private String amenityBath;
 	private String amenityBed;
-	private String amenityPrivateBar;
 	private String facilities;
-	private String intro;
+	private String roomsIntro;
 	private String roomsFileName;
-	
 	public int getRoomsCd() {
 		return roomsCd;
 	}
@@ -101,23 +99,17 @@ public class RoomsDto {
 	public void setAmenityBed(String amenityBed) {
 		this.amenityBed = amenityBed;
 	}
-	public String getAmenityPrivateBar() {
-		return amenityPrivateBar;
-	}
-	public void setAmenityPrivateBar(String amenityPrivateBar) {
-		this.amenityPrivateBar = amenityPrivateBar;
-	}
 	public String getFacilities() {
 		return facilities;
 	}
 	public void setFacilities(String facilities) {
 		this.facilities = facilities;
 	}
-	public String getIntro() {
-		return intro;
+	public String getRoomsIntro() {
+		return roomsIntro;
 	}
-	public void setIntro(String intro) {
-		this.intro = intro;
+	public void setRoomsIntro(String roomsIntro) {
+		this.roomsIntro = roomsIntro;
 	}
 	public String getRoomsFileName() {
 		return roomsFileName;
@@ -125,4 +117,6 @@ public class RoomsDto {
 	public void setRoomsFileName(String roomsFileName) {
 		this.roomsFileName = roomsFileName;
 	}
+	
+	
 }
