@@ -44,13 +44,19 @@
 				</thead>
 				<tbody>
 					<c:choose>
-						<c:when test="${empty goodsList }">
+						<c:when test="${empty roomsList }">
 							<tr>
 								<td colspan="3" align="center"><h6>조회된 상품이 없습니다.</h6></td>
 							</tr>
 						</c:when>
 						<c:otherwise>
-							
+							<c:forEach var="roomsDto" items="${roomsList }" varStatus="i">
+								<tr>
+									<td>
+										
+									</td>
+								</tr>
+							</c:forEach>
 						</c:otherwise>
 					</c:choose>				
 				</tbody>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="admin.rooms">
+	
+	<select id="selectListRooms" resultType="RoomsDto">
+		SELECT
+				*
+		FROM
+				ROOMS
+	</select>
+
+	<insert id="insertRooms" parameterType="RoomsDto">
+		INSERT INTO 
+				ROOMS(
+					ROOMS_NM,
+					VIEW,
+					PRICE,
+					DISCOUNT_RATE,
+					POINT,
+					FLOOR,
+					BED_NM,
+					BED_CNT,
+					SIZE,
+					STOKE,
+					AMENITY_BATH,
+					AMENITY_BED,
+					FACILITIES,
+					ROOMS_INTRO,
+					ROOMS_FILE_NAME
+				)
+		 VALUES(
+				#{roomsNm},
+				#{view},
+				#{price},
+				#{discountRate},
+				#{point},
+				#{floor},
+				#{bedNm},
+				#{bedCnt},
+				#{size},
+				#{stoke},
+				#{amenityBath},
+				#{amenityBed},
+				#{facilities},
+				#{roomsIntro},
+				#{roomsFileName}
+		);
+	</insert>
+	
+
+</mapper>

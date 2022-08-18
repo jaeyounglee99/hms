@@ -36,6 +36,7 @@ public class AdminRoomsController {
 		
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("/admin/rooms/adminRoomsList");
+		mv.addObject("roomsList" , adminRoomsService.getRoomsList());
 		
 		return mv;
 	}
@@ -50,31 +51,41 @@ public class AdminRoomsController {
 		
 		multipartRequest.setCharacterEncoding("utf-8");
 		
-		SimpleDateFormat fm = new SimpleDateFormat("yyyy-MM-dd");
-		
 		RoomsDto roomsDto = new RoomsDto();
 		roomsDto.setRoomsNm(multipartRequest.getParameter("roomsNm"));
 		roomsDto.setView(multipartRequest.getParameter("view"));
 		roomsDto.setPrice(Integer.parseInt( multipartRequest.getParameter("price")));
 		roomsDto.setDiscountRate(Integer.parseInt( multipartRequest.getParameter("discountRate")));
 		roomsDto.setPoint(Integer.parseInt( multipartRequest.getParameter("point")));
+		roomsDto.setFloor(Integer.parseInt( multipartRequest.getParameter("floor")));
+		roomsDto.setBedNm(multipartRequest.getParameter("bedNm"));
+		roomsDto.setBedCnt(Integer.parseInt( multipartRequest.getParameter("bedCnt")));
+		roomsDto.setSize(Integer.parseInt( multipartRequest.getParameter("size")));
+		roomsDto.setStoke(Integer.parseInt( multipartRequest.getParameter("stoke")));
+		roomsDto.setAmenityBath(multipartRequest.getParameter("amenityBath"));
+		roomsDto.setAmenityBed(multipartRequest.getParameter("amenityBed"));
+		roomsDto.setFacilities(multipartRequest.getParameter("facilities"));
+		roomsDto.setRoomsIntro(multipartRequest.getParameter("roomsIntro"));
+		roomsDto.setRoomsFileName(multipartRequest.getParameter("roomsFileName"));
 		
 		
-//		Iterator<String> file = multipartRequest.getFileNames();
-//		if (file.hasNext()) {
-//			
-//			MultipartFile uploadFile = multipartRequest.getFile(file.next()); 	
-//			
-//			if (!uploadFile.getOriginalFilename().isEmpty()) {
-//				String uploadFileName = UUID.randomUUID() + "_" + uploadFile.getOriginalFilename();
-//				File f = new File(CURR_IMAGE_REPO_PATH + SEPERATOR + uploadFileName);	
-//				uploadFile.transferTo(f); 
-//				roomsDto.setGoodsFileName(uploadFileName);
-//			}
-//		}
+		Iterator<String> file = multipartRequest.getFileNames();
+		if (file.hasNext()) {
+			
+			MultipartFile uploadFile = multipartRequest.getFile(file.next()); 	
+			
+			if (!uploadFile.getOriginalFilename().isEmpty()) {
+				String uploadFileName = UUID.randomUUID() + "_" + uploadFile.getOriginalFilename();
+				File f = new File(CURR_IMAGE_REPO_PATH + SEPERATOR + uploadFileName);	
+				uploadFile.transferTo(f); 
+				roomsDto.setRoomsFileName(uploadFileName);
+			}
+		}
 	
+		adminRoomsService.addNewRooms(roomsDto);
+		
 		String jsScript = "<script>";
-			   jsScript += "alert('상춤을 등록하였습니다.');";
+			   jsScript += "alert('상품을 등록하였습니다.');";
 			   jsScript += "location.href='adminRoomsList';";
 			   jsScript += "</script>";
 			   

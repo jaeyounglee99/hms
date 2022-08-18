@@ -91,16 +91,16 @@
 				</div>
 				<div class="form-group">
 					<p align="left">어메니티(욕실)<span style="color: red;">*</span></p>
-					<input type="text" name="stoke" class="form-control">
+					<input type="text" name="amenityBath" class="form-control">
 				</div>
 				<div class="form-group">
 					<p align="left">어메니티(침실)<span style="color: red;">*</span></p>
-					<input type="text" name="stoke" class="form-control">
+					<input type="text" name="amenityBed" class="form-control">
 				</div>
 				<div class="form-group">
 					<p align="left">부대시설 <span style="color: red;">*</span></p>
-					<textarea rows="5" cols="100" name="facilites" placeholder="부대시설을 입력하세요."></textarea> 
-                    <script>CKEDITOR.replace("facilites");</script>
+					<textarea rows="5" cols="100" name="facilities" placeholder="부대시설을 입력하세요."></textarea> 
+                    <script>CKEDITOR.replace("facilities");</script>
 				</div>
 				<div class="form-group">
 					<p align="left">객실소개 <span style="color: red;">*</span></p>

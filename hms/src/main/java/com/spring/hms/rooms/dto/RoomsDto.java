@@ -21,6 +21,7 @@ public class RoomsDto {
 	private String facilities;
 	private String roomsIntro;
 	private String roomsFileName;
+	
 	public int getRoomsCd() {
 		return roomsCd;
 	}

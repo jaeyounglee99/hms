@@ -12,8 +12,9 @@
 	
 	<!-- DailyFile Appenders -->
 	<appender name="dailyFileAppender" class="org.apache.log4j.DailyRollingFileAppender">
-		<param name="File" value="C:\\hms_log\\logTest.log" />		<!-- C:\\hms_log\\logTest.log -->
-																<!-- /var/lib/tomcat9/hms.log -->
+		<param name="File" value="/Users/ijeyeong/hms.log" />		<!-- C:\\hms_log\\logTest.log -->
+																	<!-- /Users/ijeyeong/hms.log -->
+																	<!-- /var/lib/tomcat9/hms.log -->
 		<layout class="org.apache.log4j.PatternLayout">				
 		  <param name="DatePattern"   value="'.'yyyy-MM-dd"/>
 		  <param name="ConversionPattern"   value="[%d{HH:mm:ss}][%-5p](%F:%L)-%m%n"/>
