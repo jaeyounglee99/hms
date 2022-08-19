@@ -1,6 +1,7 @@
 package com.spring.hms.admin.rooms.controller;
 
 import java.io.File;
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.text.SimpleDateFormat;
 import java.util.Iterator;
@@ -92,6 +93,54 @@ public class AdminRoomsController {
 	   HttpHeaders responseHeaders = new HttpHeaders();
 	    responseHeaders.add("Content-Type", "text/html; charset=utf-8");
 		
+		return new ResponseEntity<Object>(jsScript, responseHeaders, HttpStatus.OK);
+	}
+	
+	@RequestMapping(value="/adminRoomsModify" , method=RequestMethod.POST)
+	public ResponseEntity<Object> adminRoomsModify(MultipartHttpServletRequest multipartRequest) throws Exception{
+		
+		multipartRequest.setCharacterEncoding("utf-8");
+		
+		RoomsDto roomsDto = new RoomsDto();
+		roomsDto.setRoomsNm(multipartRequest.getParameter("roomsNm"));
+		roomsDto.setView(multipartRequest.getParameter("view"));
+		roomsDto.setPrice(Integer.parseInt( multipartRequest.getParameter("price")));
+		roomsDto.setDiscountRate(Integer.parseInt( multipartRequest.getParameter("discountRate")));
+		roomsDto.setPoint(Integer.parseInt( multipartRequest.getParameter("point")));
+		roomsDto.setFloor(Integer.parseInt( multipartRequest.getParameter("floor")));
+		roomsDto.setBedNm(multipartRequest.getParameter("bedNm"));
+		roomsDto.setBedCnt(Integer.parseInt( multipartRequest.getParameter("bedCnt")));
+		roomsDto.setSize(Integer.parseInt( multipartRequest.getParameter("size")));
+		roomsDto.setStoke(Integer.parseInt( multipartRequest.getParameter("stoke")));
+		roomsDto.setAmenityBath(multipartRequest.getParameter("amenityBath"));
+		roomsDto.setAmenityBed(multipartRequest.getParameter("amenityBed"));
+		roomsDto.setFacilities(multipartRequest.getParameter("facilities"));
+		roomsDto.setRoomsIntro(multipartRequest.getParameter("roomsIntro"));
+		roomsDto.setRoomsFileName(multipartRequest.getParameter("roomsFileName"));
+		
+		Iterator<String> file = multipartRequest.getFileNames();
+		if (file.hasNext()) {
+			
+			MultipartFile uploadFile = multipartRequest.getFile(file.next()); 	
+			
+			if (!uploadFile.getOriginalFilename().isEmpty()) {
+				String uploadFileName = UUID.randomUUID() + "_" + uploadFile.getOriginalFilename();
+				File f = new File(CURR_IMAGE_REPO_PATH + SEPERATOR + uploadFileName);	
+				uploadFile.transferTo(f); 
+				roomsDto.setRoomsFileName(uploadFileName);
+			}
+		}
+		
+		adminRoomsService.modifyRooms(roomsDto);
+		
+		String jsScript = "<script>";
+			   jsScript = "alert('객실정보를 수정하였습니다.');";
+			   jsScript = "location.href='adminRoomsList';";
+			   jsScript = "</script>";
+		
+	   HttpHeaders responseHeaders = new HttpHeaders();
+	    responseHeaders.add("Content-Type", "text/html; charset=utf-8");
+	    
 		return new ResponseEntity<Object>(jsScript, responseHeaders, HttpStatus.OK);
 	}
 }

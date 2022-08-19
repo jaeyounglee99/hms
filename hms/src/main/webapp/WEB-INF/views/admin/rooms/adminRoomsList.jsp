@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html lang="en">
@@ -53,7 +54,18 @@
 							<c:forEach var="roomsDto" items="${roomsList }" varStatus="i">
 								<tr>
 									<td>
-										
+										<h6>${roomsDto.roomsCd }</h6>
+									</td>
+									<td>
+										<img src="${contextPath }/thumbnails?roomsFileName=${roomsDto.roomsFileName}" width="100" height="100">
+										<div>
+											<h6>${roomsDto.roomsNm }</h6>
+											<p>${roomsDto.view } | ${roomsDto.floor }층 | <fmt:formatNumber value="${roomsDto.price }"/>원</p>
+										</div>
+									</td>
+									<td></td>
+									<td>
+										<a href="${contextPath }/admin/rooms/adminRoomsModify?roomsCd=${roomsDto.roomsCd}"><span class="icon-pencil"></span></a>
 									</td>
 								</tr>
 							</c:forEach>

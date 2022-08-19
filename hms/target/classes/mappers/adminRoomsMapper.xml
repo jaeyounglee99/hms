@@ -48,5 +48,58 @@
 		);
 	</insert>
 	
+	<update id="updateRooms" parameterType="RoomsDto">
+		UPDATE
+				ROOMS
+		<set>
+			<if test='roomsNm != null and roomsNm != ""'>
+				ROOMS_NM = #{roomsNm},
+			</if>
+			<if test='view != null and view != ""'>
+				VIEW = #{view},
+			</if>
+			<if test='price != null and price != ""'>
+				PRICE = #{price},
+			</if>
+			<if test='discountRate != null and discountRate != ""'>
+				DISCOUNT_RATE = #{discountRate},
+			</if>
+			<if test='point != null and point != ""'>
+				POINT = #{point},
+			</if>
+			<if test='floor != null and floor != ""'>
+				FLOOR = #{floor},
+			</if>
+			<if test='bedNm != null and bedNm != ""'>
+				BED_NM = #{bedNm},
+			</if>
+			<if test='bedCnt != null and bedCnt != ""'>
+				BED_CNT = #{bedCnt},
+			</if>
+			<if test='size != null and size != ""'>
+				SIZE = #{size},
+			</if>
+			<if test='stoke != null and stoke != ""'>
+				STOKE = #{stoke},
+			</if>
+			<if test='amenityBath != null and amenityBath != ""'>
+				AMENITY_BATH = #{amenityBath},
+			</if>
+			<if test='amenityBed != null and amenityBed != ""'>
+				AMENITY_BED = #{amenityBed},
+			</if>
+			<if test='facilities != null and facilities != ""'>
+				FACILITIES = #{facilities},
+			</if>
+			<if test='roomsIntro != null and roomsIntro != ""'>
+				ROOMS_INTRO = #{roomsIntro},
+			</if>
+			<if test='roomsFileName != null and roomsFileName != ""'>
+				ROOMS_FILE_NAME = #{roomsFileName},
+			</if>
+		</set>
+		WHERE
+				GOODS_CD = #{roomsCd}
+	</update>
 
 </mapper>

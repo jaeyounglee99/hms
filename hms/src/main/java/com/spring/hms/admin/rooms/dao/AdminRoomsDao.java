@@ -8,5 +8,6 @@ public interface AdminRoomsDao {
 	
 	public List<RoomsDto> selectListRooms();
 	public void insertRooms(RoomsDto roomsDto);
+	public void updateRooms(RoomsDto roomsDto);
 
 }

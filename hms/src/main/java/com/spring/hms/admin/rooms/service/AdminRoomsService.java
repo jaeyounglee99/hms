@@ -8,5 +8,6 @@ public interface AdminRoomsService {
 	
 	public List<RoomsDto> getRoomsList();
 	public void addNewRooms(RoomsDto roomsDto);
+	public void modifyRooms(RoomsDto roomsDto);
 
 }

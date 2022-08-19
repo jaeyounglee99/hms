@@ -24,5 +24,10 @@ public class  AdminRoomsDaoImpl implements AdminRoomsDao{
 		sqlSession.insert("admin.rooms.insertRooms" , roomsDto);
 	}
 
+	@Override
+	public void updateRooms(RoomsDto roomsDto) {
+		sqlSession.update("admin.rooms.updateRooms" , roomsDto);
+	}
+
 
 }
