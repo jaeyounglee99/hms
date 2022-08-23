@@ -1,5 +1,7 @@
 package com.spring.hms.rooms.dto;
 
+import java.util.Date;
+
 import org.springframework.stereotype.Component;
 
 @Component
@@ -11,17 +13,19 @@ public class RoomsDto {
 	private int price;
 	private int discountRate;
 	private int point;
-	private int floor;
+	private String floor;
 	private String bedNm;
-	private int bedCnt;
 	private int size;
 	private int stoke;
 	private String amenityBath;
 	private String amenityBed;
 	private String facilities;
 	private String roomsIntro;
-	private String roomsFileName;
-	
+	private String roomsInfo;
+	private String roomsFileName1;
+	private String roomsFileName2;
+	private String roomsFileName3;
+	private Date enrollDt;
 	public int getRoomsCd() {
 		return roomsCd;
 	}
@@ -58,10 +62,10 @@ public class RoomsDto {
 	public void setPoint(int point) {
 		this.point = point;
 	}
-	public int getFloor() {
+	public String getFloor() {
 		return floor;
 	}
-	public void setFloor(int floor) {
+	public void setFloor(String floor) {
 		this.floor = floor;
 	}
 	public String getBedNm() {
@@ -69,12 +73,6 @@ public class RoomsDto {
 	}
 	public void setBedNm(String bedNm) {
 		this.bedNm = bedNm;
-	}
-	public int getBedCnt() {
-		return bedCnt;
-	}
-	public void setBedCnt(int bedCnt) {
-		this.bedCnt = bedCnt;
 	}
 	public int getSize() {
 		return size;
@@ -112,12 +110,37 @@ public class RoomsDto {
 	public void setRoomsIntro(String roomsIntro) {
 		this.roomsIntro = roomsIntro;
 	}
-	public String getRoomsFileName() {
-		return roomsFileName;
+	public String getRoomsInfo() {
+		return roomsInfo;
 	}
-	public void setRoomsFileName(String roomsFileName) {
-		this.roomsFileName = roomsFileName;
+	public void setRoomsInfo(String roomsInfo) {
+		this.roomsInfo = roomsInfo;
+	}
+	public String getRoomsFileName1() {
+		return roomsFileName1;
+	}
+	public void setRoomsFileName1(String roomsFileName1) {
+		this.roomsFileName1 = roomsFileName1;
+	}
+	public String getRoomsFileName2() {
+		return roomsFileName2;
+	}
+	public void setRoomsFileName2(String roomsFileName2) {
+		this.roomsFileName2 = roomsFileName2;
+	}
+	public String getRoomsFileName3() {
+		return roomsFileName3;
+	}
+	public void setRoomsFileName3(String roomsFileName3) {
+		this.roomsFileName3 = roomsFileName3;
+	}
+	public Date getEnrollDt() {
+		return enrollDt;
+	}
+	public void setEnrollDt(Date enrollDt) {
+		this.enrollDt = enrollDt;
 	}
 	
 	
+
 }

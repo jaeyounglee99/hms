@@ -6,7 +6,7 @@
 <html lang="en">
 
 <div class="hero-wrap"
-	style="background-image: url('${contextPath }/resources/bootstrap/images/bg_1.jpg');">
+	style="background-image: url('${contextPath }/resources/bootstrap/images/main.header.jpeg');">
 	<div class="overlay"></div>
 	<div class="container">
 		<div
@@ -15,7 +15,7 @@
 				class="col-md-9 ftco-animate text-center d-flex align-items-end justify-content-center">
 				<div class="text">
 					<p class="breadcrumbs mb-2">
-						<span class="mr-2"><a href="${contextPath }/index">Home</a></span>
+						<span class="mr-2"><a href="${contextPath }/">Home</a></span>
 						<span>Registration</span>
 					</p>
 					<h1 class="mb-4 bread">Registration</h1>
@@ -56,16 +56,18 @@
 									<td>
 										<h6>${roomsDto.roomsCd }</h6>
 									</td>
-									<td>
-										<img src="${contextPath }/thumbnails?roomsFileName=${roomsDto.roomsFileName}" width="100" height="100">
+									<td class="row">
+										<img src="${contextPath }/thumbnails?roomsFileName=${roomsDto.roomsFileName1}" width="100" height="100">
 										<div>
-											<h6>${roomsDto.roomsNm }</h6>
-											<p>${roomsDto.view } | ${roomsDto.floor }층 | <fmt:formatNumber value="${roomsDto.price }"/>원</p>
+											<br>
+											<h6>&emsp;&emsp;&emsp;&emsp;<a href="${contextPath }/rooms/roomsDetail?roomsCd=${roomsDto.roomsCd}">${roomsDto.roomsNm }</a></h6>
+											<p>&emsp;&emsp;&emsp;&emsp;${roomsDto.view }뷰 | ${roomsDto.floor }층 | <fmt:formatNumber value="${roomsDto.price }"/>원</p>
 										</div>
 									</td>
-									<td></td>
+									<td><fmt:formatDate value="${roomsDto.enrollDt }" pattern="yyyy-MM-dd"/></td>
 									<td>
-										<a href="${contextPath }/admin/rooms/adminRoomsModify?roomsCd=${roomsDto.roomsCd}"><span class="icon-pencil"></span></a>
+										&emsp;<a href="${contextPath }/admin/rooms/adminRoomsModify?roomsCd=${roomsDto.roomsCd}"><span class="icon-pencil"></span></a>&emsp;
+										<a href="${contextPath }/admin/rooms/adminRoomsRemove?roomsCd=${roomsDto.roomsCd}"><span class="icon-trash-o"></span></a>
 									</td>
 								</tr>
 							</c:forEach>
@@ -73,11 +75,11 @@
 					</c:choose>				
 				</tbody>
 			</table>
+			</div>
 		</div>
 		<div align="right">
 			<button type="button" onclick="javascript:location.href='${contextPath}/admin/rooms/adminRoomsAdd'" class="btn btn-primary py-3 px-5"><span>등록</span></button>
 		</div>
-	</div>
 	</div>
 </section>
 </body>

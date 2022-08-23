@@ -175,7 +175,7 @@ function execDaumPostcode() {
 <body>
 	
 	<div class="hero-wrap"
-		style="background-image: url('${contextPath}/resources/bootstrap/images/bg_1.jpg');">
+		style="background-image: url('${contextPath}/resources/bootstrap/images/main.header.jpeg');">
 		<div class="overlay"></div>
 		<div class="container">
 			<div

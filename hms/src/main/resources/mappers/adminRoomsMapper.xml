@@ -20,14 +20,17 @@
 					POINT,
 					FLOOR,
 					BED_NM,
-					BED_CNT,
 					SIZE,
 					STOKE,
 					AMENITY_BATH,
 					AMENITY_BED,
 					FACILITIES,
 					ROOMS_INTRO,
-					ROOMS_FILE_NAME
+					ROOMS_INFO,
+					ROOMS_FILE_NAME1,
+					ROOMS_FILE_NAME2,
+					ROOMS_FILE_NAME3,
+					ENROLL_DT
 				)
 		 VALUES(
 				#{roomsNm},
@@ -37,14 +40,17 @@
 				#{point},
 				#{floor},
 				#{bedNm},
-				#{bedCnt},
 				#{size},
 				#{stoke},
 				#{amenityBath},
 				#{amenityBed},
 				#{facilities},
 				#{roomsIntro},
-				#{roomsFileName}
+				#{roomsInfo},
+				#{roomsFileName1},
+				#{roomsFileName2},
+				#{roomsFileName3},
+				NOW()
 		);
 	</insert>
 	
@@ -73,9 +79,6 @@
 			<if test='bedNm != null and bedNm != ""'>
 				BED_NM = #{bedNm},
 			</if>
-			<if test='bedCnt != null and bedCnt != ""'>
-				BED_CNT = #{bedCnt},
-			</if>
 			<if test='size != null and size != ""'>
 				SIZE = #{size},
 			</if>
@@ -94,12 +97,25 @@
 			<if test='roomsIntro != null and roomsIntro != ""'>
 				ROOMS_INTRO = #{roomsIntro},
 			</if>
-			<if test='roomsFileName != null and roomsFileName != ""'>
-				ROOMS_FILE_NAME = #{roomsFileName},
+			<if test='roomsInfo != null and roomsInfo != ""'>
+				ROOMS_INFO = #{roomsInfo},
+			</if>
+			<if test='roomsFileName1 != null and roomsFileName1 != ""'>
+				ROOMS_FILE_NAME1 = #{roomsFileName1},
+			</if>
+			<if test='roomsFileName2 != null and roomsFileName2 != ""'>
+				ROOMS_FILE_NAME2 = #{roomsFileName2},
+			</if>
+			<if test='roomsFileName3 != null and roomsFileName3 != ""'>
+				ROOMS_FILE_NAME3 = #{roomsFileName3},
 			</if>
 		</set>
 		WHERE
-				GOODS_CD = #{roomsCd}
+				ROOMS_CD = #{roomsCd}
 	</update>
+	
+	<delete id="deleteRooms" parameterType="int">
+		DELETE FROM ROOMS WHERE ROOMS_CD = #{roomsCd}
+	</delete>
 
 </mapper>

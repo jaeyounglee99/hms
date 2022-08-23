@@ -29,5 +29,10 @@ public class  AdminRoomsDaoImpl implements AdminRoomsDao{
 		sqlSession.update("admin.rooms.updateRooms" , roomsDto);
 	}
 
+	@Override
+	public void deleteRooms(int roomsCd) {
+		sqlSession.delete("admin.rooms.deleteRooms" , roomsCd);
+	}
+
 
 }

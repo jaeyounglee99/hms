@@ -28,5 +28,10 @@ public class AdminRoomsServiceImpl implements AdminRoomsService{
 	public void modifyRooms(RoomsDto roomsDto) {
 		adminRoomsDao.updateRooms(roomsDto);
 	}
+
+	@Override
+	public void removeRooms(int roomsCd) {
+		adminRoomsDao.deleteRooms(roomsCd);
+	}
 	
 }

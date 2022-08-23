@@ -11,7 +11,7 @@
 </head>
 <body>
    <section class="home-slider owl-carousel">
-      <div class="slider-item" style="background-image:url(${contextPath }/resources/bootstrap/images/bg_1.jpg);">
+      <div class="slider-item" style="background-image:url(${contextPath }/resources/bootstrap/images/main.header.jpeg);">
       	<div class="overlay"></div>
         <div class="container">
           <div class="row no-gutters slider-text align-items-center justify-content-center">
@@ -25,7 +25,7 @@
         </div>
       </div>
 
-      <div class="slider-item" style="background-image:url(${contextPath }/resources/bootstrap/images/bg_2.jpg);">
+      <div class="slider-item" style="background-image:url(${contextPath }/resources/bootstrap/images/main.header2.jpeg);">
       	<div class="overlay"></div>
         <div class="container">
           <div class="row no-gutters slider-text align-items-center justify-content-center">
@@ -214,16 +214,16 @@
     		<div class="row">
     			<div class="col-sm col-md-6 col-lg-4 ftco-animate">
     				<div class="room">
-    					<a href="rooms.html" class="img d-flex justify-content-center align-items-center" style="background-image: url(${contextPath }/resources/bootstrap/images/room-1.jpg);">
+    					<a href="${contextPath }/rooms/roomsDetail?roomsCd=1" class="img d-flex justify-content-center align-items-center" style="background-image: url(${contextPath }/resources/bootstrap/images/deluxe.jpeg);">
     						<div class="icon d-flex justify-content-center align-items-center">
     							<span class="icon-search2"></span>
     						</div>
     					</a>
     					<div class="text p-3 text-center">
-    						<h3 class="mb-3"><a href="rooms.html">Suite Room</a></h3>
-    						<p><span class="price mr-2">$120.00</span> <span class="per">per night</span></p>
+    						<h3 class="mb-3"><a href="${contextPath }/rooms/roomsDetail?roomsCd=1">Deluxe Room</a></h3>
+    						<p><span class="price mr-2">$120.00</span></p>
     						<hr>
-    						<p class="pt-1"><a href="room-single.html" class="btn-custom">View Room Details <span class="icon-long-arrow-right"></span></a></p>
+    						<p class="pt-1"><a href="${contextPath }/rooms/roomsDetail?roomsCd=1" class="btn-custom">View Room Details <span class="icon-long-arrow-right"></span></a></p>
     					</div>
     				</div>
     			</div>
@@ -244,13 +244,13 @@
     			</div>
     			<div class="col-sm col-md-6 col-lg-4 ftco-animate">
     				<div class="room">
-    					<a href="rooms.html" class="img d-flex justify-content-center align-items-center" style="background-image: url(${contextPath }/resources/bootstrap/images/room-3.jpg);">
+    					<a href="${contextPath }/rooms/roomsDetailNm?roomsNm=deluxeOceanViewTwin" class="img d-flex justify-content-center align-items-center" style="background-image: url(${contextPath }/resources/bootstrap/images/deluxe.jpeg);">
     						<div class="icon d-flex justify-content-center align-items-center">
     							<span class="icon-search2"></span>
     						</div>
     					</a>
     					<div class="text p-3 text-center">
-    						<h3 class="mb-3"><a href="rooms.html">Deluxe Room</a></h3>
+    						<h3 class="mb-3"><a href="${contextPath }/rooms/roomsDetailNm?roomsNm=deluxeOceanViewTwin">Deluxe Room</a></h3>
     						<p><span class="price mr-2">$150.00</span> <span class="per">per night</span></p>
     						<hr>
     						<p class="pt-1"><a href="room-single.html" class="btn-custom">View Room Details <span class="icon-long-arrow-right"></span></a></p>
