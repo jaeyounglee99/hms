@@ -14,6 +14,11 @@ public class RoomsDaoImpl implements RoomsDao{
 
 	@Autowired
 	private SqlSession sqlSession;
+
+	@Override
+	public List<RoomsDto> selectListRooms(Map<String, Object> roomsListMap) {
+		return sqlSession.selectList("rooms.selectListRooms" , roomsListMap);
+	}
 	
 	@Override
 	public RoomsDto selectOneRooms(int roomsCd) {
@@ -24,6 +29,7 @@ public class RoomsDaoImpl implements RoomsDao{
 	public List<RoomsDto> selectRelatedRoomsList(Map<String, Object> roomsMap) {
 		return sqlSession.selectList("rooms.selectListRelatedRooms" , roomsMap);
 	}
+
 
 
 }

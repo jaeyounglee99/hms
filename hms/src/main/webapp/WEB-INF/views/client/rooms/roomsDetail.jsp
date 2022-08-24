@@ -79,38 +79,23 @@
           		<div class="col-md-12 room-single ftco-animate mb-5 mt-5">
           			<h4 class="mb-4">Available Room</h4>
           			<div class="row">
-          			<c:foreach var="relatedRooms" items="${relatedRoomsList }">
+          			<c:forEach var="relatedRooms" items="${relatedRoomsList }">
           				<div class="col-sm col-md-6 ftco-animate">
 				    				<div class="room">
-				    					<a href="rooms.html" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(${contextPath}/images/room-1.jpg);">
+				    					<a href="${contextPath }/rooms/roomsDetail?roomsCd=${relatedRooms.roomsCd}" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(${contextPath}/thumbnails?roomsFileName=${relatedRooms.roomsFileName1});">
 				    						<div class="icon d-flex justify-content-center align-items-center">
 				    							<span class="icon-search2"></span>
 				    						</div>
 				    					</a>
 				    					<div class="text p-3 text-center">
-				    						<h3 class="mb-3"><a href="rooms.html">Suite Room</a></h3>
-				    						<p><span class="price mr-2">$120.00</span> <span class="per">per night</span></p>
+				    						<h3 class="mb-3"><a href="${contextPath }/rooms/roomsDetail?roomsCd=${relatedRooms.roomsCd}">${relatedRooms.roomsNm }</a></h3>
+				    						<p><span class="price mr-2">${relatedRooms.price }</span> <span class="per">per night</span></p>
 				    						<hr>
-				    						<p class="pt-1"><a href="room-single.html" class="btn-custom">View Room Details <span class="icon-long-arrow-right"></span></a></p>
+				    						<p class="pt-1"><a href="${contextPath }/rooms/roomsDetail?roomsCd=${relatedRooms.roomsCd}" class="btn-custom">View Room Details <span class="icon-long-arrow-right"></span></a></p>
 				    					</div>
 				    				</div>
 				    	</div>
-				    </c:foreach>
-				    			<!-- <div class="col-sm col-md-6 ftco-animate">
-				    				<div class="room">
-				    					<a href="rooms.html" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/room-2.jpg);">
-				    						<div class="icon d-flex justify-content-center align-items-center">
-				    							<span class="icon-search2"></span>
-				    						</div>
-				    					</a>
-				    					<div class="text p-3 text-center">
-				    						<h3 class="mb-3"><a href="rooms.html">Family Room</a></h3>
-				    						<p><span class="price mr-2">$20.00</span> <span class="per">per night</span></p>
-				    						<hr>
-				    						<p class="pt-1"><a href="room-single.html" class="btn-custom">View Room Details <span class="icon-long-arrow-right"></span></a></p>
-				    					</div>
-				    				</div>
-				    			</div> -->
+				    </c:forEach>
           			</div>
           		</div>
           		
@@ -171,31 +156,6 @@
                   </div>
                <br><input type="submit" value="예약" class="btn btn-primary">
             </div>
-
-      <%--       <div class="sidebar-box ftco-animate">
-              <h3>Amenity</h3>
-              <div class="block-21 mb-4 d-flex">
-                <a class="blog-img mr-4" style="background-image: url(images/image_1.jpg);"></a>
-                <div class="text">
-                  <div><span class="icon-check">욕실</span></div>
-                  <h3 class="meta">${roomsDto.amenityBath }</h3>
-                </div>
-              </div>
-              <div class="block-21 mb-4 d-flex">
-                <a class="blog-img mr-4" style="background-image: url(images/image_1.jpg);"></a>
-                <div class="text">
-                  <div><span class="icon-check">침실</span></div>
-                  <h3 class="meta">${roomsDto.amenityBed }</h3>
-                </div>
-              </div>
-              <div class="block-21 mb-4 d-flex">
-                <a class="blog-img mr-4" style="background-image: url(images/image_1.jpg);"></a>
-                <div class="text">
-                  <div><span class="icon-check">부대시설</span></div>
-                  <h3 class="meta">${roomsDto.facilities }</h3>
-                </div>
-              </div>
-              </div> --%>
 
             <div class="sidebar-box ftco-animate">
               <h3>Information</h3>

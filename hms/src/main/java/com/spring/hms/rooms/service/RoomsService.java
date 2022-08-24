@@ -11,6 +11,7 @@ import com.spring.hms.rooms.dto.RoomsDto;
 @Service
 public interface RoomsService {
 	
+	public List<RoomsDto> getRoomsList(Map<String,Object> roomsListMap);
 	public RoomsDto getRoomsDetail(int roomsCd);
 	public List<RoomsDto> getRelatedRoomsList(Map<String,Object> roomsMap);
 }

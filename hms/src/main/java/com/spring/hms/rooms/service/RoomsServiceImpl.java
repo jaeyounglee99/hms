@@ -14,7 +14,11 @@ public class RoomsServiceImpl implements RoomsService{
 
 	@Autowired
 	private RoomsDao roomsDao;
-	
+
+	@Override
+	public List<RoomsDto> getRoomsList(Map<String, Object> roomsListMap) {
+		return roomsDao.selectListRooms(roomsListMap);
+	}	
 
 	@Override
 	public RoomsDto getRoomsDetail(int roomsCd) {
@@ -25,5 +29,6 @@ public class RoomsServiceImpl implements RoomsService{
 	public List<RoomsDto> getRelatedRoomsList(Map<String, Object> roomsMap) {
 		return roomsDao.selectRelatedRoomsList(roomsMap);
 	}
+
 
 }

@@ -20,6 +20,17 @@ public class RoomsController {
 	@Autowired
 	private RoomsService roomsService;
 	
+	@RequestMapping(value="/roomsList" , method=RequestMethod.GET)
+	public ModelAndView roomsList(@RequestParam Map<String,Object> roomsListMap) {
+		
+		ModelAndView mv = new ModelAndView();
+		
+		mv.setViewName("/rooms/roomsList");
+		mv.addObject("roomsList" , roomsService.getRoomsList(roomsListMap));
+		
+		return mv;
+	}
+	
 	@RequestMapping(value="/roomsDetail" , method=RequestMethod.GET)
 	public ModelAndView roomsDetail(@RequestParam("roomsCd") int roomsCd) {
 		
@@ -31,10 +42,10 @@ public class RoomsController {
 		mv.addObject("roomsDto", roomsDto);
 		
 		Map<String,Object> roomsMap = new HashMap<String, Object>();
-		roomsMap.put("roomsSize", roomsDto.getSize());
+		roomsMap.put("size", roomsDto.getSize());
 		roomsMap.put("roomsCd", roomsCd);
 		
-		mv.addObject("roomsList" , roomsService.getRelatedRoomsList(roomsMap));
+		mv.addObject("relatedRoomsList" , roomsService.getRelatedRoomsList(roomsMap));
 		return mv;
 	}
 

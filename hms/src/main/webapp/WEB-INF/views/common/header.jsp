@@ -22,7 +22,7 @@
 			          	<li class="nav-item"><a href="${contextPath }/admin/rooms/adminRoomsList" class="nav-link">객실 등록</a></li>
 	        		</c:when>
 	        		<c:otherwise>
-	        			<li class="nav-item"><a href="index.html" class="nav-link">객실</a></li>
+	        			<li class="nav-item"><a href="${contextPath }/rooms/roomsList" class="nav-link">객실</a></li>
 	        		</c:otherwise>
 	        	</c:choose>
 	        	<c:choose>

@@ -59,13 +59,22 @@
 				<div class="form-group">
 					<p align="left">객실 종류 <span style="color: red;">*</span></p>
 					<select name="roomsNm" class="form-control">
-						<option value="deluxeOceanViewTwin">디럭스 오션뷰 트윈</option>
-						<option value="deluxeCityViewKing">디럭스 시티뷰 킹</option>
-						<option value="deluxeCityViewTwin">디럭스 시티뷰 트윈</option>
-						<option value="premierCityViewDouble">프리미어 시티뷰 더블</option>
-						<option value="premierOceanViewTwin">프리미어 오션뷰 트윈</option>
-						<option value="grandPremierCityViewTwin">프리미어 시티뷰 트윈</option>
-						<option value="superiorSuite">수페리어 스위트</option>
+						<option value="deluxeOceanviewTwin">디럭스 오션뷰 트윈</option>
+						<option value="deluxeCityviewKing">디럭스 시티뷰 킹</option>
+						<option value="deluxeCityviewTwin">디럭스 시티뷰 트윈</option>
+						<option value="premierCityviewDouble">프리미어 시티뷰 더블</option>
+						<option value="premierCityviewTwin">프리미어 시티뷰 트윈</option>
+						<option value="premierOceanviewTwin">프리미어 오션뷰 트윈</option>
+						<option value="superiorCityviewDouble">수페리어 시티뷰 더블</option>
+						<option value="superiorOceanviewDouble">수페리어 오션뷰 더블</option>
+						<option value="superiorOceanviewTwin">수페리어 오션뷰 트윈</option>
+						<option value="kidsDeluxeKing">키즈 디럭스 킹</option>
+						<option value="kidsCityviewKing">키즈 시티뷰 킹</option>
+						<option value="kidsSuperiorOceanview">키즈 수페리어 오션뷰</option>
+						<option value="piacevoleDeluxe">피아체볼레 디럭스</option>
+						<option value="piacevoleClassic">피아체볼레 클래식</option>
+						<option value="piacevolePremier">피아체볼레 프리미어</option>
+						<option value="kidsSuite">키즈 스위트</option>
 						<option value="premierSuite">프리미어 스위트</option>
 						<option value="grandSuite">그랜드 스위트</option>
 					</select>

@@ -3,6 +3,15 @@
 
 <mapper namespace="rooms">
 
+	<select id="selectListRooms" parameterType="hashmap" resultType="RoomsDto">
+		SELECT
+				*
+		FROM
+				ROOMS
+		<where>
+		</where>
+	</select>
+	
 	<select id="selectOneRooms" parameterType="int" resultType="RoomsDto">
 		SELECT
 				*
