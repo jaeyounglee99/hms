@@ -1,6 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>  
 <c:set var="contextPath" value="${pageContext.request.contextPath}"  /> 
     
 <!DOCTYPE html>
@@ -242,15 +242,15 @@
     			</div>
     			<div class="col-sm col-md-6 col-lg-4 ftco-animate">
     				<div class="room">
-    					<a href="${contextPath }/rooms/roomsDetailNm?roomsNm=deluxeOceanViewTwin" class="img d-flex justify-content-center align-items-center" style="background-image: url(${contextPath }/resources/bootstrap/images/deluxe.jpeg);">
+    					<a href="${contextPath }/rooms/roomsDetail?roomsCd=7" class="img d-flex justify-content-center align-items-center" style="background-image: url(${contextPath }/resources/bootstrap/images/superiorOceanviewTwin1.jpg);">
     						<div class="icon d-flex justify-content-center align-items-center">
     							<span class="icon-search2"></span>
     						</div>
     					</a>
     					<div class="text p-3 text-center">
-    						<h3 class="mb-3"><a href="${contextPath }/rooms/roomsDetailNm?roomsNm=deluxeOceanViewTwin">Deluxe Room</a></h3>
+    						<h3 class="mb-3"><a href="${contextPath }/rooms/roomsDetail?roomsCd=7">Superior Room</a></h3>
     						<hr>
-    						<p class="pt-1"><a href="room-single.html" class="btn-custom">View Room Details <span class="icon-long-arrow-right"></span></a></p>
+    						<p class="pt-1"><a href="${contextPath }/rooms/roomsDetail?roomsCd=7" class="btn-custom">View Room Details <span class="icon-long-arrow-right"></span></a></p>
     					</div>
     				</div>
     			</div>
