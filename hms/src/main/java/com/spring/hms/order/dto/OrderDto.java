@@ -13,14 +13,23 @@ public class OrderDto {
 	private String checkIn;
 	private String checkOut;
 	private int personnel;
+	private int breakfastQty;
+	private int swimmingPoolQty;
 	private int paymentAmt;
 	private String ordererNm;
+	private String ordererBirth;
 	private String ordererHp;
+	private String ordererEmail;
 	private String request;
 	private String cardCompanyNm;
-	private String cardNm;
-	private String cardPayMonth;
+	private String cardNo1;
+	private String cardNo2;
+	private String cardNo3;
+	private String cardNo4;
+	private int cardValidityMonth;
+	private int cardValidityYear;
 	private Date payOrderTime;
+	
 	public int getOrderCd() {
 		return orderCd;
 	}
@@ -57,6 +66,18 @@ public class OrderDto {
 	public void setPersonnel(int personnel) {
 		this.personnel = personnel;
 	}
+	public int getBreakfastQty() {
+		return breakfastQty;
+	}
+	public void setBreakfastQty(int breakfastQty) {
+		this.breakfastQty = breakfastQty;
+	}
+	public int getSwimmingPoolQty() {
+		return swimmingPoolQty;
+	}
+	public void setSwimmingPoolQty(int swimmingPoolQty) {
+		this.swimmingPoolQty = swimmingPoolQty;
+	}
 	public int getPaymentAmt() {
 		return paymentAmt;
 	}
@@ -69,11 +90,23 @@ public class OrderDto {
 	public void setOrdererNm(String ordererNm) {
 		this.ordererNm = ordererNm;
 	}
+	public String getOrdererBirth() {
+		return ordererBirth;
+	}
+	public void setOrdererBirth(String ordererBirth) {
+		this.ordererBirth = ordererBirth;
+	}
 	public String getOrdererHp() {
 		return ordererHp;
 	}
 	public void setOrdererHp(String ordererHp) {
 		this.ordererHp = ordererHp;
+	}
+	public String getOrdererEmail() {
+		return ordererEmail;
+	}
+	public void setOrdererEmail(String ordererEmail) {
+		this.ordererEmail = ordererEmail;
 	}
 	public String getRequest() {
 		return request;
@@ -87,17 +120,41 @@ public class OrderDto {
 	public void setCardCompanyNm(String cardCompanyNm) {
 		this.cardCompanyNm = cardCompanyNm;
 	}
-	public String getCardNm() {
-		return cardNm;
+	public String getCardNo1() {
+		return cardNo1;
 	}
-	public void setCardNm(String cardNm) {
-		this.cardNm = cardNm;
+	public void setCardNo1(String cardNo1) {
+		this.cardNo1 = cardNo1;
 	}
-	public String getCardPayMonth() {
-		return cardPayMonth;
+	public String getCardNo2() {
+		return cardNo2;
 	}
-	public void setCardPayMonth(String cardPayMonth) {
-		this.cardPayMonth = cardPayMonth;
+	public void setCardNo2(String cardNo2) {
+		this.cardNo2 = cardNo2;
+	}
+	public String getCardNo3() {
+		return cardNo3;
+	}
+	public void setCardNo3(String cardNo3) {
+		this.cardNo3 = cardNo3;
+	}
+	public String getCardNo4() {
+		return cardNo4;
+	}
+	public void setCardNo4(String cardNo4) {
+		this.cardNo4 = cardNo4;
+	}
+	public int getCardValidityMonth() {
+		return cardValidityMonth;
+	}
+	public void setCardValidityMonth(int cardValidityMonth) {
+		this.cardValidityMonth = cardValidityMonth;
+	}
+	public int getCardValidityYear() {
+		return cardValidityYear;
+	}
+	public void setCardValidityYear(int cardValidityYear) {
+		this.cardValidityYear = cardValidityYear;
 	}
 	public Date getPayOrderTime() {
 		return payOrderTime;

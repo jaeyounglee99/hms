@@ -26,23 +26,17 @@ public class OrderController {
 	@Autowired
 	private OrderService orderService;
 	
-	@RequestMapping(value="/orderRooms" , method=RequestMethod.POST)
-	public ResponseEntity<Object> orderRooms(MultipartHttpServletRequest multipartRequest) throws Exception {
+	@RequestMapping(value="/orderRooms" , method=RequestMethod.GET)
+	public ModelAndView orderRooms(@RequestParam("roomsCd") int roomsCd , @RequestParam("checkIn") String checkIn , @RequestParam("checkOut") String checkOut , @RequestParam("personnel") int personnel , HttpServletRequest request) {
 		
-	multipartRequest.setCharacterEncoding("utf-8");
-	
-	OrderDto orderDto = new OrderDto();
-	orderDto.setCheckIn(multipartRequest.getParameter("checkIn"));
-	orderDto.setCheckOut(multipartRequest.getParameter("checkOut"));
-	orderDto.setPersonnel(Integer.parseInt(multipartRequest.getParameter("personnel")));
-	
-//	orderService.orderRooms(orderDto);
-	
-	HttpHeaders responseHeaders = new HttpHeaders();
-    responseHeaders.add("Content-Type", "text/html; charset=utf-8");
-    
-	return new ResponseEntity<Object>(responseHeaders, HttpStatus.OK);
-	
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("/order/orderRooms");
+		
+		HttpSession session = request.getSession();
+		mv.addObject("orderer" , orderService.getOrdererDetail((String)session.getAttribute("memberId")));
+		
+		return mv;
 	}
+	
 
 }
