@@ -18,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.spring.hms.order.dto.OrderDto;
 import com.spring.hms.order.service.OrderService;
+import com.spring.hms.rooms.dto.RoomsDto;
 
 @Controller
 @RequestMapping("/order")
@@ -26,17 +27,31 @@ public class OrderController {
 	@Autowired
 	private OrderService orderService;
 	
-	@RequestMapping(value="/orderRooms" , method=RequestMethod.GET)
-	public ModelAndView orderRooms(@RequestParam("roomsCd") int roomsCd , @RequestParam("checkIn") String checkIn , @RequestParam("checkOut") String checkOut , @RequestParam("personnel") int personnel , HttpServletRequest request) {
+	@RequestMapping(value="/checkRoomsOption" , method=RequestMethod.GET)
+	public ModelAndView checkRoomsOption(OrderDto orderDto , HttpServletRequest request) {
 		
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("/order/orderRooms");
+		mv.setViewName("/order/checkRoomsOption");
 		
 		HttpSession session = request.getSession();
-		mv.addObject("orderer" , orderService.getOrdererDetail((String)session.getAttribute("memberId")));
+		
+		mv.addObject("orderDto" ,orderDto);
+		mv.addObject("orderImfo" , orderService.getOrderDetail(orderDto.getRoomsCd()));
 		
 		return mv;
 	}
+	
+//	@RequestMapping(value="/orderRooms" , method=RequestMethod.GET)
+//	public ModelAndView orderRooms(@RequestParam("roomsCd") int roomsCd , @RequestParam("checkIn") String checkIn , @RequestParam("checkOut") String checkOut , @RequestParam("personnel") int personnel , HttpServletRequest request) {
+//		
+//		ModelAndView mv = new ModelAndView();
+//		mv.setViewName("/order/orderRooms");
+//		
+//		HttpSession session = request.getSession();
+//		mv.addObject("orderer" , orderService.getOrdererDetail((String)session.getAttribute("memberId")));
+//		
+//		return mv;
+//	}
 	
 
 }

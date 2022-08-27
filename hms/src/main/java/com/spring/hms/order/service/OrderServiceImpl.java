@@ -5,12 +5,18 @@ import org.springframework.stereotype.Service;
 
 import com.spring.hms.member.dto.MemberDto;
 import com.spring.hms.order.dao.OrderDao;
+import com.spring.hms.rooms.dto.RoomsDto;
 
 @Service
 public class OrderServiceImpl implements OrderService{
 
 	@Autowired
 	private OrderDao orderDao;
+	
+	@Override
+	public RoomsDto getOrderDetail(int roomsCd) {
+		return orderDao.selectOneOrderDetail(roomsCd);
+	}
 	
 	@Override
 	public MemberDto getOrdererDetail(String memberId) {

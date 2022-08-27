@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
+<c:set var="sessionId" value="${sessionScope.memberId }"/>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +11,13 @@
 
 function processToOrder(roomsCd) {
 	
+	if("${sessionId == null}" == "true") {
+		alert("로그인 후 이용해 주세요");
+		location.href = "${contextPath}/member/login";
+	}
+	
+	else {
+		
 	var checkInYMD = $("[name='checkIn']").val();
 	var checkInArray = checkInYMD.split("/");
 	var checkIn = checkInArray[2] + "-" + checkInArray[0] + "-" + checkInArray[1];
@@ -21,7 +29,9 @@ function processToOrder(roomsCd) {
 	
 	var personnel = $("[name='personnel']").val();
 	
-	location.href = "${contextPath}/order/orderRooms?roomsCd="+roomsCd+"&checkIn="+checkIn+"&checkOut="+checkOut+"&personnel="+personnel;
+	location.href = "${contextPath}/order/checkRoomsOption?roomsCd="+roomsCd+"&checkIn="+checkIn+"&checkOut="+checkOut+"&personnel="+personnel;
+	
+	}
 }
 
 </script>

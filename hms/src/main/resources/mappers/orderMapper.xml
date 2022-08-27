@@ -2,7 +2,16 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="order">
-
+	
+	<select id="selectOneOrderDetail" parameterType="int" resultType="RoomsDto">
+		SELECT
+				*
+		FROM
+				ROOMS
+		WHERE
+				ROOMS_CD = #{roomsCd}
+	</select>
+	
 	<select id="selectOneOrderer" parameterType="String" resultType="MemberDto">
 		SELECT
 				*

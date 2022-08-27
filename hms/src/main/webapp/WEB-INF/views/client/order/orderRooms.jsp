@@ -6,6 +6,14 @@
 <html lang="en">
 <script src="${contextPath}/resources/ckeditor/ckeditor.js"></script> 
 <head>
+<meta charset="utf-8">
+<script>
+ 	
+ 	$().ready(function(){
+ 		
+ 	});
+ 	
+</script>
 </head>
 <div class="hero-wrap"
 	style="background-image: url('${contextPath }/resources/bootstrap/images/main.header.jpeg');">
@@ -42,11 +50,21 @@
                 <h5>your order</h5><hr>
                 <ul>
 	                <li>
-	                	<span>price</span>
-	               	 	<span style="display: inline-block; width: 80%; text-align: right;">product</span>
+	                	<span>product</span>
+	               	 	<span style="display: inline-block; width: 80%; text-align: right;">price</span>
 					</li>
-					 
+					 <c:set var="point" value="${goodsDto.point }"/>
+					 <li>
+					 	${roomsDto.roomsNm }
+					 	<span style="display: inline-block; width: 85%; text-align: right;"><fmt:formatNumber value="${roomsDto.price - roomsDto.price * roomsDto.discountRate / 100 }"/>원</span>
+					 </li>
+					 <br>
+					 <li>point <span id="totalPoint"></span></li>
                 </ul>
+                <ul>
+                	<li>Total <span id="viewPaymentAmt"></span></li>
+                </ul>
+                <hr><br><br>
               </div>
 				<div class="form-group" align="left">
 					<p>이름 <span style="color: red;">*</span></p>
