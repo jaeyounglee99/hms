@@ -49,19 +49,6 @@
 				<div class="categories">
                 <h5>your order</h5><hr>
                 <ul>
-	                <li>
-	                	<span>product</span>
-	               	 	<span style="display: inline-block; width: 80%; text-align: right;">price</span>
-					</li>
-					 <c:set var="point" value="${goodsDto.point }"/>
-					 <li>
-					 	${roomsDto.roomsNm }
-					 	<span style="display: inline-block; width: 85%; text-align: right;"><fmt:formatNumber value="${roomsDto.price - roomsDto.price * roomsDto.discountRate / 100 }"/>원</span>
-					 </li>
-					 <br>
-					 <li>point <span id="totalPoint"></span></li>
-                </ul>
-                <ul>
                 	<li>Total <span id="viewPaymentAmt"></span></li>
                 </ul>
                 <hr><br><br>

@@ -28,7 +28,6 @@ function processToOrder(roomsCd) {
 	var checkOut = checkOutArray[2] + "-" + checkOutArray[0] +  "-" + checkOutArray[1];
 	
 	var personnel = $("[name='personnel']").val();
-	
 	location.href = "${contextPath}/order/checkRoomsOption?roomsCd="+roomsCd+"&checkIn="+checkIn+"&checkOut="+checkOut+"&personnel="+personnel;
 	
 	}

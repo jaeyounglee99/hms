@@ -41,17 +41,16 @@ public class OrderController {
 		return mv;
 	}
 	
-//	@RequestMapping(value="/orderRooms" , method=RequestMethod.GET)
-//	public ModelAndView orderRooms(@RequestParam("roomsCd") int roomsCd , @RequestParam("checkIn") String checkIn , @RequestParam("checkOut") String checkOut , @RequestParam("personnel") int personnel , HttpServletRequest request) {
-//		
-//		ModelAndView mv = new ModelAndView();
-//		mv.setViewName("/order/orderRooms");
-//		
-//		HttpSession session = request.getSession();
-//		mv.addObject("orderer" , orderService.getOrdererDetail((String)session.getAttribute("memberId")));
-//		
-//		return mv;
-//	}
+	@RequestMapping(value="/orderRooms" , method=RequestMethod.GET)
+	public ModelAndView orderRooms( HttpServletRequest request) {
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("/order/orderRooms");
+		
+		HttpSession session = request.getSession();
+		
+		return mv;
+	}
 	
 
 }
