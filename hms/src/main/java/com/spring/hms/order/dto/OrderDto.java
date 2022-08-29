@@ -13,8 +13,8 @@ public class OrderDto {
 	private String checkIn;
 	private String checkOut;
 	private int personnel;
-	private int breakfastQty;
-	private int swimmingPoolQty;
+	private int breakfast;
+	private int swimmingPool;
 	private int paymentAmt;
 	private String ordererNm;
 	private String ordererBirth;
@@ -66,17 +66,17 @@ public class OrderDto {
 	public void setPersonnel(int personnel) {
 		this.personnel = personnel;
 	}
-	public int getBreakfastQty() {
-		return breakfastQty;
+	public int getBreakfast() {
+		return breakfast;
 	}
-	public void setBreakfastQty(int breakfastQty) {
-		this.breakfastQty = breakfastQty;
+	public void setBreakfast(int breakfast) {
+		this.breakfast = breakfast;
 	}
-	public int getSwimmingPoolQty() {
-		return swimmingPoolQty;
+	public int getSwimmingPool() {
+		return swimmingPool;
 	}
-	public void setSwimmingPoolQty(int swimmingPoolQty) {
-		this.swimmingPoolQty = swimmingPoolQty;
+	public void setSwimmingPool(int swimmingPool) {
+		this.swimmingPool = swimmingPool;
 	}
 	public int getPaymentAmt() {
 		return paymentAmt;
@@ -162,5 +162,16 @@ public class OrderDto {
 	public void setPayOrderTime(Date payOrderTime) {
 		this.payOrderTime = payOrderTime;
 	}
+	@Override
+	public String toString() {
+		return "OrderDto [orderCd=" + orderCd + ", memberId=" + memberId + ", roomsCd=" + roomsCd + ", checkIn="
+				+ checkIn + ", checkOut=" + checkOut + ", personnel=" + personnel + ", breakfast=" + breakfast
+				+ ", swimmingPool=" + swimmingPool + ", paymentAmt=" + paymentAmt + ", ordererNm=" + ordererNm
+				+ ", ordererBirth=" + ordererBirth + ", ordererHp=" + ordererHp + ", ordererEmail=" + ordererEmail
+				+ ", request=" + request + ", cardCompanyNm=" + cardCompanyNm + ", cardNo1=" + cardNo1 + ", cardNo2="
+				+ cardNo2 + ", cardNo3=" + cardNo3 + ", cardNo4=" + cardNo4 + ", cardValidityMonth=" + cardValidityMonth
+				+ ", cardValidityYear=" + cardValidityYear + ", payOrderTime=" + payOrderTime + "]";
+	}
+	
 	
 }

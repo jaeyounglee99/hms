@@ -55,11 +55,18 @@
 		$("#totalPrice").html(totalPrice);
 	}
 	
-	function processOrderList(roomsCd){
+	function processOrderList(){
 		
-		location.href = "${contextPath}/order/orderRooms?roomsCd="+${orderImfo.roomsCd}+"&checkIn="+${orderDto.checkIn}+"&checkout="+${orderDto.checkOut}+"&personnel="+${orderDto.personnel}
-						+"&breakfast="+breakfast+"&swimmingPool="+swimmingPool;
-	}
+		var breakfast = Number($("#breakfastQty").val());
+		var swimmingPool = Number($("#swimmingPoolQty").val());
+		var checkIn = "${orderDto.checkIn}";
+		var checkOut = "${orderDto.checkOut}";
+		var roomsCd = ${orderImfo.roomsCd};
+		var totalPrice = Number($("#totalPrice").val());
+		
+		location.href = "${contextPath}/order/orderRooms?roomsCd="+roomsCd+"&checkIn="+checkIn+"&checkOut="+checkOut+"&personnel="+${orderDto.personnel}
+						+"&breakfast="+breakfast+"&swimmingPool="+swimmingPool+"&paymentAmt="+totalPrice;
+	} 
 </script>
 	
 	
@@ -115,7 +122,7 @@
 					<li>
 						<span>조식 추가 | 34,000원</span> &emsp;
 						<span><input type="button" id="decBreakfastQtyBnt" value="-"></span>
-						<input type="text" id="breakfastQty" value="0" onchange="modifyBreakfastQty()" disabled style="width:3%">
+						<input type="text" id="breakfastQty" value="0" disabled style="width:3%">
 						<span><input type="button" id="incBreakfastQtyBnt" value="+"></span>
 						<br>
 						<p>- 조식이 이미 포함되어 있는 패키지의 경우, 별도의 신청을 하지 않으셔도 됩니다.</p>
@@ -145,7 +152,7 @@
 						<span style="display: inline-block; width: 78%; text-align: right" id="totalPrice"></span>
 					</li>
 					<div align="right">
-					<input type="button" value="예약하기" onclick="javascript:processOrderList(${orderImfo.roomsCd});" class="btn btn-primary" style="width:25%">
+					<input type="button" value="예약하기" onclick="javascript:processOrderList();" class="btn btn-primary" style="width:25%">
 					</div>
 				</ul>
 				<br>

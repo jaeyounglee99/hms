@@ -47,10 +47,24 @@
 		
 			<form action="${contextPath }/order/orderRooms" method="post" class="bg-white p-5 contact-form">
 				<div class="categories">
-                <h5>your order</h5><hr>
-                <ul>
-                	<li>Total <span id="viewPaymentAmt"></span></li>
-                </ul>
+                <li>
+						<span style="display: inline-block; width: 30%; text-align: justify;">product</span>
+						<span style="display: inline-block; width: 15%; text-align: justify;">check-in</span>
+						<span style="display: inline-block; width: 15%; text-align: justify;">check-out</span> 
+						<span style="display: inline-block; width: 15%; text-align: justify;">person</span> 
+						<span style="display: inline-block; width: 20%; text-align: justify;">price</span>
+					</li>
+					<li>
+						<span style="display: inline-block; width: 30%; text-align: justify;"></span> 
+						<span style="display: inline-block; width: 15%; text-align: justify;">${orderDto.checkIn }</span>
+						<span style="display: inline-block; width: 15%; text-align: justify;">${orderDto.checkOut }</span>
+						<span style="display: inline-block; width: 15%; text-align: justify;">${orderDto.personnel }</span>
+						<span style="display: inline-block; width: 20%; text-align: justify;"><fmt:formatNumber value=""/></span>
+					</li>
+					<li>
+						<span>point</span>
+						<span style="display: inline-block; width: 78%; text-align: right;">${orderImfo.point }P적립</span>
+					</li>
                 <hr><br><br>
               </div>
 				<div class="form-group" align="left">

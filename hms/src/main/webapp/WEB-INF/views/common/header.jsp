@@ -35,7 +35,7 @@
 	        	</c:choose>
 	        	<c:choose>
 	        		<c:when test="${sessionScope.role eq 'admin' }">
-			          	<li class="nav-item"><a href="restaurant.html" class="nav-link">예약확인</a></li>
+			          	<li class="nav-item"><a href="${contextPath }/admin/order/orderConfirm" class="nav-link">예약확인</a></li>
 	        		</c:when>
 					<c:otherwise>
 						<li class="nav-item"><a href="restaurant.html" class="nav-link">프로모션</a></li>
