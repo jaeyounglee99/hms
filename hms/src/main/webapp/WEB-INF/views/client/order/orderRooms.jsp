@@ -42,7 +42,7 @@
 				<input type="hidden" name="checkIn" value="${orderDto.checkIn }">
 				<input type="hidden" name="checkOut" value="${orderDto.checkOut }">
 				<input type="hidden" name="personnel" value="${orderDto.personnel }">
-				<input type="hidden" name="breakFast" value="${orderDto.breakfast }">
+				<input type="hidden" name="breakfast" value="${orderDto.breakfast }">
 				<input type="hidden" name="swimmingPool" value="${orderDto.swimmingPool }">
 				<input type="hidden" name="paymentAmt" value="${orderDto.paymentAmt }">
 				<input type="hidden" name="point" value="${orderImfo.point}">

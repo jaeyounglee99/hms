@@ -57,17 +57,18 @@ public class OrderController {
 	
 	@RequestMapping(value="/orderRooms" , method=RequestMethod.POST)
 	public ResponseEntity<Object> orderRoomsByOrderImfo(@RequestParam Map<String,Object> orderMap, HttpServletRequest request){
+		System.out.println(orderMap);
 		
 		OrderDto orderDto = new OrderDto();
 		
 		orderDto.setMemberId((String)orderMap.get("memberId"));
-		orderDto.setRoomsCd((int)orderMap.get("roomsCd"));
+		orderDto.setRoomsCd(Integer.parseInt((String)orderMap.get("roomsCd")));
 		orderDto.setCheckIn((String)orderMap.get("checkIn"));
 		orderDto.setCheckOut((String)orderMap.get("checkOut"));
-		orderDto.setPersonnel((int)orderMap.get("personnel"));
-		orderDto.setBreakfast((int)orderMap.get("breakfast"));
-		orderDto.setSwimmingPool((int)orderMap.get("setSwimmingPool"));
-		orderDto.setPaymentAmt((int)orderMap.get("paymentAmt"));
+		orderDto.setPersonnel(Integer.parseInt((String)orderMap.get("personnel")));
+		orderDto.setBreakfast(Integer.parseInt((String)orderMap.get("breakfast")));
+		orderDto.setSwimmingPool(Integer.parseInt((String)orderMap.get("swimmingPool")));
+		orderDto.setPaymentAmt(Integer.parseInt((String)orderMap.get("paymentAmt")));
 		orderDto.setOrdererNm((String)orderMap.get("ordererNm"));
 		orderDto.setOrdererBirth((String)orderMap.get("ordererBirth"));
 		orderDto.setOrdererHp((String)orderMap.get("ordererHp"));
@@ -78,8 +79,8 @@ public class OrderController {
 		orderDto.setCardNo2((String)orderMap.get("cardNo2"));
 		orderDto.setCardNo3((String)orderMap.get("cardNo3"));
 		orderDto.setCardNo4((String)orderMap.get("cardNo4"));
-		orderDto.setCardValidityMonth((int)orderMap.get("cardValidityMonth"));
-		orderDto.setCardValidityYear((int)orderMap.get("cardValidityYear"));
+		orderDto.setCardValidityMonth((String)orderMap.get("cardValidityMonth"));
+		orderDto.setCardValidityYear((String)orderMap.get("cardValidityYear"));
 		
 		Map<String,Object> getPoint = new HashMap<String, Object>();
 		getPoint.put("point", "point");

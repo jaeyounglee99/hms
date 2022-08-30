@@ -26,8 +26,8 @@ public class OrderDto {
 	private String cardNo2;
 	private String cardNo3;
 	private String cardNo4;
-	private int cardValidityMonth;
-	private int cardValidityYear;
+	private String cardValidityMonth;
+	private String cardValidityYear;
 	private Date payOrderTime;
 	
 	public int getOrderCd() {
@@ -144,16 +144,16 @@ public class OrderDto {
 	public void setCardNo4(String cardNo4) {
 		this.cardNo4 = cardNo4;
 	}
-	public int getCardValidityMonth() {
+	public String getCardValidityMonth() {
 		return cardValidityMonth;
 	}
-	public void setCardValidityMonth(int cardValidityMonth) {
+	public void setCardValidityMonth(String cardValidityMonth) {
 		this.cardValidityMonth = cardValidityMonth;
 	}
-	public int getCardValidityYear() {
+	public String getCardValidityYear() {
 		return cardValidityYear;
 	}
-	public void setCardValidityYear(int cardValidityYear) {
+	public void setCardValidityYear(String cardValidityYear) {
 		this.cardValidityYear = cardValidityYear;
 	}
 	public Date getPayOrderTime() {
@@ -162,6 +162,7 @@ public class OrderDto {
 	public void setPayOrderTime(Date payOrderTime) {
 		this.payOrderTime = payOrderTime;
 	}
+	
 	@Override
 	public String toString() {
 		return "OrderDto [orderCd=" + orderCd + ", memberId=" + memberId + ", roomsCd=" + roomsCd + ", checkIn="
@@ -170,8 +171,21 @@ public class OrderDto {
 				+ ", ordererBirth=" + ordererBirth + ", ordererHp=" + ordererHp + ", ordererEmail=" + ordererEmail
 				+ ", request=" + request + ", cardCompanyNm=" + cardCompanyNm + ", cardNo1=" + cardNo1 + ", cardNo2="
 				+ cardNo2 + ", cardNo3=" + cardNo3 + ", cardNo4=" + cardNo4 + ", cardValidityMonth=" + cardValidityMonth
-				+ ", cardValidityYear=" + cardValidityYear + ", payOrderTime=" + payOrderTime + "]";
+				+ ", cardValidityYear=" + cardValidityYear + ", payOrderTime=" + payOrderTime + ", getOrderCd()="
+				+ getOrderCd() + ", getMemberId()=" + getMemberId() + ", getRoomsCd()=" + getRoomsCd()
+				+ ", getCheckIn()=" + getCheckIn() + ", getCheckOut()=" + getCheckOut() + ", getPersonnel()="
+				+ getPersonnel() + ", getBreakfast()=" + getBreakfast() + ", getSwimmingPool()=" + getSwimmingPool()
+				+ ", getPaymentAmt()=" + getPaymentAmt() + ", getOrdererNm()=" + getOrdererNm() + ", getOrdererBirth()="
+				+ getOrdererBirth() + ", getOrdererHp()=" + getOrdererHp() + ", getOrdererEmail()=" + getOrdererEmail()
+				+ ", getRequest()=" + getRequest() + ", getCardCompanyNm()=" + getCardCompanyNm() + ", getCardNo1()="
+				+ getCardNo1() + ", getCardNo2()=" + getCardNo2() + ", getCardNo3()=" + getCardNo3() + ", getCardNo4()="
+				+ getCardNo4() + ", getCardValidityMonth()=" + getCardValidityMonth() + ", getCardValidityYear()="
+				+ getCardValidityYear() + ", getPayOrderTime()=" + getPayOrderTime() + ", getClass()=" + getClass()
+				+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
 	}
+	
+
+	
 	
 	
 }
