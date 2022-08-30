@@ -20,5 +20,55 @@
 		WHERE
 				MEMBER_ID = #{memberId}
 	</select>
+	
+	<insert id="insertOrder" parameterType="OrderDto">
+		INSERT INTO
+				`ORDER` (
+				MEMBER_ID,
+				ROOMS_CD,
+				CHECK_IN,
+				CHECK_OUT,
+				PERSONNEL,
+				BREAKFAST,
+				SWIMMING_POOL,
+				PAYMENT_AMT,
+				ORDERER_NM,
+				ORDERER_BIRTH,
+				ORDERER_HP,
+				ORDERER_EMAIL,
+				REQUEST,
+				CARD_COMPANY_NM,
+				CARD_NO1,
+				CARD_NO2,
+				CARD_NO3,
+				CARD_NO4,
+				CARD_VALIDITY_MONTH,
+				CARD_VALIDITY_YEAR,
+				PAY_ORDER_TIME
+		)
+		VALUES (
+				#{orderDto.memberId},
+				#{orderDto.roomsCd},
+				#{orderDto.checkIn},
+				#{orderDto.checkOut},
+				#{orderDto.personnel},
+				#{orderDto.breakfast},
+				#{orderDto.swimmingPool},
+				#{orderDto.paymentAmt},
+				#{orderDto.ordererNm},
+				#{orderDto.ordererBirth},
+				#{orderDto.ordererHp},
+				#{orderDto.ordererEmail},
+				#{orderDto.request},
+				#{orderDto.cardCompanyNm},
+				#{orderDto.cardNo1},
+				#{orderDto.cardNo2},
+				#{orderDto.cardNo3},
+				#{orderDto.cardNo4},
+				#{orderDto.cardValidityMonth},
+				#{orderDto.cardValidityYear},
+				NOW()
+		)
+	</insert>
 
 </mapper>

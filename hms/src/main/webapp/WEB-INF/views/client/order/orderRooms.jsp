@@ -7,13 +7,6 @@
 <script src="${contextPath}/resources/ckeditor/ckeditor.js"></script> 
 <head>
 <meta charset="utf-8">
-<script>
- 	
- 	$().ready(function(){
- 		
- 	});
- 	
-</script>
 </head>
 <div class="hero-wrap"
 	style="background-image: url('${contextPath }/resources/bootstrap/images/main.header.jpeg');">
@@ -46,8 +39,19 @@
 		<div class="row block-9">
 		
 			<form action="${contextPath }/order/orderRooms" method="post" class="bg-white p-5 contact-form">
+				<input type="hidden" name="checkIn" value="${orderDto.checkIn }">
+				<input type="hidden" name="checkOut" value="${orderDto.checkOut }">
+				<input type="hidden" name="personnel" value="${orderDto.personnel }">
+				<input type="hidden" name="breakFast" value="${orderDto.breakfast }">
+				<input type="hidden" name="swimmingPool" value="${orderDto.swimmingPool }">
+				<input type="hidden" name="paymentAmt" value="${orderDto.paymentAmt }">
+				<input type="hidden" name="point" value="${orderImfo.point}">
+				<input type="hidden" name="memberId" value="${orderer.memberId}">
+				<input type="hidden" name="roomsCd" value="${orderImfo.roomsCd}">
+				
+				
 				<div class="categories">
-                <li>
+                	<li>
 						<span style="display: inline-block; width: 30%; text-align: justify;">product</span>
 						<span style="display: inline-block; width: 15%; text-align: justify;">check-in</span>
 						<span style="display: inline-block; width: 15%; text-align: justify;">check-out</span> 
@@ -55,17 +59,17 @@
 						<span style="display: inline-block; width: 20%; text-align: justify;">price</span>
 					</li>
 					<li>
-						<span style="display: inline-block; width: 30%; text-align: justify;"></span> 
+						<span style="display: inline-block; width: 30%; text-align: justify;">${orderImfo.roomsNm }</span>
 						<span style="display: inline-block; width: 15%; text-align: justify;">${orderDto.checkIn }</span>
 						<span style="display: inline-block; width: 15%; text-align: justify;">${orderDto.checkOut }</span>
 						<span style="display: inline-block; width: 15%; text-align: justify;">${orderDto.personnel }</span>
-						<span style="display: inline-block; width: 20%; text-align: justify;"><fmt:formatNumber value=""/></span>
+						<span style="display: inline-block; width: 20%; text-align: justify;"><fmt:formatNumber value="${orderDto.paymentAmt }"/>원</span>
+						 
 					</li>
 					<li>
 						<span>point</span>
 						<span style="display: inline-block; width: 78%; text-align: right;">${orderImfo.point }P적립</span>
-					</li>
-                <hr><br><br>
+					</li><br><br>
               </div>
 				<div class="form-group" align="left">
 					<p>이름 <span style="color: red;">*</span></p>
@@ -143,6 +147,10 @@
 				<div class="form-group" align="left">
 					<p>요청사항 <span style="color: red;">*</span></p>
 					<input type="text" name="request" maxlength="300" class="form-control">
+				</div>
+				<div class="form-group" align="center">
+					<input type="submit" value="예약하기" class="btn py-3 px-4 btn-primary"
+						style="width: 80%">
 				</div>
 			</form>
 		</div>

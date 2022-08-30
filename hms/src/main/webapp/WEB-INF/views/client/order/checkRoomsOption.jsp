@@ -62,10 +62,11 @@
 		var checkIn = "${orderDto.checkIn}";
 		var checkOut = "${orderDto.checkOut}";
 		var roomsCd = ${orderImfo.roomsCd};
-		var totalPrice = Number($("#totalPrice").val());
+		var paymentAmt = ${orderImfo.price - orderImfo.price * (orderImfo.discountRate / 100) } + + (34000 * Number(breakfast)) + (46000 * Number(swimmingPool));
+			
 		
 		location.href = "${contextPath}/order/orderRooms?roomsCd="+roomsCd+"&checkIn="+checkIn+"&checkOut="+checkOut+"&personnel="+${orderDto.personnel}
-						+"&breakfast="+breakfast+"&swimmingPool="+swimmingPool+"&paymentAmt="+totalPrice;
+						+"&breakfast="+breakfast+"&swimmingPool="+swimmingPool+"&paymentAmt="+paymentAmt;
 	} 
 </script>
 	
