@@ -31,15 +31,15 @@ public class OrderDaoImpl implements OrderDao{
 		sqlSession.insert("order.insertOrder" , orderDto);
 	}
 
-//	@Override
-//	public void updateStockQty(OrderDto orderDto) {
-//		sqlSession.update("order.updateStockQty" , orderDto);
-//	}
-//
-//	@Override
-//	public void updateMemberPoint(Map<String, Object> getPoint) {
-//		sqlSession.update("order.updateMemberPoint" , getPoint);
-//	}
+	@Override
+	public void updateRoomsStock(OrderDto orderDto) {
+		sqlSession.update("order.updateRoomsStock" , orderDto);
+	}
+
+	@Override
+	public void updateMemberPoint(Map<String, Object> getPointMap) {
+		sqlSession.update("order.updateMemberPoint" , getPointMap);
+	}
 
 
 

@@ -38,7 +38,7 @@
 			          	<li class="nav-item"><a href="${contextPath }/admin/order/orderConfirm" class="nav-link">예약확인</a></li>
 	        		</c:when>
 					<c:otherwise>
-						<li class="nav-item"><a href="restaurant.html" class="nav-link">프로모션</a></li>
+						<li class="nav-item"><a href="${contextPath }/myPage/myInfo?memberId=${sessionScope.memberId}" class="nav-link">마이페이지</a></li>
 					</c:otherwise>	        	
 	        	</c:choose>
 	          <c:choose>

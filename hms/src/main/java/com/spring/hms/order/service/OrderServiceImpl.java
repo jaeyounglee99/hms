@@ -28,9 +28,10 @@ public class OrderServiceImpl implements OrderService{
 	}
 
 	@Override
-	public void addOrder(OrderDto orderDto , Map<String,Object> getPoint) {
+	public void addOrder(OrderDto orderDto , Map<String,Object> getPointMap) {
 		orderDao.insertOrder(orderDto);
-		
+		orderDao.updateRoomsStock(orderDto);
+		orderDao.updateMemberPoint(getPointMap);
 	}
 
 }

@@ -47,28 +47,45 @@
 				PAY_ORDER_TIME
 		)
 		VALUES (
-				#{orderDto.memberId},
-				#{orderDto.roomsCd},
-				#{orderDto.checkIn},
-				#{orderDto.checkOut},
-				#{orderDto.personnel},
-				#{orderDto.breakfast},
-				#{orderDto.swimmingPool},
-				#{orderDto.paymentAmt},
-				#{orderDto.ordererNm},
-				#{orderDto.ordererBirth},
-				#{orderDto.ordererHp},
-				#{orderDto.ordererEmail},
-				#{orderDto.request},
-				#{orderDto.cardCompanyNm},
-				#{orderDto.cardNo1},
-				#{orderDto.cardNo2},
-				#{orderDto.cardNo3},
-				#{orderDto.cardNo4},
-				#{orderDto.cardValidityMonth},
-				#{orderDto.cardValidityYear},
+				#{memberId},
+				#{roomsCd},
+				#{checkIn},
+				#{checkOut},
+				#{personnel},
+				#{breakfast},
+				#{swimmingPool},
+				#{paymentAmt},
+				#{ordererNm},
+				#{ordererBirth},
+				#{ordererHp},
+				#{ordererEmail},
+				#{request},
+				#{cardCompanyNm},
+				#{cardNo1},
+				#{cardNo2},
+				#{cardNo3},
+				#{cardNo4},
+				#{cardValidityMonth},
+				#{cardValidityYear},
 				NOW()
 		)
 	</insert>
 
+	<update id="updateRoomsStock" parameterType="OrderDto">
+		UPDATE
+				ROOMS
+		SET
+				STOCK = STOCK - 1
+		WHERE
+				ROOMS_CD = #{roomsCd}
+	</update>
+	
+	<update id="updateMemberPoint" parameterType="hashmap">
+		UPDATE
+				MEMBER
+		SET
+				POINT = POINT + #{point}
+		WHERE
+				MEMBER_ID = #{memberId}	
+	</update>
 </mapper>

@@ -57,7 +57,6 @@ public class OrderController {
 	
 	@RequestMapping(value="/orderRooms" , method=RequestMethod.POST)
 	public ResponseEntity<Object> orderRoomsByOrderImfo(@RequestParam Map<String,Object> orderMap, HttpServletRequest request){
-		System.out.println(orderMap);
 		
 		OrderDto orderDto = new OrderDto();
 		
@@ -82,15 +81,15 @@ public class OrderController {
 		orderDto.setCardValidityMonth((String)orderMap.get("cardValidityMonth"));
 		orderDto.setCardValidityYear((String)orderMap.get("cardValidityYear"));
 		
-		Map<String,Object> getPoint = new HashMap<String, Object>();
-		getPoint.put("point", "point");
+		Map<String,Object> getPointMap = new HashMap<String, Object>();
+		getPointMap.put("point", Integer.parseInt((String)orderMap.get("point")));
 		
-		orderService.addOrder(orderDto , getPoint);
+		orderService.addOrder(orderDto , getPointMap);
 		
 		
 		String jsScript = "<script>";
 			   jsScript += "alert('예약되었습니다.');";
-			   jsScript += "location.href='" + request.getContextPath() + "/myPage/orderConfirm'";
+			   jsScript += "location.href='" + request.getContextPath() + "/'";
 			   jsScript += "</script>";
 			   
 		HttpHeaders responseHeaders = new HttpHeaders();
