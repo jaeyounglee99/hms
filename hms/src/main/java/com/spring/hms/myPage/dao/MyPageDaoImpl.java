@@ -17,4 +17,9 @@ public class MyPageDaoImpl implements MyPageDao{
 		return sqlSession.selectOne("myPage.selectOneMyInfo" , memberId);
 	}
 
+	@Override
+	public void updateMyInfo(MemberDto memberDto) {
+		sqlSession.update("myPage.updteMyInfo" , memberDto);
+	}
+
 }

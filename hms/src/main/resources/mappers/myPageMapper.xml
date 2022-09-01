@@ -12,4 +12,51 @@
 				MEMBER_ID = #{memberId}
 	</select>
 
+	<update id="updteMyInfo">
+		UPDATE
+				MEMBER
+		 <set> 
+	      <if test='memberNm != null and memberNm != ""'>
+	        MEMBER_NM = #{memberNm},
+	      </if>
+	      <if test='passwd != null and passwd != ""'>
+	        PASSWD = #{passwd},
+	      </if>
+	      <if test='point != null and point != ""'>
+	        POINT = #{point},
+	      </if>
+	      <if test='gender != null and gender != ""'>
+	        GENDER = #{gender},
+	      </if>
+	      <if test='dateBirth != null and dateBirth != ""'>
+	        DATE_BIRTH = #{dateBirth},
+	      </if>
+	      <if test='hp != null and hp != ""'>
+	        HP = #{hp},
+	      </if>
+	      <if test='smsstsYn != null and smsstsYn != ""'>
+	        SMSSTS_YN = #{smsstsYn},
+	      </if>
+	      <if test='email != null and email != ""'>
+	        EMAIL = #{email},
+	      </if>
+	      <if test='emailstsYn != null and emailstsYn != ""'>
+	        EMAILSTS_YN = #{emailstsYn},
+	      </if>
+	      <if test='postalCode != null and postalCode != ""'>
+	        POSTAL_CODE = #{postalCode},
+	      </if>
+	      <if test='roadAddress != null and roadAddress != ""'>
+	        ROAD_ADDRESS = #{roadAddress},
+	      </if>
+	      <if test='landAddress != null and landAddress != ""'>
+	        LAND_ADDRESS = #{landAddress},
+	      </if>
+	      <if test='remainingAddress != null and remainingAddress != ""'>
+	        REMAINING_ADDRESS = #{remainingAddress},
+	      </if>
+	    </set>
+	    WHERE
+	    		MEMBER_ID = #{memberId}
+	</update>
 </mapper>

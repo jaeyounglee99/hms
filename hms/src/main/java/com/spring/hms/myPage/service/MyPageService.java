@@ -5,4 +5,5 @@ import com.spring.hms.member.dto.MemberDto;
 public interface MyPageService {
 
 	public MemberDto getMyInfo(String memberId);
+	public void modifyInfo(MemberDto memberDto);
 }
