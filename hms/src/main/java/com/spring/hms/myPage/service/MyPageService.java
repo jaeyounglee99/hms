@@ -6,4 +6,5 @@ public interface MyPageService {
 
 	public MemberDto getMyInfo(String memberId);
 	public void modifyInfo(MemberDto memberDto);
+	public void removeMember(String memberId);
 }

@@ -6,4 +6,5 @@ public interface MyPageDao {
 
 	public MemberDto selectOneMyInfo(String memberId);
 	public void updateMyInfo(MemberDto memberDto);
+	public void deleteMember(String memberId);
 }

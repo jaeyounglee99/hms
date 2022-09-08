@@ -1,6 +1,7 @@
 package com.spring.hms.myPage.controller;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -45,6 +46,25 @@ public class MypageController {
 				jsScript += " alert('수정되었습니다.');";
 				jsScript += " location.href='" + request.getContextPath() + "/myPage/myInfo?memberId=" + memberDto.getMemberId() +  "';";
 				jsScript += " </script>";
+		
+		return new ResponseEntity<Object>(jsScript, responseHeaders, HttpStatus.OK);
+		
+	}
+	
+	@RequestMapping(value="/removeMember" , method=RequestMethod.GET)
+	public ResponseEntity<Object> removeMember(HttpServletRequest request){
+		
+		HttpSession session = request.getSession();
+		session.invalidate(); 
+		
+		myPageService.removeMember(request.getParameter("memberId"));
+		HttpHeaders responseHeaders = new HttpHeaders();
+		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
+		
+		String jsScript  = "<script>";
+				jsScript += "alert('탈퇴되었습니다.');";
+				jsScript += "location.href='" + request.getContextPath() + "/';";
+				jsScript += "</script>";
 		
 		return new ResponseEntity<Object>(jsScript, responseHeaders, HttpStatus.OK);
 		

@@ -22,4 +22,9 @@ public class MyPageDaoImpl implements MyPageDao{
 		sqlSession.update("myPage.updteMyInfo" , memberDto);
 	}
 
+	@Override
+	public void deleteMember(String memberId) {
+		sqlSession.delete("myPage.deleteMember" , memberId);
+	}
+
 }

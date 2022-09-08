@@ -9,32 +9,10 @@
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script>
 	
-function execDaumPostcode() {
-    new daum.Postcode({
-        oncomplete: function(data) {
-
-            var fullRoadAddr = data.roadAddress; 
-            var extraRoadAddr = ''; 
-
-            if (data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
-                extraRoadAddr += data.bname;
-            }
-            if (data.buildingName !== '' && data.apartment === 'Y'){
-               extraRoadAddr += (extraRoadAddr !== '' ? ', ' + data.buildingName : data.buildingName);
-            }
-            if (extraRoadAddr !== ''){
-                extraRoadAddr = ' (' + extraRoadAddr + ')';
-            }
-            if (fullRoadAddr !== ''){
-                fullRoadAddr += extraRoadAddr;
-            }
-
-            document.getElementById('postalCode').value = data.zonecode; //5자리 새우편번호 사용
-            document.getElementById('roadAddress').value = fullRoadAddr;
-            document.getElementById('landAddress').value = data.jibunAddress;
-          
-        }
-    }).open();
+function removeMember() {
+	if (confirm("정말로 탈퇴하시겠습니까?")) {
+		location.href = "${contextPath}/myPage/removeMember?memberId=" + $("#memberId").val();
+	}
 }
 
 	$().ready(function(){
@@ -43,13 +21,25 @@ function execDaumPostcode() {
 		$("#birthY").val(dateBirth[0]);
 		$("#birthM").val(dateBirth[1]);
 		$("#birthD").val(dateBirth[2]);
+		
+		$("form").submit(function(){
+			var dateBirth = $("#birthY").val() + "-" + $("#birthM").val() + "-" + $("#birthD").val();
+			$("[name='dateBirth']").val(dateBirth);
+		});
 	});
 	
 	
 </script>
 </head>
 <body>
-	
+
+	<c:if test="${sessionScope.memberId eq null}">
+		<script>
+			alert("로그인을 먼저 진행해주세요.");
+			location.href = "${contextPath}/member/login";
+		</script>
+	</c:if>
+		
 	<div class="hero-wrap"
 		style="background-image: url('${contextPath}/resources/bootstrap/images/main.header.jpeg');">
 		<div class="overlay"></div>
@@ -73,6 +63,10 @@ function execDaumPostcode() {
 	<div align="center">
 		<div class="comment-form-wrap pt-5" style="width: 60%">
 			<h3 class="mb-5">내 가입정보</h3>
+			<div class="text">
+	            <span class="breadcrumbs mb-2"><a href="${contextPath }/myPage/myInfo?memberId=${sessionScope.memberId}">가입정보</a></span>&ensp;
+	            <span class="breadcrumbs mb-2"><a href="#">예약조회</a></span>&ensp;
+            </div>
 			<form action="${contextPath }/myPage/modifyInfo" method="post" class="p-5 bg-light">
 				<p align="left">
 					아이디 <span style="color: red;">*</span>
@@ -194,8 +188,8 @@ function execDaumPostcode() {
 					<p align="left" id="remainingAddressValid"></p>
 				</div>
 				<div class="form-group" align="right">
-					<input type="submit" value="수정" class="btn py-3 px-4 btn-primary"
-						style="width: 20%">
+					<input type="submit" value="수정" class="btn py-3 px-4 btn-primary" style="width: 20%"> &emsp;
+					<input type="button" value="탈퇴" onclick="removeMember()" class="btn py-3 px-4 btn-primary" style="width: 10%">
 				</div>
 			</form>
 		</div>

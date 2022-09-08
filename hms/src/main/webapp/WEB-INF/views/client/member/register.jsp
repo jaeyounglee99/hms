@@ -9,56 +9,10 @@
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script>
 	
-function execDaumPostcode() {
-    new daum.Postcode({
-        oncomplete: function(data) {
-
-            var fullRoadAddr = data.roadAddress; 
-            var extraRoadAddr = ''; 
-
-            if (data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
-                extraRoadAddr += data.bname;
-            }
-            if (data.buildingName !== '' && data.apartment === 'Y'){
-               extraRoadAddr += (extraRoadAddr !== '' ? ', ' + data.buildingName : data.buildingName);
-            }
-            if (extraRoadAddr !== ''){
-                extraRoadAddr = ' (' + extraRoadAddr + ')';
-            }
-            if (fullRoadAddr !== ''){
-                fullRoadAddr += extraRoadAddr;
-            }
-
-            document.getElementById('postalCode').value = data.zonecode; //5자리 새우편번호 사용
-            document.getElementById('roadAddress').value = fullRoadAddr;
-            document.getElementById('landAddress').value = data.jibunAddress;
-          
-        }
-    }).open();
-}
-	
 	$().ready(function(){
 
-		$("#btnOverlapped").click(function(){
-			
-			var memberId = $("#memberId").val();
-			
-			$.ajax({
-				url	 : "${contextPath}/member/checkDuplicatedId?memberId=" + memberId,
-				type : "post",
-				data : memberId ,
-				success : function(data) {
-					 if (data == "notDuplicate"){
-			        	 $("#memberIdValid").html("<p><span style='color:green;'>사용할 수 있는 ID입니다</span></p>");
-			          }
-			         if (data == "Duplicate") {
-			        	 $("#memberIdValid").html("<p><span style='color:red;'>이미 사용중인 ID입니다</span></p>");
-						 $("#memberId").focus();
-						 return false;
-			          }
-				},
-			});
-		});
+		
+		
 	
 		$("#passwd").keyup(function(){
 			$("#passwdValid").html("");
@@ -112,11 +66,52 @@ function execDaumPostcode() {
 			var dateBirth = $("#birthY").val() + "-" + $("#birthM").val() + "-" + $("#birthD").val();
 			$("[name='dateBirth']").val(dateBirth);
 			
+			$("#btnOverlapped").click(function(){
+				
+				$("input[name=checked_id]").val('y');
+				
+				var memberId = $("#memberId").val();
+				
+				
+				$.ajax({
+					url	 : "${contextPath}/member/checkDuplicatedId?memberId=" + memberId,
+					type : "post",
+					data : memberId ,
+					async:false,
+					success : function(data) {
+						 if (data == "notDuplicate"){
+				        	 $("#memberIdValid").html("<p><span style='color:green;'>사용할 수 있는 ID입니다</span></p>");
+				          }
+				         if (data == "Duplicate") {
+				        	 $("#memberIdValid").html("<p><span style='color:red;'>이미 사용중인 ID입니다</span></p>");
+							 $("#memberId").focus();
+							 duplCheck = true;
+				          }
+					},
+				});
+				
+				if (duplCheck){
+				alert('ID를 확인해주세요');
+				return false;
+				} 
+				
+			});
+			
+				
+			
+			
+			
 			if ($("#memberId").val() == "") {
 				$("#memberIdValid").html("<p><span style='color:red;'>아이디를 입력하세요</span></p>");
 				$("#memberId").focus();
 				return false;
 			}
+
+			
+			if($("input[name='checked_id']").val()==''){
+		        alert('아이디중복 확인을 해주세요.');
+		        return false;
+		    	}
 			
 			if ($("#passwd").val() == "") {
 				$("#passwdValid").html("<p><span style='color:red;'>비밀번호를 입력하세요</span></p>")
@@ -160,12 +155,6 @@ function execDaumPostcode() {
 				return false;
 			}
 
-			if ($("#remainingAddress").val() == "") {
-				$("#remainingAddressValid").html("<p><span style='color:red;'>상세주소를 입력하세요</span></p>")
-				$("#remainingAddress").focus();
-				return false;
-			}
-			
 		});
 		
 	});
@@ -204,6 +193,7 @@ function execDaumPostcode() {
 				<div class="form-group d-flex align-self-stretch">
 					<input type="text" id="memberId" name="memberId" placeholder="아이디를 입력하세요." class="form-control" style="width: 80%">
 					&emsp; <input type="button" id="btnOverlapped" value="중복확인" class="btn py-3 px-4 btn-primary">
+					<input type="hidden" name="checked_id" value="">
 				</div>
 					<p align="left" id="memberIdValid"></p>
 				<div class="form-group">
