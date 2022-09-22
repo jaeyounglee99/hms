@@ -70,4 +70,19 @@ public class MypageController {
 		
 	}
 	
+	@RequestMapping(value="/myOrderList" , method=RequestMethod.GET)
+	public ModelAndView myOrderList(HttpServletRequest request) {
+		
+		HttpSession session = request.getSession();
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("/myPage/myOrderList");
+		mv.addObject("myOrderList" , myPageService.getMyOrderList((String)session.getAttribute("memberId")));
+		
+		return mv;
+	}
+	
+	
+	
+	
 }

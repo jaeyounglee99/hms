@@ -8,10 +8,10 @@
 	</settings>
 	
 	<typeAliases>
-		<typeAlias type="com.spring.hms.member.dto.MemberDto"	alias="MemberDto"/>
+		<typeAlias type="com.spring.hms.member.dto.MemberDto"		alias="MemberDto"/>
 		<typeAlias type="com.spring.hms.admin.member.dto.AdminDto"	alias="AdminDto"/>
-		<typeAlias type="com.spring.hms.rooms.dto.RoomsDto"	alias="RoomsDto"/>
-		<typeAlias type="com.spring.hms.order.dto.OrderDto"	alias="OrderDto"/>
+		<typeAlias type="com.spring.hms.rooms.dto.RoomsDto"			alias="RoomsDto"/>
+		<typeAlias type="com.spring.hms.order.dto.OrderDto"			alias="OrderDto"/>
 	</typeAliases>
 	
 </configuration>

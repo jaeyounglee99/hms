@@ -10,10 +10,40 @@
 <script>
 	
 	$().ready(function(){
-
-		
-		
 	
+		var dateBirth = $("#birthY").val() + "-" + $("#birthM").val() + "-" + $("#birthD").val();
+		$("[name='dateBirth']").val(dateBirth);
+		
+		var duplCheck = true;
+		
+		$("#btnOverlapped").click(function(){
+			
+			$("input[name=checked_id]").val('y');
+			
+			var memberId = $("#memberId").val();
+			
+			$.ajax({
+				url	 : "${contextPath}/member/checkDuplicatedId?memberId=" + memberId,
+				type : "post",
+				data : memberId ,
+				async:false,
+				success : function(data) {
+					 if (data == "notDuplicate"){
+			        	 $("#memberIdValid").html("<p><span style='color:green;'>사용할 수 있는 ID입니다</span></p>");
+			          }
+			         if (data == "Duplicate") {
+			        	 $("#memberIdValid").html("<p><span style='color:red;'>이미 사용중인 ID입니다</span></p>");
+						 $("#memberId").focus();
+						 duplCheck = false;
+			          }
+				}
+			});
+			
+			return duplCheck;
+			
+		});
+		
+		
 		$("#passwd").keyup(function(){
 			$("#passwdValid").html("");
 			var pw = $("#passwd").val();
@@ -61,55 +91,17 @@
 			}
 		});
 		
-		$("form").submit(function(){
-			
-			var dateBirth = $("#birthY").val() + "-" + $("#birthM").val() + "-" + $("#birthD").val();
-			$("[name='dateBirth']").val(dateBirth);
-			
-			$("#btnOverlapped").click(function(){
-				
-				$("input[name=checked_id]").val('y');
-				
-				var memberId = $("#memberId").val();
-				
-				
-				$.ajax({
-					url	 : "${contextPath}/member/checkDuplicatedId?memberId=" + memberId,
-					type : "post",
-					data : memberId ,
-					async:false,
-					success : function(data) {
-						 if (data == "notDuplicate"){
-				        	 $("#memberIdValid").html("<p><span style='color:green;'>사용할 수 있는 ID입니다</span></p>");
-				          }
-				         if (data == "Duplicate") {
-				        	 $("#memberIdValid").html("<p><span style='color:red;'>이미 사용중인 ID입니다</span></p>");
-							 $("#memberId").focus();
-							 duplCheck = true;
-				          }
-					},
-				});
-				
-				if (duplCheck){
-				alert('ID를 확인해주세요');
-				return false;
-				} 
-				
-			});
-			
-				
-			
-			
-			
-			if ($("#memberId").val() == "") {
+		
+		
+		
+			/* if ($("#memberId").val() == "") {
 				$("#memberIdValid").html("<p><span style='color:red;'>아이디를 입력하세요</span></p>");
 				$("#memberId").focus();
 				return false;
-			}
+			} */
 
-			
-			if($("input[name='checked_id']").val()==''){
-		        alert('아이디중복 확인을 해주세요.');
+			/* if($("input[name='checked_id']").val()==''){
+		        alert('아이디 중복 확인을 해주세요.');
 		        return false;
 		    	}
 			
@@ -153,12 +145,77 @@
 				$("#postalCodeValid").html("<p><span style='color:red;'>우편번호를 입력하세요</span></p>")
 				$("#postalCode").focus();
 				return false;
-			}
+			} */
 
-		});
+		
 		
 	});
 	
+	function formValidationCheck(){
+		
+		var memberId = document.form.memberId;
+		if (memberId.value == "") {
+			alert("아이디를 입력하세요");
+			memberId.focus();
+			return false
+		}
+		
+		var checked_id = document.form.checked_id;
+		if (checked_id.value == ""){
+			alert("아이디 중복 확인을 해주세요");
+			memberId.focus();
+			return false
+		}
+		
+		var passwd = document.form.passwd;
+		if (passwd.value == ""){
+			alert("비밀번호를 입력하세요");
+			passwd.focus();
+			return false;
+		}
+		
+		var confirmPw = document.form.confirmPw;
+		if (confirmPw.value == ""){
+			alert("비밀번호를 확인하세요");
+			confirmPw.focus();
+			return false;
+		}
+		
+		var memberNm = document.form.memberNm;
+		if (memberNm.value == ""){
+			alert("성명을 입력하세요");
+			memberNm.focus();
+			return false;
+		}
+		
+		var gender = document.form.gender;
+		if (gender.value == ""){
+			alert("성별을 선택하세요");
+			gender.focus();
+			return false;
+		}
+		
+		var email = document.form.email;
+		if (email.value == ""){
+			alert("이메일을 입력하세요");
+			email.focus();
+			return false;
+		}
+		
+		var hp = document.form.hp;
+		if (hp.value == ""){
+			alert("전화번호를 입력하세요");
+			hp.focus();
+			return false;
+		}
+		
+		var postalCode = document.form.postalCode;
+		if (postalCode.value == ""){
+			alert("우편번호를 입력하세요");
+			postalCode.focus();
+			return false;
+		}
+	}
 </script>
 </head>
 <body>
@@ -186,7 +243,7 @@
 	<div align="center">
 		<div class="comment-form-wrap pt-5" style="width: 40%">
 			<h3 class="mb-5">회원가입</h3>
-			<form action="${contextPath }/member/register" method="post" class="p-5 bg-light">
+			<form name="form" action="${contextPath }/member/register" method="post" onsubmit="return formValidationCheck()" class="p-5 bg-light">
 				<p align="left">
 					아이디 <span style="color: red;">*</span>
 				</p>
