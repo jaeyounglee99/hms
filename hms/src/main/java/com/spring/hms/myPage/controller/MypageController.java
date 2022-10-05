@@ -1,5 +1,7 @@
 package com.spring.hms.myPage.controller;
 
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -78,6 +80,17 @@ public class MypageController {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("/myPage/myOrderList");
 		mv.addObject("myOrderList" , myPageService.getMyOrderList((String)session.getAttribute("memberId")));
+		
+		return mv;
+	}
+	
+	@RequestMapping(value="/myOrderDetail" , method=RequestMethod.GET)
+	public ModelAndView myOrderDetail(@RequestParam Map<String,Object> orderDetailMap) {
+		
+		ModelAndView mv = new ModelAndView();
+		
+		mv.setViewName("/myPage/myOrderDetail");
+//		mv.addObject("myOrder" , myPageService.getMyOrderDetail(orderDetailMap));
 		
 		return mv;
 	}

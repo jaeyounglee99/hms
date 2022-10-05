@@ -68,7 +68,7 @@
 										<img src="${contextPath }/thumbnails?roomsFileName=${myOrder.roomsFileName1}" width="100" height="100">
 										<div>
 											<br>
-											<h6>&emsp;&emsp;&emsp;&emsp;<a href="#">${myOrder.roomsNm }</a></h6>
+											<h6>&emsp;&emsp;&emsp;&emsp;<a href="${contextPath }/myPage/myOrderDetail?orderCd=${myOrder.orderCd}&memberId=${myOrder.memberId}">${myOrder.roomsNm }</a></h6>
 										</div>
 									</td>
 									<td><fmt:formatNumber value="${myOrder.price }"/>원</td>
