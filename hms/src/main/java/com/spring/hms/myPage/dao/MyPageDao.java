@@ -11,4 +11,5 @@ public interface MyPageDao {
 	public void updateMyInfo(MemberDto memberDto);
 	public void deleteMember(String memberId);
 	public List<Map<String,Object>> selectListMyOrder(String memberId);
+	public Map<String,Object> selectOneMyOrder(Map<String,Object> orderDetailMap);
 }

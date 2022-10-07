@@ -35,4 +35,9 @@ public class MyPageDaoImpl implements MyPageDao{
 		return sqlSession.selectList("myPage.selectListMyOrder" , memberId);
 	}
 
+	@Override
+	public Map<String, Object> selectOneMyOrder(Map<String, Object> orderDetailMap) {
+		return sqlSession.selectOne("myPage.selectOneMyOrder" , orderDetailMap);
+	}
+
 }

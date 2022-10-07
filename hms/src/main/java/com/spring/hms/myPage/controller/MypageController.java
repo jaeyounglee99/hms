@@ -90,7 +90,7 @@ public class MypageController {
 		ModelAndView mv = new ModelAndView();
 		
 		mv.setViewName("/myPage/myOrderDetail");
-//		mv.addObject("myOrder" , myPageService.getMyOrderDetail(orderDetailMap));
+		mv.addObject("myOrder" , myPageService.getMyOrderDetail(orderDetailMap));
 		
 		return mv;
 	}

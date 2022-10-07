@@ -11,4 +11,5 @@ public interface MyPageService {
 	public void modifyInfo(MemberDto memberDto);
 	public void removeMember(String memberId);
 	public List<Map<String,Object>> getMyOrderList(String memberId);
+	public Map<String,Object> getMyOrderDetail(Map<String,Object> orderDetailMap);
 }

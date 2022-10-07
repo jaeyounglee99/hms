@@ -94,4 +94,43 @@
 			 		 ON O.ROOMS_CD = R.ROOMS_CD
 			 		AND O.MEMBER_ID = #{memberId}
 	</select>
+	
+		<resultMap type="hashmap" id="myOrderDetailMap">
+			<result column="ORDER_CD"		property="orderCd"/>
+			<result column="CHECK_IN"		property="checkIn"/>
+			<result column="CHECK_OUT"		property="checkOut"/>
+			<result column="PERSONNEL"		property="personnel"/>
+			<result column="BREAKFAST"		property="breakfast"/>
+			<result column="SWIMMING_POOL"	property="swimmingPool"/>
+			<result column="ORDERER_NM"		property="ordererNm"/>
+			<result column="ORDERER_HP"		property="ordererHp"/>
+			<result column="REQUEST"		property="request"/>
+			<result column="ROOMS_CD"		property="roomsCd"/>
+			<result column="ROOMS_NM"		property="roomsNm"/>
+			<result column="POINT"			property="point"/>
+		</resultMap>
+		
+	<select id="selectOneMyOrder" parameterType="hashmap" resultMap="myOrderDetailMap">
+		SELECT
+				O.ORDER_CD		AS ORDER_CD,
+				O.CHECK_IN		AS CHECK_IN,
+				O.CHECK_OUT		AS CHECK_OUT,
+				O.PERSONNEL		AS PERSONNEL,
+				O.BREAKFAST		AS BREAKFAST,
+				O.SWIMMING_POOL	AS SWIMMING_POOL,
+				O.ORDERER_NM	AS ORDERER_NM,
+				O.ORDERER_HP	AS ORDERER_HP,
+				O.REQUEST		AS REQUEST,
+				R.ROOMS_CD		AS ROOMS_CD,
+				R.ROOMS_NM		AS ROOMS_NM,
+				R.POINT			AS POINT
+		FROM
+				`ORDER` O
+			JOIN MEMBER M
+					 ON M.MEMBER_ID = O.MEMBER_ID
+					AND M.MEMBER_ID = #{memberId}
+			JOIN ROOMS R
+					ON R.ROOMS_CD = O.ROOMS_CD
+				   AND O.ORDER_CD = #{orderCd}
+	</select>
 </mapper>

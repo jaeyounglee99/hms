@@ -19,25 +19,78 @@
 				<div class="text">
 					<p class="breadcrumbs mb-2">
 						<span class="mr-2"><a href="${contextPath }/index">Home</a></span>
-						<span>Registration</span>
+						<span>orderDetail</span>
 					</p>
-					<h1 class="mb-4 bread">Registration</h1>
+					<h1 class="mb-4 bread">orderDetail</h1>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
 <body>
-
 	<section class="ftco-section contact-section bg-light">
 		<div class="container">
-			<h5>your order</h5>
-			<hr>
-			<ul>
-				<li>
-					
-				</li>
-			</ul>
+		<h3>your order</h3><hr>
+			<div class="row mb-5">
+				<div class="col-md">
+					<div class="ftco-footer-widget mb-4">
+						<ul class="list-unstyled">
+							<li>
+								<span class="py-2 d-block">체크인</span>
+								<span class="py-2 d-block">체크아웃</span>
+								<span class="py-2 d-block">연락처 정보</span>
+								<span class="py-2 d-block">예약자</span>
+								<span class="py-2 d-block">예약 객실</span>
+								<span class="py-2 d-block">총인원</span>
+							</li>
+						</ul>
+					</div>
+					<hr>
+						<ul class="list-unstyled">
+							<li>
+								<span class="py-2 d-block">조식 추가</span>
+								<span class="py-2 d-block">수영장 이용</span>
+							</li>
+						</ul>
+					<hr>
+						<ul class="list-unstyled">
+							<li><span class="py-2 d-block">적립 포인트</span></li>
+						</ul>
+					<hr>
+						<ul class="list-unstyled">
+							<li><span class="py-2 d-block">요청사항</span></li>
+						</ul>
+				</div>
+				<div class="col-md">
+					<div class="ftco-footer-widget mb-4">
+						<ul class="list-unstyled">
+							<li>
+								<span class="py-2 d-block">${myOrder.checkIn}</span>
+								<span class="py-2 d-block">${myOrder.checkOut}</span>
+								<span class="py-2 d-block">${myOrder.ordererHp}</span>
+								<span class="py-2 d-block">${myOrder.ordererNm}</span>
+								<span class="py-2 d-block">${myOrder.roomsNm}</span>
+								<span class="py-2 d-block">${myOrder.personnel}</span>
+							</li>
+						</ul>
+					</div>
+					<hr>
+						<ul class="list-unstyled">
+							<li>
+								<span class="py-2 d-block">${myOrder.breakfast} 명</span>
+								<span class="py-2 d-block">${myOrder.swimmingPool} 명</span>
+							</li>
+						</ul>
+					<hr>
+						<ul class="list-unstyled">
+							<li><span class="py-2 d-block">${myOrder.point} P</span></li>
+						</ul>
+					<hr>
+						<ul class="list-unstyled">
+							<li><span class="py-2 d-block">${myOrder.request}</span></li>
+						</ul>
+				</div>
+			</div>
 		</div>
 	</section>
 </body>
