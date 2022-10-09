@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import net.coobird.thumbnailator.Thumbnails;
 
@@ -33,5 +35,10 @@ public class CommonController {
 		byte[] buffer = new byte[1024 * 8];
 		out.write(buffer);
 		out.close();
+	}
+	
+	@RequestMapping(value="/contact" , method=RequestMethod.GET)
+	public ModelAndView contact() {
+		return new ModelAndView("/contact");
 	}
 }

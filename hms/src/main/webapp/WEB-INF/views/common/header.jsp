@@ -57,7 +57,7 @@
 			    	<li class="nav-item"><a href="contact.html" class="nav-link">고객문의</a></li>
 	          	</c:when>
 	          	<c:otherwise>
-	          		<li class="nav-item"><a href="contact.html" class="nav-link">고객문의</a></li>
+	          		<li class="nav-item"><a href="${contextPath }/contact" class="nav-link">고객문의</a></li>
 	          	</c:otherwise>
 	          </c:choose>
 	        </ul>
