@@ -39,18 +39,18 @@
         </div>
         <div class="row block-9">
           <div class="col-md-6 order-md-last d-flex">
-            <form action="${contactPath}/contact" class="bg-white p-5 contact-form">
+            <form action="${contextPath}/contact" method="post" class="bg-white p-5 contact-form">
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="이름을 입력하세요">
+                <input type="text" name="name" class="form-control" placeholder="이름을 입력하세요">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Email을 입력하세요">
+                <input type="text" name="email" class="form-control" placeholder="Email을 입력하세요">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="제목을 입력하세요">
+                <input type="text" name="subject" class="form-control" placeholder="제목을 입력하세요">
               </div>
               <div class="form-group">
-                <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="메세지를 입력하세요"></textarea>
+                <textarea name="content" cols="30" rows="7" class="form-control" placeholder="메세지를 입력하세요"></textarea>
               </div>
               <div class="form-group">
                 <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
