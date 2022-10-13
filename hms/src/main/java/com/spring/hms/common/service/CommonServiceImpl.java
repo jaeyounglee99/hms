@@ -1,5 +1,8 @@
 package com.spring.hms.common.service;
 
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,5 +19,17 @@ public class CommonServiceImpl implements CommonService {
 	public void addNewContact(ContactDto contactDto) throws Exception {
 		commonDao.insertContact(contactDto);
 	}
+
+	@Override
+	public List<ContactDto> getContactList() throws Exception {
+		return commonDao.selectListContact();
+	}
+
+	@Override
+	public void removeContact(int[] deleteContactCdList) {
+		commonDao.deleteContact(deleteContactCdList);
+	}
+
+	
 
 }

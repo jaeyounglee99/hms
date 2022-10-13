@@ -19,4 +19,23 @@
 				NOW()
 		)
 	</insert>
+	
+	<select id="selectListContact" resultType="ContactDto">
+		SELECT
+				*
+		FROM
+				CONTACT
+		ORDER BY
+				REG_DT DESC
+	</select>
+	
+	<delete id="deleteContact">
+		DELETE FROM
+				CONTACT
+		WHERE
+				CONTACT_CD IN 
+		<foreach collection="array" item="contactCd" separator="," open="("  close=")" >
+				#{contactCd}
+		</foreach>
+	</delete>
 </mapper>

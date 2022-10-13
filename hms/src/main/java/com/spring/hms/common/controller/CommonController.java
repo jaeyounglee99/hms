@@ -64,4 +64,36 @@ public class CommonController {
 	   responseHeaders.add("Content-Type", "text/html; charset=utf-8");
 		return new ResponseEntity<Object>(jsScript, responseHeaders, HttpStatus.OK);
 	}
+	
+	@RequestMapping(value="/contactList" , method=RequestMethod.GET)
+	public ModelAndView contactList() throws Exception{
+		ModelAndView mv = new ModelAndView("/common/contactList");
+		mv.setViewName("/contactList");
+		mv.addObject("contactList", commonService.getContactList());
+		return mv;
+	}
+	
+	@RequestMapping(value="/removeContact" ,  method=RequestMethod.GET)
+	public ResponseEntity<Object> removeCart(@RequestParam("contactCdList") String contactCdList) throws Exception {
+		
+		String[] temp = contactCdList.split(",");
+		int[] deleteContactCdList = new int[temp.length];
+
+		for (int i = 0; i < temp.length; i++) {
+			deleteContactCdList[i] = Integer.parseInt(temp[i]);
+		}
+		
+		commonService.removeContact(deleteContactCdList);
+		
+		String jsScript = "<script>";
+				jsScript += "alert('컨텍트 정보를 삭제하였습니다.'); ";
+				jsScript += "location.href='contactList'";
+				jsScript += "</script>";
+		
+	    HttpHeaders responseHeaders = new HttpHeaders();
+	    responseHeaders.add("Content-Type", "text/html; charset=utf-8");
+		
+		return new ResponseEntity<Object>(jsScript, responseHeaders, HttpStatus.OK);
+		
+	}
 }
