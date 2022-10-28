@@ -96,4 +96,13 @@ public class CommonController {
 		return new ResponseEntity<Object>(jsScript, responseHeaders, HttpStatus.OK);
 		
 	}
+	
+	@RequestMapping(value="/contactDetail" , method=RequestMethod.GET)
+	public ModelAndView contactDetail(@RequestParam("contactCd") int contactCd) {
+		
+		ModelAndView mv = new ModelAndView("/common/contactList");
+		mv.setViewName("/contactDetail");
+//		mv.addObject("");
+		return mv;
+	}
 }

@@ -50,7 +50,7 @@
 	        				<div class="form-group p-4 align-self-stretch d-flex align-items-end">
 	        					<div class="wrap">
 				    					<label for="#">Check-in Date</label>
-				    					<input type="text" class="form-control checkin_date" placeholder="Check-in date">
+				    					<input type="text" name="checkIn" class="form-control checkin_date" placeholder="Check-in date">
 			    					</div>
 			    				</div>
 	        			</div>
@@ -58,7 +58,7 @@
 	        				<div class="form-group p-4 align-self-stretch d-flex align-items-end">
 	        					<div class="wrap">
 				    					<label for="#">Check-out Date</label>
-				    					<input type="text" class="form-control checkout_date" placeholder="Check-out date">
+				    					<input type="text" name="checkOut" class="form-control checkout_date" placeholder="Check-out date">
 			    				</div>
 			    				</div>
 	        			</div>
