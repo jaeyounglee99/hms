@@ -16,18 +16,23 @@ public class CommonDaoImpl implements CommonDao{
 	private SqlSession sqlSession;
 
 	@Override
-	public void insertContact(ContactDto contactDto) {
+	public void insertContact(ContactDto contactDto) throws Exception{
 		sqlSession.insert("common.insertContact" , contactDto);
 	}
 
 	@Override
-	public List<ContactDto> selectListContact() {
+	public List<ContactDto> selectListContact() throws Exception{
 		return sqlSession.selectList("common.selectListContact");
 	}
 
 	@Override
-	public void deleteContact(int[] deleteContactCdList) {
+	public void deleteContact(int[] deleteContactCdList) throws Exception{
 		sqlSession.delete("common.deleteContact" , deleteContactCdList);
+	}
+
+	@Override
+	public ContactDto selectOneContact(int contactCd) throws Exception {
+		return sqlSession.selectOne("common.selectOneContact" , contactCd);
 	}
 
 }

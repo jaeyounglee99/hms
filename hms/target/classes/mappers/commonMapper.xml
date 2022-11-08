@@ -38,4 +38,13 @@
 				#{contactCd}
 		</foreach>
 	</delete>
+	
+	<select id="selectOneContact" parameterType="int" resultType="ContactDto">
+		SELECT
+				*
+		FROM
+				CONTACT
+		WHERE
+				CONTACT_CD = #{contactCd}
+	</select>
 </mapper>

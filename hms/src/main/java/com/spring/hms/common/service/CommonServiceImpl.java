@@ -26,9 +26,15 @@ public class CommonServiceImpl implements CommonService {
 	}
 
 	@Override
-	public void removeContact(int[] deleteContactCdList) {
+	public void removeContact(int[] deleteContactCdList) throws Exception{
 		commonDao.deleteContact(deleteContactCdList);
 	}
+
+	@Override
+	public ContactDto getContactDetail(int contactCd) throws Exception {
+		return commonDao.selectOneContact(contactCd);
+	}
+
 
 	
 

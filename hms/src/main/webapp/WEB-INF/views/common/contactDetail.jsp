@@ -37,7 +37,7 @@
 			</div>
 			<div class="form-group">
 				<p align="left">주문자 연락처</p>
-				<input type="text" value="${contactDto.eamil }" class="form-control" disabled>
+				<input type="text" value="${contactDto.email }" class="form-control" disabled>
 			</div>
 			<div class="form-group">
 				<p align="left">제목</p>

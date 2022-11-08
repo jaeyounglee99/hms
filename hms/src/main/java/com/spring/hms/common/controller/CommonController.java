@@ -67,7 +67,7 @@ public class CommonController {
 	
 	@RequestMapping(value="/contactList" , method=RequestMethod.GET)
 	public ModelAndView contactList() throws Exception{
-		ModelAndView mv = new ModelAndView("/common/contactList");
+		ModelAndView mv = new ModelAndView();
 		mv.setViewName("/contactList");
 		mv.addObject("contactList", commonService.getContactList());
 		return mv;
@@ -98,11 +98,11 @@ public class CommonController {
 	}
 	
 	@RequestMapping(value="/contactDetail" , method=RequestMethod.GET)
-	public ModelAndView contactDetail(@RequestParam("contactCd") int contactCd) {
+	public ModelAndView contactDetail(@RequestParam("contactCd") int contactCd) throws Exception{
 		
-		ModelAndView mv = new ModelAndView("/common/contactList");
+		ModelAndView mv = new ModelAndView();
 		mv.setViewName("/contactDetail");
-//		mv.addObject("");
+		mv.addObject("contactDto" , commonService.getContactDetail(contactCd));
 		return mv;
 	}
 }

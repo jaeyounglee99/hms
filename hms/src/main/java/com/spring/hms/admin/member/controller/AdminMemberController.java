@@ -28,7 +28,7 @@ public class AdminMemberController {
 	}
 	
 	@RequestMapping(value="/adminLogin" , method=RequestMethod.POST)
-	public ResponseEntity<Object> login(AdminDto adminDto , HttpServletRequest request) {
+	public ResponseEntity<Object> login(AdminDto adminDto , HttpServletRequest request) throws Exception{
 		
 		String message = "";
 		if (adminMemberService.adminLogin(adminDto)) {
@@ -70,5 +70,19 @@ public class AdminMemberController {
 		
 		return new ResponseEntity<Object>(jsScript, responseHeaders, HttpStatus.OK);
 	
+	}
+	
+	@RequestMapping(value="/adminMemberList" , method=RequestMethod.GET)
+	public ModelAndView adminMemberList(HttpServletRequest request) throws Exception{
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("/admin/member/adminMemberList");
+		
+		HttpSession session = request.getSession();
+		session.setAttribute("sideMenu", "adminMode");
+		
+		mv.addObject("memberList" , adminMemberService.getMemberList());
+		
+		return mv;
 	}
 }
