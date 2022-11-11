@@ -43,7 +43,7 @@
 				<thead>
 					<tr>
 						<th width="10%">번호</th>
-                        <th width="30%">회원아이디</th>
+                        <th width="27%">회원아이디</th>
                         <th width="20%">회원이름</th>
                         <th width="15%">포인트</th>
                         <th width="15%">성별</th>
@@ -64,7 +64,7 @@
                            		 		<h6>${i.count }</h6>
                                     </td>
                                  	<td class="row">
-                                    	<h6><a href="${contextPath }">${memberDto.memberId }</a></h6>
+                                    	<h6><a href="${contextPath }/myPage/myInfo?memberId=${memberDto.memberId}">${memberDto.memberId }</a></h6>
                                     </td>
                                     <td>${memberDto.memberNm }</td>
                                     <td>${memberDto.point }</td>
