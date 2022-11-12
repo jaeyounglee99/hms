@@ -3,45 +3,30 @@
 <mapper namespace="admin.order">
 	
 	<resultMap type="hashmap" id="orderListMap">
-		<result column="ORDER_CD" property="orderCd"/>
-		<result column="PAY_ORDER_TIME" property="payOrderTime"/>
-		<result column="MEMBER_ID" property="memberId"/>
-		<result column="CHECK_IN" property="checkIn"/>
-		<result column="CHECK_OUT" property="checkOut"/>
-		<result column="PERSONNEL" property="personnel"/>
-		<result column="BREAKFAST" property="breakfast"/>
-		<result column="SWIMMING_POOL" property="swimmingPool"/>
-		<result column="PAYMENT_AMT" property="paymentAmt"/>
-		<result column="ORDERER_NM" property="ordererNm"/>
-		<result column="ORDERER_HP" property="ordererHp"/>
-		<result column="REQUEST" property="request"/>
-		<result column="ROOMS_CD" property="roomsCd"/>
-		<result column="ROOMS_NM" property="roomsNm"/>
-		<result column="VIEW" property="view"/>
-		<result column="POINT" property="point"/>
-		<result column="FLOOR" property="floor"/>
-
+		<result column="ORDER_CD" 			property="orderCd"/>
+		<result column="MEMBER_ID" 			property="memberId"/>
+		<result column="CHECK_IN" 			property="checkIn"/>
+		<result column="CHECK_OUT" 			property="checkOut"/>
+		<result column="PERSONNEL" 			property="personnel"/>
+		<result column="ROOMS_CD" 			property="roomsCd"/>
+		<result column="ROOMS_NM" 			property="roomsNm"/>
+		<result column="VIEW" 				property="view"/>
+		<result column="FLOOR" 				property="floor"/>
+		<result column="ROOMS_FILE_NAME1"	property="roomsFileName1"/>
 	</resultMap>
 
-	<select id="selectOrderList" resultMap="orderListMap">
+	<select id="selectListOrder" resultMap="orderListMap">
 		SELECT
-				O.ORDER_CD			AS	ORDER_CD
-				O.PAY_ORDER_TIME	AS	PAY_ORDER_TIME
-				O.MEMBER_ID			AS	MEMBER_ID
-				O.CHECK_IN			AS	CHECK_IN
-				O.CHECK_OUT			AS	CHECK_OUT
-				O.PERSONNEL			AS	PERSONNEL
-				O.BREAKFAST			AS	BREAKFAST
-				O.SWIMMING_POOL		AS 	SWIMMING_POOL
-				O.PAYMENT_AMT		AS	PAYMENT_AMT
-				O.ORDERER_NM		AS	ORDERER_NM
-				O.ORDERER_HP		AS	ORDERER_HP
-				O.REQUEST			AS	REQUEST
-				R.ROOMS_CD			AS	ROOMS_CD
-				R.ROOMS_NM			AS	ROOMS_NM
-				R.VIEW				AS	VIEW
-				R.POINT				AS	POINT
-				R.FLOOR				AS	FLOOR
+				O.ORDER_CD			AS	ORDER_CD,
+				O.MEMBER_ID			AS	MEMBER_ID,
+				O.CHECK_IN			AS	CHECK_IN,
+				O.CHECK_OUT			AS	CHECK_OUT,
+				O.PERSONNEL			AS	PERSONNEL,
+				R.ROOMS_CD			AS	ROOMS_CD,
+				R.ROOMS_NM			AS	ROOMS_NM,
+				R.VIEW				AS	VIEW,
+				R.FLOOR				AS	FLOOR,
+				R.ROOMS_FILE_NAME1	AS	ROOMS_FILE_NAME1
 		FROM
 				`ORDER` O
 				  JOIN  ROOMS R

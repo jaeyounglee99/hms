@@ -21,7 +21,7 @@ public class AdminOrderController {
 	public ModelAndView adminOrderList(HttpServletRequest request) throws Exception{
 		
 		ModelAndView mv = new ModelAndView();
-//		mv.setViewName("/admin/order/adminOrderList");
+		mv.setViewName("/admin/order/adminOrderList");
 		mv.addObject("orderList" , adminOrderService.getOrderList());
 		
 		return mv;
