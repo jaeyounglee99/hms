@@ -118,21 +118,20 @@
     <section class="ftco-section ftc-no-pb ftc-no-pt">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-5 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url(${contextPath }/resources/bootstrap/images/bg_2.jpg);">
-						<a href="https://vimeo.com/45830194" class="icon popup-vimeo d-flex justify-content-center align-items-center">
-							<span class="icon-play"></span>
-						</a>
+					<div>
+						<iframe width="475" height="665"  src="https://www.youtube.com/embed/7WSy2lMb_kY" frameborder="0"></iframe>
 					</div>
 					<div class="col-md-7 py-5 wrap-about pb-md-5 ftco-animate">
 	          <div class="heading-section heading-section-wo-line pt-md-5 pl-md-5 mb-5">
 	          	<div class="ml-md-0">
-		          	<span class="subheading">Welcome to Deluxe Hotel</span>
+		          	<span class="subheading">Welcome to Piacevole Hotel</span>
 		            <h2 class="mb-4">Welcome To Our Hotel</h2>
 	            </div>
 	          </div>
 	          <div class="pb-md-5">
-							<p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their.</p>
-							<p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
+							<p> 피아체볼레 호텔은 대담하면서도 매력적인 디자인과 감수성이 풍부하고 재치있는 마인드로 가득 채워진 몰입형 라이프스타일 호텔입니다. 진보적인 마인드의 국내 고객과 새롭고 흥미로운 문화 체험을 원하는 외국인 관광객 모두에게 이상적인 선택입니다. </p>
+							<p> 지중해식의 요리, 앨티튜드에서의 파티, 블라인드 스팟에서의 세련된 칵테일, 럼퍼스 룸 혹은 프리빌리지에서의 건배에 이르기까지 모두를 만족시킬 다양한 맛과 분위기가 준비되어 있습니다.</p>
+							<p> 피아체볼레에서 다양한 문화 체험을 즐기고 소중한 사람들과의 특별한 추억을 남겨보세요. </p>
 							<ul class="ftco-social d-flex">
                 <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
                 <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
@@ -291,7 +290,7 @@
     					</a>
     					<div class="text p-3 text-center">
     						<h3 class="mb-3"><a href="rooms.html">Luxury Room</a></h3>
-em    						<hr>
+  							<hr>
     						<p class="pt-1"><a href="room-single.html" class="btn-custom">View Room Details <span class="icon-long-arrow-right"></span></a></p>
     					</div>
     				</div>

@@ -35,7 +35,7 @@ public class OrderController {
 		mv.setViewName("/order/checkRoomsOption");
 		
 		mv.addObject("orderDto" ,orderDto);
-		mv.addObject("orderImfo" , orderService.getOrderDetail(orderDto.getRoomsCd()));
+		mv.addObject("orderInfo" , orderService.getOrderDetail(orderDto.getRoomsCd()));
 		
 		return mv;
 	}
@@ -50,13 +50,13 @@ public class OrderController {
 		
 		
 		mv.addObject("orderDto" , orderDto);
-		mv.addObject("orderImfo" , orderService.getOrderDetail(orderDto.getRoomsCd()));
+		mv.addObject("orderInfo" , orderService.getOrderDetail(orderDto.getRoomsCd()));
 		mv.addObject("orderer", orderService.getOrdererDetail((String)session.getAttribute("memberId")));
 		return mv;
 	}
 	
 	@RequestMapping(value="/orderRooms" , method=RequestMethod.POST)
-	public ResponseEntity<Object> orderRoomsByOrderImfo(@RequestParam Map<String,Object> orderMap, HttpServletRequest request){
+	public ResponseEntity<Object> orderRoomsByOrderInfo(@RequestParam Map<String,Object> orderMap, HttpServletRequest request){
 		
 		OrderDto orderDto = new OrderDto();
 		

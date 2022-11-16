@@ -42,10 +42,10 @@
 			<table>
 				<thead>
 					<tr>
-						<th width="45%">예약정보</th>
+						<th width="30%">예약정보</th>
                         <th width="15%">예약자</th>
-                        <th width="18%">체크인</th>
-                        <th width="18%">체크아웃</th>
+                        <th width="15%">체크인</th>
+                        <th width="15%">체크아웃</th>
                         <th width="10%">인원</th>
 					</tr>
 				</thead>
@@ -59,17 +59,18 @@
 						<c:otherwise>
 							<c:forEach var="order" items="${orderList }">
 								<tr>
-                                    <td>
+                                    <td class="row">
                                     	<img src="${contextPath }/thumbnails?roomsFileName=${order.roomsFileName1}" width="100" height="100">
                                     	<div>
 											<br>
-											<h6>&emsp;&emsp;&emsp;&emsp;<a href="${contextPath }/myPage/myOrderDetail?orderCd=${order.orderCd}">${order.roomsNm }</a></h6>
-											<p>&emsp;&emsp;&emsp;&emsp;${order.view }뷰 | ${order.floor }층 | <fmt:formatNumber value="${order.price }"/>원</p>
+											<h6>&emsp;&emsp;&emsp;&emsp;<a href="${contextPath }/myPage/myOrderDetail?orderCd=${order.orderCd}&memberId=${order.memberId}">${order.roomsNm }</a></h6>
+											<p>&emsp;&emsp;&emsp;&emsp;${order.view }뷰 | ${order.floor }층 | <fmt:formatNumber value="${order.paymentAmt }"/>원</p>
 										</div>
                                     </td>
                                     <td>${order.memberId }</td>
                                     <td>${order.checkIn }</td>
                                     <td>${order.checkOut }</td>
+                                    <td>${order.personnel }명</td>
 			                    </tr>
 							</c:forEach>
 						</c:otherwise>

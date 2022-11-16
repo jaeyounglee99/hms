@@ -50,21 +50,40 @@
                 <input type="text" name="subject" class="form-control" placeholder="제목을 입력하세요">
               </div>
               <div class="form-group">
-                <textarea name="content" cols="30" rows="7" class="form-control" placeholder="메세지를 입력하세요"></textarea>
+                <textarea name="content" cols="30" rows="15" class="form-control" placeholder="메세지를 입력하세요"></textarea>
               </div>
               <div class="form-group">
                 <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
               </div>
             </form>
+          </div>
           
-          </div>
-
+          <!-- 지도 -->
           <div class="col-md-6 d-flex">
-          	<div id="map" class="bg-white"></div>
-          </div>
+					<div id="daumRoughmapContainer1600749162322"
+						class="mymap root_daum_roughmap root_daum_roughmap_landing os_mac"
+						style="z-index: 2; width: 450px;">
+
+					<script charset="UTF-8" class="daum_roughmap_loader_script"
+						src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+					<script charset="UTF-8"
+						src="http://t1.daumcdn.net/kakaomapweb/place/jscss/roughmap/b88f2e2f/roughmapLander.js"></script>
+					<script charset="UTF-8"
+						src="http://t1.daumcdn.net/kakaomapweb/place/jscss/roughmap/b88f2e2f/roughmapLander.js"></script>
+					<!-- 3. 실행 스크립트 -->
+					<script charset="UTF-8">
+						new daum.roughmap.Lander({
+							"timestamp" : "1600749162322",
+							"key" : "226ga",
+							"mapWidth" : "450",
+							"mapHeight" : "707"
+						}).render();
+					</script>
+				</div>
+			</div>
+				
         </div>
       </div>
     </section>
-	
 </body>
 </html>

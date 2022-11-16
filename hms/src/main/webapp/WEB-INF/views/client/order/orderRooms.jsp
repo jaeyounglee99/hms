@@ -45,9 +45,9 @@
 				<input type="hidden" name="breakfast" value="${orderDto.breakfast }">
 				<input type="hidden" name="swimmingPool" value="${orderDto.swimmingPool }">
 				<input type="hidden" name="paymentAmt" value="${orderDto.paymentAmt }">
-				<input type="hidden" name="point" value="${orderImfo.point}">
+				<input type="hidden" name="point" value="${orderInfo.point}">
 				<input type="hidden" name="memberId" value="${orderer.memberId}">
-				<input type="hidden" name="roomsCd" value="${orderImfo.roomsCd}">
+				<input type="hidden" name="roomsCd" value="${orderInfo.roomsCd}">
 				
 				
 				<div class="categories">
@@ -59,7 +59,7 @@
 						<span style="display: inline-block; width: 20%; text-align: justify;">price</span>
 					</li>
 					<li>
-						<span style="display: inline-block; width: 30%; text-align: justify;">${orderImfo.roomsNm }</span>
+						<span style="display: inline-block; width: 30%; text-align: justify;">${orderInfo.roomsNm }</span>
 						<span style="display: inline-block; width: 15%; text-align: justify;">${orderDto.checkIn }</span>
 						<span style="display: inline-block; width: 15%; text-align: justify;">${orderDto.checkOut }</span>
 						<span style="display: inline-block; width: 15%; text-align: justify;">${orderDto.personnel }</span>
@@ -68,7 +68,7 @@
 					</li>
 					<li>
 						<span>point</span>
-						<span style="display: inline-block; width: 78%; text-align: right;">${orderImfo.point }P적립</span>
+						<span style="display: inline-block; width: 78%; text-align: right;">${orderInfo.point }P적립</span>
 					</li><br><br>
               </div>
 				<div class="form-group" align="left">
