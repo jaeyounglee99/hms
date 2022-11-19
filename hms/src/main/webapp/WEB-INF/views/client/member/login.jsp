@@ -33,40 +33,22 @@
 			</div>
 		</div>
 		<div class="row block-9">
-			<div class="col-md-6 order-md-last d-flex">
-				<form action="${contextPath }/member/login" method="post" class="bg-white p-5 contact-form">
-					<p class="pt-1">
-						회원로그인<span class="icon-long-arrow-right"></span>
-					</p>
-					<div class="form-group">
-						<input type="text" name="memberId" class="form-control" placeholder="아이디">
-					</div>
-					<div class="form-group">
-						<input type="password" name="passwd" class="form-control" placeholder="비밀번호">
-					</div>
-					<div class="form-group">
-						<input type="submit" value="로그인" class="btn btn-primary py-3 px-5">
-						<a href="${contextPath }/member/register"><span
-							class="btn btn-primary py-3 px-5">회원가입</span></a>
-					</div>
-				</form>
-			</div>
-			<div class="col-md-6 order-md-last d-flex">
-				<form action="#" class="bg-white p-5 contact-form">
-					<p class="pt-1">
-						비회원로그인<span class="icon-long-arrow-right"></span>
-					</p>
-					<div class="form-group">
-						<input type="text" name="nMemberCd" class="form-control" placeholder="예약번호">
-					</div>
-					<div class="form-group">
-						<input type="text" name="nMemberNm" class="form-control" placeholder="이름">
-					</div>
-					<div class="form-group">
-						<input type="submit" value="로그인" class="btn btn-primary py-3 px-5">
-					</div>
-				</form>
-			</div>
+			<form action="${contextPath }/member/login" method="post" class="bg-white p-5 contact-form">
+				<p class="pt-1">
+					회원로그인<span class="icon-long-arrow-right"></span>
+				</p>
+				<div class="form-group">
+					<input type="text" name="memberId" class="form-control" placeholder="아이디">
+				</div>
+				<div class="form-group">
+					<input type="password" name="passwd" class="form-control" placeholder="비밀번호">
+				</div>
+				<div class="form-group">
+					<input type="submit" value="로그인" class="btn btn-primary py-3 px-5">
+					<a href="${contextPath }/member/register"><span
+						class="btn btn-primary py-3 px-5">회원가입</span></a>
+				</div>
+			</form>
 		</div>
 	</div>
 </section>

@@ -32,22 +32,20 @@
 			</div>
 		</div>
 		<div class="row block-9">
-			<div class="col-md-6 order-md-last d-flex">
-				<form action="${contextPath }/admin/member/adminLogin" method="post" class="bg-white p-5 contact-form">
-					<p class="pt-1">
-						관리자 로그인<span class="icon-long-arrow-right"></span>
-					</p>
-					<div class="form-group">
-						<input type="text" name="adminId" class="form-control" placeholder="아이디">
-					</div>
-					<div class="form-group">
-						<input type="password" name="passwd" class="form-control" placeholder="비밀번호">
-					</div>
-					<div class="form-group">
-						<input type="submit" value="로그인" class="btn btn-primary py-3 px-5">
-					</div>
-				</form>
-			</div>
+			<form action="${contextPath }/admin/member/adminLogin" method="post" class="bg-white p-5 contact-form">
+				<p class="pt-1">
+					관리자 로그인<span class="icon-long-arrow-right"></span>
+				</p>
+				<div class="form-group">
+					<input type="text" name="adminId" class="form-control" placeholder="아이디">
+				</div>
+				<div class="form-group">
+					<input type="password" name="passwd" class="form-control" placeholder="비밀번호">
+				</div>
+				<div class="form-group">
+					<input type="submit" value="로그인" class="btn btn-primary py-3 px-5">
+				</div>
+			</form>
 		</div>
 	</div>
 </section>
