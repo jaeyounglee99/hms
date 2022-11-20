@@ -63,10 +63,6 @@ function removeMember() {
 	<div align="center">
 		<div class="comment-form-wrap pt-5" style="width: 60%">
 			<h3 class="mb-5">내 가입정보</h3>
-			<div class="text">
-	            <span class="breadcrumbs mb-2"><a href="${contextPath }/myPage/myInfo?memberId=${sessionScope.memberId}">가입정보</a></span>&ensp;
-	            <span class="breadcrumbs mb-2"><a href="${contextPath }/myPage/myOrderList">예약조회</a></span>&ensp;
-            </div>
 			<form action="${contextPath }/myPage/modifyInfo" method="post" class="p-5 bg-light">
 				<p align="left">
 					아이디 <span style="color: red;">*</span>

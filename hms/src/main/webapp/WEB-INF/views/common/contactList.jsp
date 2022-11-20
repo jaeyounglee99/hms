@@ -52,9 +52,9 @@
 				<div class="text">
 					<p class="breadcrumbs mb-2">
 						<span class="mr-2"><a href="${contextPath }/">Home</a></span>
-						<span>Registration</span>
+						<span>Contact</span>
 					</p>
-					<h1 class="mb-4 bread">MyOrder</h1>
+					<h1 class="mb-4 bread">Contact</h1>
 				</div>
 			</div>
 		</div>
@@ -65,7 +65,7 @@
 	<div class="container">
 		<div class="row d-flex mb-5 contact-info">
 			<div class="col-md-12 mb-4" align="center">
-				<h2 class="h3">예약 조회</h2>
+				<h2 class="h3">고객 문의사항</h2>
 			</div>
 		</div>
 		<div align="center">

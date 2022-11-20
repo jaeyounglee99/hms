@@ -5,7 +5,7 @@
 <c:set var="sessionId" value="${sessionScope.memberId }"/>	
 <!DOCTYPE html>
 
-    <div class="hero-wrap" style="background-image: url('images/bg_1.jpg');">
+    <div class="hero-wrap" style="background-image: url('${contextPath }/resources/bootstrap/images/main.header.jpeg');">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text d-flex align-itemd-end justify-content-center">
@@ -127,50 +127,61 @@
     	</div>
     </section>
 
-
     <section class="instagram pt-5">
-      <div class="container-fluid">
-        <div class="row no-gutters justify-content-center pb-5">
-          <div class="col-md-7 text-center heading-section ftco-animate">
-            <h2><span>Instagram</span></h2>
-          </div>
-        </div>
-        <div class="row no-gutters">
-          <div class="col-sm-12 col-md ftco-animate">
-            <a href="images/insta-1.jpg" class="insta-img image-popup" style="background-image: url(images/insta-1.jpg);">
-              <div class="icon d-flex justify-content-center">
-                <span class="icon-instagram align-self-center"></span>
-              </div>
-            </a>
-          </div>
-          <div class="col-sm-12 col-md ftco-animate">
-            <a href="images/insta-2.jpg" class="insta-img image-popup" style="background-image: url(images/insta-2.jpg);">
-              <div class="icon d-flex justify-content-center">
-                <span class="icon-instagram align-self-center"></span>
-              </div>
-            </a>
-          </div>
-          <div class="col-sm-12 col-md ftco-animate">
-            <a href="images/insta-3.jpg" class="insta-img image-popup" style="background-image: url(images/insta-3.jpg);">
-              <div class="icon d-flex justify-content-center">
-                <span class="icon-instagram align-self-center"></span>
-              </div>
-            </a>
-          </div>
-          <div class="col-sm-12 col-md ftco-animate">
-            <a href="images/insta-4.jpg" class="insta-img image-popup" style="background-image: url(images/insta-4.jpg);">
-              <div class="icon d-flex justify-content-center">
-                <span class="icon-instagram align-self-center"></span>
-              </div>
-            </a>
-          </div>
-          <div class="col-sm-12 col-md ftco-animate">
-            <a href="images/insta-5.jpg" class="insta-img image-popup" style="background-image: url(images/insta-5.jpg);">
-              <div class="icon d-flex justify-content-center">
-                <span class="icon-instagram align-self-center"></span>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
+		<div class="container-fluid">
+			<div class="row no-gutters justify-content-center pb-5">
+				<div class="col-md-7 text-center heading-section ftco-animate">
+					<h2>
+						<span>Piacevole Photos</span>
+					</h2>
+				</div>
+			</div>
+			<div class="row no-gutters">
+				<div class="col-sm-12 col-md ftco-animate">
+					<a href="${contextPath }/resources/bootstrap/images/photos1.jpeg"
+						class="insta-img image-popup"
+						style="background-image: url(${contextPath }/resources/bootstrap/images/photos1.jpeg);">
+						<div class="icon d-flex justify-content-center">
+							<span class="icon-instagram align-self-center"></span>
+						</div>
+					</a>
+				</div>
+				<div class="col-sm-12 col-md ftco-animate">
+					<a href="${contextPath }/resources/bootstrap/images/photos2.jpeg"
+						class="insta-img image-popup"
+						style="background-image: url(${contextPath }/resources/bootstrap/images/photos2.jpeg);">
+						<div class="icon d-flex justify-content-center">
+							<span class="icon-instagram align-self-center"></span>
+						</div>
+					</a>
+				</div>
+				<div class="col-sm-12 col-md ftco-animate">
+					<a href="${contextPath }/resources/bootstrap/images/photos3.jpeg"
+						class="insta-img image-popup"
+						style="background-image: url(${contextPath }/resources/bootstrap/images/photos3.jpeg);">
+						<div class="icon d-flex justify-content-center">
+							<span class="icon-instagram align-self-center"></span>
+						</div>
+					</a>
+				</div>
+				<div class="col-sm-12 col-md ftco-animate">
+					<a href="${contextPath }/resources/bootstrap/images/photos4.jpeg"
+						class="insta-img image-popup"
+						style="background-image: url(${contextPath }/resources/bootstrap/images/photos4.jpeg);">
+						<div class="icon d-flex justify-content-center">
+							<span class="icon-instagram align-self-center"></span>
+						</div>
+					</a>
+				</div>
+				<div class="col-sm-12 col-md ftco-animate">
+					<a href="${contextPath }/resources/bootstrap/images/photos5.jpeg"
+						class="insta-img image-popup"
+						style="background-image: url(${contextPath }/resources/bootstrap/images/photos5.jpeg);">
+						<div class="icon d-flex justify-content-center">
+							<span class="icon-instagram align-self-center"></span>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>

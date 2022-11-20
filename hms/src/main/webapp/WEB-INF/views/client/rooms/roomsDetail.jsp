@@ -211,45 +211,45 @@ function processToOrder(roomsCd) {
 			</div>
 			<div class="row no-gutters">
 				<div class="col-sm-12 col-md ftco-animate">
-					<a href="${contextPath }/resources/bootstrap/images/hotels1.jpeg"
+					<a href="${contextPath }/resources/bootstrap/images/photos1.jpeg"
 						class="insta-img image-popup"
-						style="background-image: url(${contextPath }/resources/bootstrap/images/hotels1.jpeg);">
+						style="background-image: url(${contextPath }/resources/bootstrap/images/photos1.jpeg);">
 						<div class="icon d-flex justify-content-center">
 							<span class="icon-instagram align-self-center"></span>
 						</div>
 					</a>
 				</div>
 				<div class="col-sm-12 col-md ftco-animate">
-					<a href="${contextPath }/resources/bootstrap/images/hotels3.jpeg"
+					<a href="${contextPath }/resources/bootstrap/images/photos2.jpeg"
 						class="insta-img image-popup"
-						style="background-image: url(${contextPath }/resources/bootstrap/images/hotels3.jpeg);">
+						style="background-image: url(${contextPath }/resources/bootstrap/images/photos2.jpeg);">
 						<div class="icon d-flex justify-content-center">
 							<span class="icon-instagram align-self-center"></span>
 						</div>
 					</a>
 				</div>
 				<div class="col-sm-12 col-md ftco-animate">
-					<a href="${contextPath }/resources/bootstrap/images/hotel6.jpeg"
+					<a href="${contextPath }/resources/bootstrap/images/photos3.jpeg"
 						class="insta-img image-popup"
-						style="background-image: url(${contextPath }/resources/bootstrap/images/hotel6.jpeg);">
+						style="background-image: url(${contextPath }/resources/bootstrap/images/photos3.jpeg);">
 						<div class="icon d-flex justify-content-center">
 							<span class="icon-instagram align-self-center"></span>
 						</div>
 					</a>
 				</div>
 				<div class="col-sm-12 col-md ftco-animate">
-					<a href="${contextPath }/resources/bootstrap/images/hotels4.jpeg"
+					<a href="${contextPath }/resources/bootstrap/images/photos4.jpeg"
 						class="insta-img image-popup"
-						style="background-image: url(${contextPath }/resources/bootstrap/images/hotels4.jpeg);">
+						style="background-image: url(${contextPath }/resources/bootstrap/images/photos4.jpeg);">
 						<div class="icon d-flex justify-content-center">
 							<span class="icon-instagram align-self-center"></span>
 						</div>
 					</a>
 				</div>
 				<div class="col-sm-12 col-md ftco-animate">
-					<a href="${contextPath }/resources/bootstrap/images/hotels5.jpeg"
+					<a href="${contextPath }/resources/bootstrap/images/photos5.jpeg"
 						class="insta-img image-popup"
-						style="background-image: url(${contextPath }/resources/bootstrap/images/hotels5.jpeg);">
+						style="background-image: url(${contextPath }/resources/bootstrap/images/photos5.jpeg);">
 						<div class="icon d-flex justify-content-center">
 							<span class="icon-instagram align-self-center"></span>
 						</div>

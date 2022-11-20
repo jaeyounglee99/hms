@@ -30,7 +30,7 @@
 			          <li class="nav-item"><a href="${contextPath }/admin/member/adminMemberList" class="nav-link">회원 관리</a></li>
 	        		</c:when>
 					<c:otherwise>
-						<li class="nav-item"><a href="rooms.html" class="nav-link">다이닝</a></li>
+						<li class="nav-item"><a href="${contextPath }/myPage/myOrderList" class="nav-link">예약확인</a></li>
 					</c:otherwise>	        	
 	        	</c:choose>
 	        	<c:choose>
