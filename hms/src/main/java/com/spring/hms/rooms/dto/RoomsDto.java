@@ -16,7 +16,7 @@ public class RoomsDto {
 	private String floor;
 	private String bedNm;
 	private int size;
-	private int stoke;
+	private int stock;
 	private String amenityBath;
 	private String amenityBed;
 	private String facilities;
@@ -26,6 +26,7 @@ public class RoomsDto {
 	private String roomsFileName2;
 	private String roomsFileName3;
 	private Date enrollDt;
+	
 	public int getRoomsCd() {
 		return roomsCd;
 	}
@@ -80,11 +81,11 @@ public class RoomsDto {
 	public void setSize(int size) {
 		this.size = size;
 	}
-	public int getStoke() {
-		return stoke;
+	public int getStock() {
+		return stock;
 	}
-	public void setStoke(int stoke) {
-		this.stoke = stoke;
+	public void setStock(int stock) {
+		this.stock = stock;
 	}
 	public String getAmenityBath() {
 		return amenityBath;
@@ -140,7 +141,5 @@ public class RoomsDto {
 	public void setEnrollDt(Date enrollDt) {
 		this.enrollDt = enrollDt;
 	}
-	
-	
 
 }

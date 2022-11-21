@@ -103,7 +103,7 @@
 				</div>
 				<div class="form-group">
 					<p align="left">남은 방 수<span style="color: red;">*</span></p>
-					<input type="text" name="stoke" class="form-control">
+					<input type="text" name="stock" class="form-control">
 				</div>
 				<div class="form-group">
 					<p align="left">어메니티(욕실)<span style="color: red;">*</span></p>

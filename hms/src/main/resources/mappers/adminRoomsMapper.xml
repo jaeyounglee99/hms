@@ -21,7 +21,7 @@
 					FLOOR,
 					BED_NM,
 					SIZE,
-					STOKE,
+					STOCK,
 					AMENITY_BATH,
 					AMENITY_BED,
 					FACILITIES,
@@ -41,7 +41,7 @@
 				#{floor},
 				#{bedNm},
 				#{size},
-				#{stoke},
+				#{stock},
 				#{amenityBath},
 				#{amenityBed},
 				#{facilities},
@@ -82,8 +82,8 @@
 			<if test='size != null and size != ""'>
 				SIZE = #{size},
 			</if>
-			<if test='stoke != null and stoke != ""'>
-				STOKE = #{stoke},
+			<if test='stock != null and stock != ""'>
+				STOCK = #{stock},
 			</if>
 			<if test='amenityBath != null and amenityBath != ""'>
 				AMENITY_BATH = #{amenityBath},

@@ -65,7 +65,7 @@ public class AdminRoomsController {
 		roomsDto.setFloor(multipartRequest.getParameter("floor"));
 		roomsDto.setBedNm(multipartRequest.getParameter("bedNm"));
 		roomsDto.setSize(Integer.parseInt( multipartRequest.getParameter("size")));
-		roomsDto.setStoke(Integer.parseInt( multipartRequest.getParameter("stoke")));
+		roomsDto.setStock(Integer.parseInt( multipartRequest.getParameter("stock")));
 		roomsDto.setAmenityBath(multipartRequest.getParameter("amenityBath"));
 		roomsDto.setAmenityBed(multipartRequest.getParameter("amenityBed"));
 		roomsDto.setFacilities(multipartRequest.getParameter("facilities"));
@@ -140,7 +140,7 @@ public class AdminRoomsController {
 		roomsDto.setFloor(multipartRequest.getParameter("floor"));
 		roomsDto.setBedNm(multipartRequest.getParameter("bedNm"));
 		roomsDto.setSize(Integer.parseInt( multipartRequest.getParameter("size")));
-		roomsDto.setStoke(Integer.parseInt( multipartRequest.getParameter("stoke")));
+		roomsDto.setStock(Integer.parseInt( multipartRequest.getParameter("stock")));
 		roomsDto.setAmenityBath(multipartRequest.getParameter("amenityBath"));
 		roomsDto.setAmenityBed(multipartRequest.getParameter("amenityBed"));
 		roomsDto.setFacilities(multipartRequest.getParameter("facilities"));
