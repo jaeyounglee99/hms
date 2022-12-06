@@ -26,10 +26,9 @@
             <div class="ftco-footer-widget mb-4 ml-md-5">
               <h2 class="ftco-heading-2">Useful Links</h2>
               <ul class="list-unstyled">
-                <li><a href="#" class="py-2 d-block">Blog</a></li>
+                <li><a href="${contextPath }/" class="py-2 d-block">Home</a></li>
                 <li><a href="${contextPath }/rooms/roomsList" class="py-2 d-block">Rooms</a></li>
-                <li><a href="#" class="py-2 d-block">Amenities</a></li>
-                <li><a href="#" class="py-2 d-block">Gift Card</a></li>
+                <li><a href="${contextPath }/contact" class="py-2 d-block">Contact Us</a></li>
               </ul>
             </div>
           </div>
@@ -40,7 +39,6 @@
                 <li><a href="${contextPath }/member/register" class="py-2 d-block">Register</a></li>
                 <li><a href="${contextPath }/member/login" class="py-2 d-block">Login</a></li>
                 <li><a href="${contextPath }/myPage/myInfo?memberId=${sessionScope.memberId}" class="py-2 d-block">My Page</a></li>
-                <li><a href="${contextPath }/contact" class="py-2 d-block">Contact Us</a></li>
               </ul>
             </div>
           </div>

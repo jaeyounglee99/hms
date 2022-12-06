@@ -8,41 +8,40 @@
 <title></title>
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script>
+
+	var duplCheck = false;
+	var checkPassword = false;
+	var checkConfirmPassword = false;
+	var checkEmail = false;
 	
-	$().ready(function(){
+ 	$().ready(function(){
 	
 		var dateBirth = $("#birthY").val() + "-" + $("#birthM").val() + "-" + $("#birthD").val();
 		$("[name='dateBirth']").val(dateBirth);
 		
-		var duplCheck = true;
-		
 		$("#btnOverlapped").click(function(){
 			
 			$("input[name=checked_id]").val('y');
-			
 			var memberId = $("#memberId").val();
-			
 			$.ajax({
 				url	 : "${contextPath}/member/checkDuplicatedId?memberId=" + memberId,
 				type : "post",
 				data : memberId ,
 				async:false,
 				success : function(data) {
-					 if (data == "notDuplicate"){
-			        	 $("#memberIdValid").html("<p><span style='color:green;'>사용할 수 있는 ID입니다</span></p>");
-			          }
-			         if (data == "Duplicate") {
-			        	 $("#memberIdValid").html("<p><span style='color:red;'>이미 사용중인 ID입니다</span></p>");
-						 $("#memberId").focus();
-						 duplCheck = false;
-			          }
+					if (data == "notDuplicate"){
+						$("#memberIdValid").html("<p><span style='color:green;'>사용할 수 있는 ID입니다</span></p>");
+					    duplCheck = true;
+					}
+					if (data == "Duplicate") {
+						$("#memberIdValid").html("<p><span style='color:red;'>이미 사용중인 ID입니다</span></p>");
+					 	$("#memberId").focus();
+					 	duplCheck = false;
+					}
 				}
 			});
-			
 			return duplCheck;
-			
 		});
-		
 		
 		$("#passwd").keyup(function(){
 			$("#passwdValid").html("");
@@ -53,27 +52,26 @@
 			
 			if(pw.length < 8 || pw.length > 20){
 				$("#passwdValid").html("<p><span style='color:red;'>8자리 ~ 20자리 이내로 입력해주세요</span></p>")  
-				  return false;
 				 }else if(pw.search(/\s/) != -1){
 					 $("#passwdValid").html("<p><span style='color:red;'>비밀번호는 공백 없이 영문,숫자, 특수문자 중 2가지 이상을 혼합하여 입력해주세요.</span></p>") 
-				  return false;
 				 }else if( (num < 0 && eng < 0) || (eng < 0 && spe < 0) || (spe < 0 && num < 0) ){
 					 $("#passwdValid").html("<p><span style='color:red;'>비밀번호는 공백 없이 영문,숫자, 특수문자 중 2가지 이상을 혼합하여 입력해주세요.</span></p>") 	
-				  return false;
 				 }else {
 					 $("#passwdValid").html("<p><span style='color:green;'>사용가능한 비밀번호입니다</span></p>")
+					 checkPassword = true;
 				 }
 		});
+		
 		
 		$("#confirmPw").keyup(function(){
 			$("#confirmPwValid").html("");
 			
-			if ($("#passwd").val() != $("#confirmPw").val()) {
-				$("#confirmPwValid").html("<p><span style='color:red;'>비밀번호 일치하지 않음</span></p>");
-				return false;
+			if ($("#passwd").val() == $("#confirmPw").val()) {
+				$("#confirmPwValid").html("<p><span style='color:green;'>비밀번호 일치</span></p>");
+				checkConfirmPassword = true;
 			}
 			else {
-				$("#confirmPwValid").html("<p><span style='color:green;'>비밀번호 일치</span></p>");
+				$("#confirmPwValid").html("<p><span style='color:red;'>비밀번호 일치하지 않음</span></p>");
 			}
 		});
 		
@@ -84,99 +82,49 @@
 			
 			if (isValidEmail.test(email)) {
 				$("#emailValid").html("<span></span>");
+				checkEmail = true;
 			}
 			else {
 				$("#emailValid").html("<p><span style='color:red;'>잘못된 이메일 형식입니다</span></p>");
-				return false;
 			}
 		});
 		
-		
-		
-		
-			/* if ($("#memberId").val() == "") {
-				$("#memberIdValid").html("<p><span style='color:red;'>아이디를 입력하세요</span></p>");
-				$("#memberId").focus();
-				return false;
-			} */
-
-			/* if($("input[name='checked_id']").val()==''){
-		        alert('아이디 중복 확인을 해주세요.');
-		        return false;
-		    	}
-			
-			if ($("#passwd").val() == "") {
-				$("#passwdValid").html("<p><span style='color:red;'>비밀번호를 입력하세요</span></p>")
-				$("#passwd").focus();
-				return false;
-			}
-
-			if ($("#confirmPw").val() == "") {
-				$("#confirmPwValid").html("<p><span style='color:red;'>비밀번호를 확인하세요</span></p>")
-				$("#confirmPw").focus();
-				return false;
-			}
-
-			if ($("#memberNm").val() == "") {
-				$("#memberNmValid").html("<p><span style='color:red;'>성명을 입력하세요</span></p>")
-				$("#memberNm").focus();
-				return false;
-			}
-
-			if ($("input[name='gender']:checked").val() != 'm' && $("input[name='gender']:checked").val() != 'f') {
-				$("#genderValid").html("<p><span style='color:red;'>성별을 선택하세요</span></p>")
-				$("input[name='gender']").focus();
-				return false;
-			}
-			
-			if ($("#email").val() == "") {
-				$("#emailValid").html("<p><span style='color:red;'>이메일을 입력하세요</span></p>")
-				$("#email").focus();
-				return false;
-			}
-
-			if ($("#hp").val() == "") {
-				$("#hpValid").html("<p><span style='color:red;'>연락처를 입력하세요</span></p>")
-				$("#hp").focus();
-				return false;
-			}
-
-			if ($("#postalCode").val() == "") {
-				$("#postalCodeValid").html("<p><span style='color:red;'>우편번호를 입력하세요</span></p>")
-				$("#postalCode").focus();
-				return false;
-			} */
-
-		
-		
 	});
 	
-	function formValidationCheck(){
+ 	 function formValidationCheck(){
 		
 		var memberId = document.form.memberId;
 		if (memberId.value == "") {
 			alert("아이디를 입력하세요");
 			memberId.focus();
-			return false
+			return false;
 		}
 		
 		var checked_id = document.form.checked_id;
 		if (checked_id.value == ""){
 			alert("아이디 중복 확인을 해주세요");
 			memberId.focus();
-			return false
+			return false;
 		}
 		
-		var passwd = document.form.passwd;
+ 		var passwd = document.form.passwd;
 		if (passwd.value == ""){
 			alert("비밀번호를 입력하세요");
 			passwd.focus();
 			return false;
+		}else if (!checkPassword){
+			alert("잘못된 비밀번호 형식입니다");
+			passwd.focus();
+			return checkPassword;
 		}
 		
 		var confirmPw = document.form.confirmPw;
 		if (confirmPw.value == ""){
 			alert("비밀번호를 확인하세요");
+			confirmPw.focus();
+			return false;
+		}else if (!checkConfirmPassword){
+			alert("비밀번호가 일치하지 않습니다");
 			confirmPw.focus();
 			return false;
 		}
@@ -191,7 +139,6 @@
 		var gender = document.form.gender;
 		if (gender.value == ""){
 			alert("성별을 선택하세요");
-			gender.focus();
 			return false;
 		}
 		
@@ -200,6 +147,10 @@
 			alert("이메일을 입력하세요");
 			email.focus();
 			return false;
+		}else if (!checkEmail){
+			alert("잘못된 이메일 형식입니다");
+			email.focus();
+			return checkEmail;
 		}
 		
 		var hp = document.form.hp;
@@ -215,11 +166,13 @@
 			postalCode.focus();
 			return false;
 		}
+		
+		return true;
 	}
+	
 </script>
 </head>
 <body>
-	
 	<div class="hero-wrap"
 		style="background-image: url('${contextPath}/resources/bootstrap/images/main.header.jpeg');">
 		<div class="overlay"></div>
@@ -262,7 +215,7 @@
 					<p align="left">
 						비밀번호 확인 <span style="color: red;">*</span>
 					</p>
-					<input type="password" id="confirmPw" placeholder="비밀번호를 확인하세요." class="form-control" >
+					<input type="password" id="confirmPw" name="confirmPw" placeholder="비밀번호를 확인하세요." class="form-control" >
 					<p align="left" id="confirmPwValid"></p>
 				</div>
 				<div class="form-group">
@@ -270,7 +223,6 @@
 						성명 <span style="color: red;">*</span>
 					</p>
 					<input type="text" id="memberNm" name="memberNm" class="form-control">
-					<p align="left" id="memberNmValid"></p>
 				</div>
 				<div class="form-group" align="left">
 					<p>
@@ -279,7 +231,6 @@
 	
 					남 &nbsp;<input type="radio" name="gender" value="m"> &emsp; 여
 					&nbsp;<input type="radio" name="gender" value="f"> <br> <br>
-					<p align="left" id="genderValid"></p>
 					<p align="left">
 						생년월일 <span style="color: red;">*</span>
 					</p>
@@ -332,7 +283,6 @@
 						휴대전화 <span style="color: red;">*</span>
 					</p>
 					<input type="text" id="hp" name="hp" placeholder="숫자만 입력하세요." maxlength='11' class="form-control">
-					<p align="left" id="hpValid"></p>
 					<div class="form-group" align="left">
 					<label for="smsstsYn">
 					    HMS에서 발송하는 SMS 소식을 수신합니다.
@@ -368,7 +318,6 @@
 						상세주소 <span style="color: red;">*</span>
 					</p>
 					<input type="text" id="remainingAddress"  name="remainingAddress" class="form-control">
-					<p align="left" id="remainingAddressValid"></p>
 				</div>
 				<div class="form-group" align="center">
 					<input type="submit" value="회원가입" class="btn py-3 px-4 btn-primary"

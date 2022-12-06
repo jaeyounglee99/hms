@@ -29,7 +29,13 @@ public class CommonController {
 	private CommonService commonService;
 	
 	private static final String CURR_IMAGE_REPO_PATH = "//Users//ijaeyeong//file_repo";
-	private static final String SEPERATOR = "//";	// window
+	private static final String SEPERATOR = "//";	// mac
+
+//	private static final String CURR_IMAGE_REPO_PATH = "C:\\file_repo";
+//	private static final String SEPERATOR = "\\";	// window
+
+//	private static final String CURR_IMAGE_REPO_PATH = "/var/lib/tomcat9/file_repo";
+//	private static final String SEPERATOR = "/";	// linux
 	
 	@RequestMapping(value="/thumbnails")
 	public void thumbnails(@RequestParam("roomsFileName") String roomsFileName, HttpServletResponse response) throws Exception {

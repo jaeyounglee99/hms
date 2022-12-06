@@ -40,81 +40,6 @@
       </div>
     </section>
 
-    <section class="ftco-booking">
-    	<div class="container">
-    		<div class="row">
-    			<div class="col-lg-12">
-    				<form action="#" class="booking-form">
-	        		<div class="row">
-	        			<div class="col-md-3 d-flex">
-	        				<div class="form-group p-4 align-self-stretch d-flex align-items-end">
-	        					<div class="wrap">
-				    					<label for="#">Check-in Date</label>
-				    					<input type="text" name="checkIn" class="form-control checkin_date" placeholder="Check-in date">
-			    					</div>
-			    				</div>
-	        			</div>
-	        			<div class="col-md-3 d-flex">
-	        				<div class="form-group p-4 align-self-stretch d-flex align-items-end">
-	        					<div class="wrap">
-				    					<label for="#">Check-out Date</label>
-				    					<input type="text" name="checkOut" class="form-control checkout_date" placeholder="Check-out date">
-			    				</div>
-			    				</div>
-	        			</div>
-	        			<div class="col-md d-flex">
-	        				<div class="form-group p-4 align-self-stretch d-flex align-items-end">
-	        					<div class="wrap">
-			      					<label for="#">Room</label>
-			      					<div class="form-field">
-			        					<div class="select-wrap">
-			                    <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-			                    <select name="" id="" class="form-control">
-			                    	<option value="">Suite</option>
-			                      <option value="">Family Room</option>
-			                      <option value="">Deluxe Room</option>
-			                      <option value="">Classic Room</option>
-			                      <option value="">Superior Room</option>
-			                      <option value="">Luxury Room</option>
-			                    </select>
-			                  </div>
-				              </div>
-				            </div>
-		              </div>
-	        			</div>
-	        			<div class="col-md d-flex">
-	        				<div class="form-group p-4 align-self-stretch d-flex align-items-end">
-	        					<div class="wrap">
-			      					<label for="#">Customer</label>
-			      					<div class="form-field">
-			        					<div class="select-wrap">
-			                    <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-			                    <select name="" id="" class="form-control">
-			                    	<option value="">1 Adult</option>
-			                      <option value="">2 Adult</option>
-			                      <option value="">3 Adult</option>
-			                      <option value="">4 Adult</option>
-			                      <option value="">5 Adult</option>
-			                      <option value="">6 Adult</option>
-			                    </select>
-			                  </div>
-				              </div>
-				            </div>
-		              </div>
-	        			</div>
-	        			<div class="col-md d-flex">
-	        				<div class="form-group d-flex align-self-stretch">
-			              <input type="submit" value="Check Availability" class="btn btn-primary py-3 px-4 align-self-stretch">
-			            </div>
-	        			</div>
-	        		</div>
-	        	</form>
-	    		</div>
-    		</div>
-    	</div>
-    </section>
-
-
     <section class="ftco-section ftc-no-pb ftc-no-pt">
 			<div class="container">
 				<div class="row">
@@ -255,15 +180,15 @@
     			</div>
     			<div class="col-sm col-md-6 col-lg-4 ftco-animate">
     				<div class="room">
-    					<a href="${contextPath }/rooms/roomsDetail?roomsCd=10" class="img d-flex justify-content-center align-items-center" style="background-image: url(${contextPath }/resources/bootstrap/images/kidsCityViewKing1.jpeg);">
+    					<a href="${contextPath }/rooms/roomsDetail?roomsCd=11" class="img d-flex justify-content-center align-items-center" style="background-image: url(${contextPath }/resources/bootstrap/images/kidsdeluxeKing1.jpeg);">
     						<div class="icon d-flex justify-content-center align-items-center">
     							<span class="icon-search2"></span>
     						</div>
     					</a>
     					<div class="text p-3 text-center">
-    						<h3 class="mb-3"><a href="${contextPath }/rooms/roomsDetail?roomsCd=10">Kids Room</a></h3>
+    						<h3 class="mb-3"><a href="${contextPath }/rooms/roomsDetail?roomsCd=11">Kids Room</a></h3>
     						<hr>
-    						<p class="pt-1"><a href="${contextPath }/rooms/roomsDetail?roomsCd=10" class="btn-custom">View Room Details <span class="icon-long-arrow-right"></span></a></p>
+    						<p class="pt-1"><a href="${contextPath }/rooms/roomsDetail?roomsCd=11" class="btn-custom">View Room Details <span class="icon-long-arrow-right"></span></a></p>
     					</div>
     				</div>
     			</div>
