@@ -13,6 +13,7 @@
 	<insert id="insertRooms" parameterType="RoomsDto">
 		INSERT INTO 
 				ROOMS(
+					SORT,
 					ROOMS_NM,
 					VIEW,
 					PRICE,
@@ -33,6 +34,7 @@
 					ENROLL_DT
 				)
 		 VALUES(
+		 		#{sort},
 				#{roomsNm},
 				#{view},
 				#{price},
@@ -58,6 +60,9 @@
 		UPDATE
 				ROOMS
 		<set>
+			<if test='sort != null and sort != ""'>
+				SORT = #{sort},
+			</if>
 			<if test='roomsNm != null and roomsNm != ""'>
 				ROOMS_NM = #{roomsNm},
 			</if>

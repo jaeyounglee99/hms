@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
@@ -48,8 +47,8 @@ function processToOrder(roomsCd) {
 					<div class="text">
 						<p class="breadcrumbs mb-2"
 							data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">
-							<span class="mr-2"><a href="index.html">Home</a></span> <span
-								class="mr-2"><a href="rooms.html">Room</a></span> <span>Room
+							<span class="mr-2"><a href="${contextPath }/">Home</a></span> <span
+								class="mr-2"><a href="${contextPath }/rooms/roomsList">Room</a></span> <span>Room
 								Single</span>
 						</p>
 						<h1 class="mb-4 bread">${roomsDto.roomsNm }</h1>

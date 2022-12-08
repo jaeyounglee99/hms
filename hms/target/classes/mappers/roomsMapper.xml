@@ -9,6 +9,27 @@
 		FROM
 				ROOMS
 		<where>
+			<if test='sort.equals("all")'>
+				SORT IN ('deluxe' , 'premier' , 'superior' , 'kids' , 'piacevole' , 'suite')
+			</if>
+			<if test='!sort.equals("all") and sort.equals("deluxe")'>
+				SORT = #{sort}
+			</if>
+			<if test='!sort.equals("all") and sort.equals("superior")'>
+				SORT = #{sort}
+			</if>
+			<if test='!sort.equals("all") and sort.equals("premier")'>
+				SORT = #{sort}
+			</if>
+			<if test='!sort.equals("all") and sort.equals("kids")'>
+				SORT = #{sort}
+			</if>
+			<if test='!sort.equals("all") and sort.equals("piacevole")'>
+				SORT = #{sort}
+			</if>
+			<if test='!sort.equals("all") and sort.equals("suite")'>
+				SORT = #{sort}
+			</if>
 		</where>
 	</select>
 	
@@ -27,6 +48,6 @@
 		FROM
 				ROOMS
 		WHERE
-				SIZE = #{size} AND ROOMS_CD != #{roomsCd}
+				SORT = #{sort} AND ROOMS_CD != #{roomsCd}
 	</select>
 </mapper>

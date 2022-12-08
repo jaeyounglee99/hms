@@ -49,6 +49,17 @@
 				</div>
 				<div class="form-group">
 					<p align="left">객실 종류 <span style="color: red;">*</span></p>
+					<select name="sort" class="form-control">
+						<option value="deluxe">디럭스</option>
+						<option value="premier">프리미어</option>
+						<option value="superior">수페리어</option>
+						<option value="kids">키즈</option>
+						<option value="piacevole">피아체볼레</option>
+						<option value="suite">스위트</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<p align="left">객실 종류 <span style="color: red;">*</span></p>
 					<select name="roomsNm" class="form-control">
 						<option value="deluxeOceanviewTwin">디럭스 오션뷰 트윈</option>
 						<option value="deluxeCityviewKing">디럭스 시티뷰 킹</option>

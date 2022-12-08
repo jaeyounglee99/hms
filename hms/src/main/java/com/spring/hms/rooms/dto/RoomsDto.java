@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 public class RoomsDto {
 
 	private int roomsCd;
+	private String sort;
 	private String roomsNm;
 	private String view;
 	private int price;
@@ -32,6 +33,12 @@ public class RoomsDto {
 	}
 	public void setRoomsCd(int roomsCd) {
 		this.roomsCd = roomsCd;
+	}
+	public String getSort() {
+		return sort;
+	}
+	public void setSort(String sort) {
+		this.sort = sort;
 	}
 	public String getRoomsNm() {
 		return roomsNm;
@@ -141,5 +148,5 @@ public class RoomsDto {
 	public void setEnrollDt(Date enrollDt) {
 		this.enrollDt = enrollDt;
 	}
-
+	
 }

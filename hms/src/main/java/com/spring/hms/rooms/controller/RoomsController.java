@@ -42,7 +42,7 @@ public class RoomsController {
 		mv.addObject("roomsDto", roomsDto);
 		
 		Map<String,Object> roomsMap = new HashMap<String, Object>();
-		roomsMap.put("size", roomsDto.getSize());
+		roomsMap.put("sort", roomsDto.getSort());
 		roomsMap.put("roomsCd", roomsCd);
 		
 		mv.addObject("relatedRoomsList" , roomsService.getRelatedRoomsList(roomsMap));

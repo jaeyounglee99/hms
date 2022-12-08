@@ -57,6 +57,7 @@ public class AdminRoomsController {
 		multipartRequest.setCharacterEncoding("utf-8");
 		
 		RoomsDto roomsDto = new RoomsDto();
+		roomsDto.setSort(multipartRequest.getParameter("sort"));
 		roomsDto.setRoomsNm(multipartRequest.getParameter("roomsNm"));
 		roomsDto.setView(multipartRequest.getParameter("view"));
 		roomsDto.setPrice(Integer.parseInt( multipartRequest.getParameter("price")));
@@ -132,6 +133,7 @@ public class AdminRoomsController {
 		
 		RoomsDto roomsDto = new RoomsDto();
 		roomsDto.setRoomsCd(Integer.parseInt(multipartRequest.getParameter("roomsCd")));
+		roomsDto.setSort(multipartRequest.getParameter("sort"));
 		roomsDto.setRoomsNm(multipartRequest.getParameter("roomsNm"));
 		roomsDto.setView(multipartRequest.getParameter("view"));
 		roomsDto.setPrice(Integer.parseInt( multipartRequest.getParameter("price")));
