@@ -84,7 +84,7 @@
 		UPDATE
 				MEMBER
 		SET
-				POINT = POINT + #{point}
+				POINT = POINT + #{totalPoint}
 		WHERE
 				MEMBER_ID = #{memberId}	
 	</update>

@@ -70,7 +70,7 @@
 								<span class="py-2 d-block">${myOrder.ordererHp}</span>
 								<span class="py-2 d-block">${myOrder.ordererNm}</span>
 								<span class="py-2 d-block">${myOrder.roomsNm}</span>
-								<span class="py-2 d-block">${myOrder.personnel}</span>
+								<span class="py-2 d-block">${myOrder.personnel} 명</span>
 							</li>
 						</ul>
 					</div>
@@ -83,7 +83,7 @@
 						</ul>
 					<hr>
 						<ul class="list-unstyled">
-							<li><span class="py-2 d-block">${myOrder.point} P</span></li>
+							<li><span class="py-2 d-block">${myOrder.totalPoint} P</span></li>
 						</ul>
 					<hr>
 						<ul class="list-unstyled">

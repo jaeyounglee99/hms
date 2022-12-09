@@ -20,14 +20,23 @@ function processToOrder(roomsCd) {
 	var checkInYMD = $("[name='checkIn']").val();
 	var checkInArray = checkInYMD.split("/");
 	var checkIn = checkInArray[2] + "-" + checkInArray[0] + "-" + checkInArray[1];
-
 	
 	var checkOutYMD = $("[name='checkOut']").val();
 	var checkOutArray = checkOutYMD.split("/");
 	var checkOut = checkOutArray[2] + "-" + checkOutArray[0] +  "-" + checkOutArray[1];
 	
+	var date1 = new Date(checkInArray[2] , checkInArray[0] , checkInArray[1]);
+	var date2 = new Date(checkOutArray[2] , checkOutArray[0] , checkOutArray[1]);
+	
+	var diff = date2 - date1;
+	var currDay = 24 * 60 * 60 * 1000;// 시 * 분 * 초 * 밀리세컨
+	var currMonth = currDay * 30;// 월 만듬
+	var currYear = currMonth * 12; // 년 만듬
+	
+	var stayPeriod = parseInt(diff/currDay);
+	
 	var personnel = $("[name='personnel']").val();
-	location.href = "${contextPath}/order/checkRoomsOption?roomsCd="+roomsCd+"&checkIn="+checkIn+"&checkOut="+checkOut+"&personnel="+personnel;
+	location.href = "${contextPath}/order/checkRoomsOption?roomsCd="+roomsCd+"&checkIn="+checkIn+"&checkOut="+checkOut+"&stayPeriod="+stayPeriod+"&personnel="+personnel;
 	
 	}
 }

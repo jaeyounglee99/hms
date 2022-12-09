@@ -68,6 +68,7 @@ public class OrderController {
 		orderDto.setBreakfast(Integer.parseInt((String)orderMap.get("breakfast")));
 		orderDto.setSwimmingPool(Integer.parseInt((String)orderMap.get("swimmingPool")));
 		orderDto.setPaymentAmt(Integer.parseInt((String)orderMap.get("paymentAmt")));
+		orderDto.setTotalPoint(Integer.parseInt((String)orderMap.get("totalPoint")));
 		orderDto.setOrdererNm((String)orderMap.get("ordererNm"));
 		orderDto.setOrdererBirth((String)orderMap.get("ordererBirth"));
 		orderDto.setOrdererHp((String)orderMap.get("ordererHp"));
@@ -82,7 +83,7 @@ public class OrderController {
 		orderDto.setCardValidityYear((String)orderMap.get("cardValidityYear"));
 		
 		Map<String,Object> getPointMap = new HashMap<String, Object>();
-		getPointMap.put("point", Integer.parseInt((String)orderMap.get("point")));
+		getPointMap.put("totalPoint", Integer.parseInt((String)orderMap.get("totalPoint")));
 		
 		orderService.addOrder(orderDto , getPointMap);
 		

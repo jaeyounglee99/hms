@@ -12,10 +12,12 @@ public class OrderDto {
 	private int roomsCd;
 	private String checkIn;
 	private String checkOut;
+	private int stayPeriod;
 	private int personnel;
 	private int breakfast;
 	private int swimmingPool;
 	private int paymentAmt;
+	private int totalPoint;
 	private String ordererNm;
 	private String ordererBirth;
 	private String ordererHp;
@@ -60,6 +62,12 @@ public class OrderDto {
 	public void setCheckOut(String checkOut) {
 		this.checkOut = checkOut;
 	}
+	public int getStayPeriod() {
+		return stayPeriod;
+	}
+	public void setStayPeriod(int stayPeriod) {
+		this.stayPeriod = stayPeriod;
+	}
 	public int getPersonnel() {
 		return personnel;
 	}
@@ -83,6 +91,12 @@ public class OrderDto {
 	}
 	public void setPaymentAmt(int paymentAmt) {
 		this.paymentAmt = paymentAmt;
+	}
+	public int getTotalPoint() {
+		return totalPoint;
+	}
+	public void setTotalPoint(int totalPoint) {
+		this.totalPoint = totalPoint;
 	}
 	public String getOrdererNm() {
 		return ordererNm;
@@ -162,30 +176,5 @@ public class OrderDto {
 	public void setPayOrderTime(Date payOrderTime) {
 		this.payOrderTime = payOrderTime;
 	}
-	
-	@Override
-	public String toString() {
-		return "OrderDto [orderCd=" + orderCd + ", memberId=" + memberId + ", roomsCd=" + roomsCd + ", checkIn="
-				+ checkIn + ", checkOut=" + checkOut + ", personnel=" + personnel + ", breakfast=" + breakfast
-				+ ", swimmingPool=" + swimmingPool + ", paymentAmt=" + paymentAmt + ", ordererNm=" + ordererNm
-				+ ", ordererBirth=" + ordererBirth + ", ordererHp=" + ordererHp + ", ordererEmail=" + ordererEmail
-				+ ", request=" + request + ", cardCompanyNm=" + cardCompanyNm + ", cardNo1=" + cardNo1 + ", cardNo2="
-				+ cardNo2 + ", cardNo3=" + cardNo3 + ", cardNo4=" + cardNo4 + ", cardValidityMonth=" + cardValidityMonth
-				+ ", cardValidityYear=" + cardValidityYear + ", payOrderTime=" + payOrderTime + ", getOrderCd()="
-				+ getOrderCd() + ", getMemberId()=" + getMemberId() + ", getRoomsCd()=" + getRoomsCd()
-				+ ", getCheckIn()=" + getCheckIn() + ", getCheckOut()=" + getCheckOut() + ", getPersonnel()="
-				+ getPersonnel() + ", getBreakfast()=" + getBreakfast() + ", getSwimmingPool()=" + getSwimmingPool()
-				+ ", getPaymentAmt()=" + getPaymentAmt() + ", getOrdererNm()=" + getOrdererNm() + ", getOrdererBirth()="
-				+ getOrdererBirth() + ", getOrdererHp()=" + getOrdererHp() + ", getOrdererEmail()=" + getOrdererEmail()
-				+ ", getRequest()=" + getRequest() + ", getCardCompanyNm()=" + getCardCompanyNm() + ", getCardNo1()="
-				+ getCardNo1() + ", getCardNo2()=" + getCardNo2() + ", getCardNo3()=" + getCardNo3() + ", getCardNo4()="
-				+ getCardNo4() + ", getCardValidityMonth()=" + getCardValidityMonth() + ", getCardValidityYear()="
-				+ getCardValidityYear() + ", getPayOrderTime()=" + getPayOrderTime() + ", getClass()=" + getClass()
-				+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
-	}
-	
-
-	
-	
 	
 }
