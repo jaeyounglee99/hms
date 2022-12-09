@@ -89,7 +89,7 @@ public class OrderController {
 		
 		String jsScript = "<script>";
 			   jsScript += "alert('예약되었습니다.');";
-			   jsScript += "location.href='" + request.getContextPath() + "/'";
+			   jsScript += "location.href='" + request.getContextPath() + "/myPage/myOrderList'";
 			   jsScript += "</script>";
 			   
 		HttpHeaders responseHeaders = new HttpHeaders();

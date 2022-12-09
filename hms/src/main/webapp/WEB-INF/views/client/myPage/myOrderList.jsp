@@ -71,7 +71,7 @@
 											<h6>&emsp;&emsp;&emsp;&emsp;<a href="${contextPath }/myPage/myOrderDetail?orderCd=${myOrder.orderCd}&memberId=${myOrder.memberId}">${myOrder.roomsNm }</a></h6>
 										</div>
 									</td>
-									<td><fmt:formatNumber value="${myOrder.price }"/>원</td>
+									<td><fmt:formatNumber value="${myOrder.paymentAmt }"/>원</td>
 									<td><fmt:formatDate value="${myOrder.payOrderTime }" pattern="yyyy-MM-dd"/></td>
 								</tr>
 							</c:forEach>

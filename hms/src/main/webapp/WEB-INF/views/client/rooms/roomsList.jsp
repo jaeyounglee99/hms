@@ -66,69 +66,6 @@
 		    		</c:choose>	
 		    		</div>
 		    	</div>
-		    	<div class="col-lg-3 sidebar">
-	      		<div class="sidebar-wrap bg-light ftco-animate">
-	      			<h3 class="heading mb-4">Advanced Search</h3>
-	      			<form action="#">
-	      				<div class="fields">
-		              <div class="form-group">
-		                <input type="text" id="checkin_date" class="form-control checkin_date" placeholder="Check In Date">
-		              </div>
-		              <div class="form-group">
-		                <input type="text" id="checkin_date" class="form-control checkout_date" placeholder="Check Out Date">
-		              </div>
-		              <div class="form-group">
-		                <div class="select-wrap one-third">
-	                    <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-	                    <select name="" id="" class="form-control">
-	                    	<option value="">Room Type</option>
-	                    	<option value="">Suite</option>
-	                      <option value="">Family Room</option>
-	                      <option value="">Deluxe Room</option>
-	                      <option value="">Classic Room</option>
-	                      <option value="">Superior Room</option>
-	                      <option value="">Luxury Room</option>
-	                    </select>
-	                  </div>
-		              </div>
-		              <div class="form-group">
-		                <div class="select-wrap one-third">
-	                    <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-	                    <select name="" id="" class="form-control">
-	                    	<option value="">0 Adult</option>
-	                    	<option value="">1 Adult</option>
-	                      <option value="">2 Adult</option>
-	                      <option value="">3 Adult</option>
-	                      <option value="">4 Adult</option>
-	                      <option value="">5 Adult</option>
-	                      <option value="">6 Adult</option>
-	                    </select>
-	                  </div>
-		              </div>
-		              <div class="form-group">
-		                <div class="select-wrap one-third">
-	                    <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-	                    <select name="" id="" class="form-control">
-	                    	<option value="">0 Children</option>
-	                    	<option value="">1 Children</option>
-	                      <option value="">2 Children</option>
-	                      <option value="">3 Children</option>
-	                      <option value="">4 Children</option>
-	                      <option value="">5 Children</option>
-	                      <option value="">6 Children</option>
-	                    </select>
-	                  </div>
-		              </div>
-					  </div>
-		              <div class="form-group">
-		                <input type="submit" value="Search" class="btn btn-primary py-3 px-5">
-		              </div>
-		            </div>
-	            </form>
-	      		</div>
-	        </div>
-		    </div>
-    	</div>
     </section>
 
     <section class="instagram pt-5">

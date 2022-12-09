@@ -48,7 +48,7 @@ function processToOrder(roomsCd) {
 						<p class="breadcrumbs mb-2"
 							data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">
 							<span class="mr-2"><a href="${contextPath }/">Home</a></span> <span
-								class="mr-2"><a href="${contextPath }/rooms/roomsList">Room</a></span> <span>Room
+								class="mr-2"><a href="${contextPath }/rooms/roomsList?sort=all">Room</a></span> <span>Room
 								Single</span>
 						</p>
 						<h1 class="mb-4 bread">${roomsDto.roomsNm }</h1>
@@ -176,10 +176,10 @@ function processToOrder(roomsCd) {
 								<label><span class="icon-person">인원</span></label>
 								<div class="select-wrap">
 									<select name="personnel" id="personnel" class="form-control">
-										<option value="1">1 Adult</option>
-										<option value="2">2 Adult</option>
-										<option value="3">3 Adult</option>
-										<option value="4">4 Adult</option>
+										<option value="1">1 person</option>
+										<option value="2">2 person</option>
+										<option value="3">3 person</option>
+										<option value="4">4 person</option>
 									</select>
 								</div>
 								<br>
