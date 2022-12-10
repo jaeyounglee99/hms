@@ -11,5 +11,5 @@ public interface OrderService {
 
 	public RoomsDto getOrderDetail(int roomsCd);
 	public MemberDto getOrdererDetail(String memberId);
-	public void addOrder(OrderDto orderDto , Map<String,Object> getPointMap);
+	public void addOrder(OrderDto orderDto);
 }

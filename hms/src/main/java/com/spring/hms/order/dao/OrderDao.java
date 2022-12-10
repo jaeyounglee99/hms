@@ -12,5 +12,5 @@ public interface OrderDao {
 	public MemberDto selectOneOrderer(String memberId);
 	public void insertOrder(OrderDto orderDto);
 	public void updateRoomsStock(OrderDto orderDto);
-	public void updateMemberPoint(Map<String,Object> getPointMap);
+	public void updateMemberPoint(OrderDto orderDto);
 }

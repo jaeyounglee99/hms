@@ -153,10 +153,12 @@ function processToOrder(roomsCd) {
 														href="${contextPath }/rooms/roomsDetail?roomsCd=${relatedRooms.roomsCd}">${relatedRooms.roomsNm }</a>
 												</h3>
 												<p>
-													<span class="price mr-2"><fmt:formatNumber
-															value="${relatedRooms.price }" />원</span> <span class="per">per
-														night</span>
+													<span class="price mr-2"><fmt:formatNumber value="${relatedRooms.price - relatedRooms.price * relatedRooms.discountRate / 100 }" />원</span> <span class="per">per night</span>
 												</p>
+												<ul class="list">
+					    							<li><span class="icon-arrow-right"> <fmt:formatNumber value="${roomsDto.price }"/>원(${roomsDto.discountRate}%)</span></li>
+					    							<li><span>View:</span> ${roomsDto.view } View</li>
+					    						</ul>
 												<hr>
 												<p class="pt-1">
 													<a

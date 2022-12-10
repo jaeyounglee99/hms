@@ -83,7 +83,7 @@
 						</ul>
 					<hr>
 						<ul class="list-unstyled">
-							<li><span class="py-2 d-block">${myOrder.totalPoint} P</span></li>
+							<li><span class="py-2 d-block"><fmt:formatNumber value="${myOrder.totalPoint}"/> P</span></li>
 						</ul>
 					<hr>
 						<ul class="list-unstyled">

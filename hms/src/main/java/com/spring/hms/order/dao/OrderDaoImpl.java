@@ -37,8 +37,8 @@ public class OrderDaoImpl implements OrderDao{
 	}
 
 	@Override
-	public void updateMemberPoint(Map<String, Object> getPointMap) {
-		sqlSession.update("order.updateMemberPoint" , getPointMap);
+	public void updateMemberPoint(OrderDto orderDto) {
+		sqlSession.update("order.updateMemberPoint" , orderDto);
 	}
 
 

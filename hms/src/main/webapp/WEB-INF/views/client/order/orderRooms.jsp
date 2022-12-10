@@ -7,6 +7,67 @@
 <script src="${contextPath}/resources/ckeditor/ckeditor.js"></script> 
 <head>
 <meta charset="utf-8">
+<script>
+	
+	function formValidationCheck(){
+		
+		var ordererNm = document.form.ordererNm;
+		if (ordererNm.value == ""){
+			alert("예약자 이름을 입력하세요");
+			ordererNm.focus();
+			return false;
+		}
+		
+		var ordererBirth = document.form.ordererBirth;
+		if (ordererBirth.value == ""){
+			alert("생년월일을 입력하세요");
+			ordererBirth.focus();
+			return false; 
+		}
+		
+		var ordererHp = document.form.ordererHp;
+		if (ordererHp.value == ""){
+			alert("연락처를 입력하세요");
+			ordererHp.focus();
+			return false;
+		}
+		
+		var ordererEmail = document.form.ordererEmail;
+		if (ordererEmail.value == ""){
+			alert("이메일을 입력하세요");
+			ordererEmail.focus();
+			return false;
+		}
+		
+		var cardNo1 = document.form.cardNo1;
+		if (cardNo1.value == ""){
+			alert("카드번호를 입력하세요");
+			cardNo1.focus();
+			return false;
+		}
+		
+		var cardNo2 = document.form.cardNo2;
+		if (cardNo2.value == ""){
+			alert("카드번호를 입력하세요");
+			cardNo2.focus();
+			return false;
+		}
+		var cardNo3 = document.form.cardNo3;
+		if (cardNo3.value == ""){
+			alert("카드번호를 입력하세요");
+			cardNo3.focus();
+			return false;
+		}
+		var cardNo4 = document.form.cardNo4;
+		if (cardNo4.value == ""){
+			alert("카드번호를 입력하세요");
+			cardNo4.focus();
+			return false;
+		}
+		
+	}
+	
+</script>
 </head>
 <div class="hero-wrap"
 	style="background-image: url('${contextPath }/resources/bootstrap/images/main.header.jpeg');">
@@ -38,7 +99,7 @@
 		<!-- <div align="center"> -->
 		<div class="row block-9">
 		
-			<form action="${contextPath }/order/orderRooms" method="post" class="bg-white p-5 contact-form">
+			<form name="form" action="${contextPath }/order/orderRooms" method="post" onsubmit="return formValidationCheck()" class="bg-white p-5 contact-form">
 				<input type="hidden" name="checkIn" value="${orderDto.checkIn }">
 				<input type="hidden" name="checkOut" value="${orderDto.checkOut }">
 				<input type="hidden" name="personnel" value="${orderDto.personnel }">
@@ -70,7 +131,7 @@
 					</li>
 					<li>
 						<span>point</span>
-						<span style="display: inline-block; width: 75%; text-align: right;">${orderDto.totalPoint}P적립</span>
+						<span style="display: inline-block; width: 75%; text-align: right;"><fmt:formatNumber value="${orderDto.totalPoint}"/>P적립</span>
 					</li><br><br>
               </div>
 				<div class="form-group" align="left">
@@ -151,8 +212,7 @@
 					<input type="text" name="request" maxlength="300" class="form-control">
 				</div>
 				<div class="form-group" align="center">
-					<input type="submit" value="예약하기" class="btn py-3 px-4 btn-primary"
-						style="width: 80%">
+					<input type="submit" value="예약하기" class="btn py-3 px-4 btn-primary" style="width: 80%">
 				</div>
 			</form>
 		</div>

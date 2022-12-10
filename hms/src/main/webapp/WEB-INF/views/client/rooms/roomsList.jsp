@@ -51,9 +51,9 @@
 		    					</a>
 		    					<div class="text p-3 text-center">
 		    						<h3 class="mb-3"><a href="${contextPath }/rooms/roomsDetail?roomsCd=${roomsDto.roomsCd}"> ${roomsDto.roomsNm }</a></h3>
-		    						<p><span class="price mr-2"><fmt:formatNumber value="${roomsDto.price }" />원</span> <span class="per">per night</span></p>
+		    						<p><span class="price mr-2"><fmt:formatNumber value="${roomsDto.price - roomsDto.price * roomsDto.discountRate / 100}" />원</span> <span class="per">per night</span></p>
 		    						<ul class="list">
-		    							<li><span>Size:</span> ${roomsDto.size } m2</li>
+		    							<li><span class="icon-arrow-right"> <fmt:formatNumber value="${roomsDto.price }"/>원(${roomsDto.discountRate}%)</span></li>
 		    							<li><span>View:</span> ${roomsDto.view } View</li>
 		    						</ul>
 		    						<hr>

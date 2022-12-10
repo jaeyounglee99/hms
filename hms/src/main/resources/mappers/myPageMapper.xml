@@ -101,12 +101,12 @@
 			<result column="PERSONNEL"		property="personnel"/>
 			<result column="BREAKFAST"		property="breakfast"/>
 			<result column="SWIMMING_POOL"	property="swimmingPool"/>
+			<result column="TOTAL_POINT"	property="totalPoint"/>
 			<result column="ORDERER_NM"		property="ordererNm"/>
 			<result column="ORDERER_HP"		property="ordererHp"/>
 			<result column="REQUEST"		property="request"/>
 			<result column="ROOMS_CD"		property="roomsCd"/>
 			<result column="ROOMS_NM"		property="roomsNm"/>
-			<result column="POINT"			property="point"/>
 		</resultMap>
 		
 	<select id="selectOneMyOrder" parameterType="hashmap" resultMap="myOrderDetailMap">
@@ -122,8 +122,7 @@
 				O.ORDERER_HP	AS ORDERER_HP,
 				O.REQUEST		AS REQUEST,
 				R.ROOMS_CD		AS ROOMS_CD,
-				R.ROOMS_NM		AS ROOMS_NM,
-				R.POINT			AS POINT
+				R.ROOMS_NM		AS ROOMS_NM
 		FROM
 				`ORDER` O
 			JOIN MEMBER M

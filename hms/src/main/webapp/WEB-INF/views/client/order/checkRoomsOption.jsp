@@ -49,8 +49,7 @@
 		
 		var breakfast = $("#breakfastQty").val();
 		var swimmingPool = $("#swimmingPoolQty").val();
-		/* var roomPrice = ${orderInfo.price - orderInfo.price * (orderInfo.discountRate / 100) } */
-		var roomPrice = ${orderInfo.price * orderDto.stayPeriod }
+		var roomPrice = ${(orderInfo.price - (orderInfo.price * orderInfo.discountRate / 100)) * orderDto.stayPeriod }
 			totalPrice = roomPrice + (34000 * Number(breakfast)) + (46000 * Number(swimmingPool));
 			totalPrice = totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') + " 원";
 		$("#totalPrice").html(totalPrice);
@@ -63,8 +62,7 @@
 		var checkIn = "${orderDto.checkIn}";
 		var checkOut = "${orderDto.checkOut}";
 		var roomsCd = ${orderInfo.roomsCd};
-		/* var paymentAmt = ${orderInfo.price - orderInfo.price * (orderInfo.discountRate / 100) } + + (34000 * Number(breakfast)) + (46000 * Number(swimmingPool)); */
-		var paymentAmt = ${orderInfo.price * orderDto.stayPeriod} + (34000 * Number(breakfast)) + (46000 * Number(swimmingPool));
+		var paymentAmt = ${(orderInfo.price - (orderInfo.price * orderInfo.discountRate / 100)) * orderDto.stayPeriod } + (34000 * Number(breakfast)) + (46000 * Number(swimmingPool));
 		var totalPoint = ${orderInfo.point * orderDto.stayPeriod};
 		
 		location.href = "${contextPath}/order/orderRooms?roomsCd="+roomsCd+"&checkIn="+checkIn+"&checkOut="+checkOut+"&stayPeriod="+${orderDto.stayPeriod}+"&personnel="+${orderDto.personnel}
@@ -114,12 +112,11 @@
 						<span style="display: inline-block; width: 15%; text-align: justify;">${orderDto.checkOut }</span>
 						<span style="display: inline-block; width: 10%; text-align: justify;">${orderDto.stayPeriod }박</span>
 						<span style="display: inline-block; width: 10%; text-align: justify;">${orderDto.personnel }명</span>
-						<%-- <span style="display: inline-block; width: 20%; text-align: justify;"><fmt:formatNumber value="${orderInfo.price - orderInfo.price * (orderInfo.discountRate / 100) * orderDto.stayPeriod }"/></span> --%>
-						<span style="display: inline-block; width: 20%; text-align: justify;"><fmt:formatNumber value="${orderInfo.price * orderDto.stayPeriod }"/>원</span>
+						<span style="display: inline-block; width: 20%; text-align: justify;"><fmt:formatNumber value="${(orderInfo.price - orderInfo.price * orderInfo.discountRate / 100) * orderDto.stayPeriod }"/>원</span>
 					</li>
 					<li>
 						<span>point</span>
-						<span style="display: inline-block; width: 75%; text-align: right;">${orderInfo.point * orderDto.stayPeriod}P적립</span>
+						<span style="display: inline-block; width: 75%; text-align: right;"><fmt:formatNumber value="${orderInfo.point * orderDto.stayPeriod}"/>P적립</span>
 					</li>
 				</ul><hr>
 				<br>

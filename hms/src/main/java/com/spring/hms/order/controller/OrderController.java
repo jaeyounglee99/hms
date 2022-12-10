@@ -82,10 +82,12 @@ public class OrderController {
 		orderDto.setCardValidityMonth((String)orderMap.get("cardValidityMonth"));
 		orderDto.setCardValidityYear((String)orderMap.get("cardValidityYear"));
 		
-		Map<String,Object> getPointMap = new HashMap<String, Object>();
-		getPointMap.put("totalPoint", Integer.parseInt((String)orderMap.get("totalPoint")));
-		
-		orderService.addOrder(orderDto , getPointMap);
+//		Map<String,Object> getPointMap = new HashMap<String, Object>();
+//		getPointMap.put("totalPoint", Integer.parseInt((String)orderMap.get("totalPoint")));
+//		
+//		orderService.addOrder(orderDto , getPointMap);
+
+		orderService.addOrder(orderDto);
 		
 		
 		String jsScript = "<script>";
