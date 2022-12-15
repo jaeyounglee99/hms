@@ -25,7 +25,7 @@
 
 	<definition name="/contactDetail" extends="baseLayout">
 		<put-attribute name="body" value="/WEB-INF/views/common/contactDetail.jsp"/>
-		<put-attribute name="title" value="고객문의"/>
+		<put-attribute name="title" value="고객문의 상세"/>
 	</definition>
 	
 </tiles-definitions>

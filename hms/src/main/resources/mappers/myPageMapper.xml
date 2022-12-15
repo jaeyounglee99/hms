@@ -92,6 +92,8 @@
 			 JOIN ROOMS R
 			 		 ON O.ROOMS_CD = R.ROOMS_CD
 			 		AND O.MEMBER_ID = #{memberId}
+		ORDER BY
+				O.PAY_ORDER_TIME DESC;
 	</select>
 	
 		<resultMap type="hashmap" id="myOrderDetailMap">

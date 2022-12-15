@@ -17,6 +17,8 @@
 				*
 		FROM
 				MEMBER
+		ORDER BY
+				JOIN_DT DESC
 	</select>
 
 </mapper>
