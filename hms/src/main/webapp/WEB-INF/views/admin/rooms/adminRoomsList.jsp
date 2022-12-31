@@ -3,8 +3,25 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
+<head>
+<meta charset="utf-8">
+<script>
+	
+	function adminRoomsRemove(roomsCd){
+		if (confirm("정말로 삭제하시겠습니까?")){
+			location.href = "${contextPath}/admin/rooms/adminRoomsRemove?roomsCd="+roomsCd;
+		}
+	}
+	
+	function gerateGoodsExcelExport(){
+		location.href = "${contextPath}/admin/rooms/roomsExcelExport";
+	}
+	
+	
+</script>
+</head>
+<body>
 <div class="hero-wrap"
 	style="background-image: url('${contextPath }/resources/bootstrap/images/main.header.jpeg');">
 	<div class="overlay"></div>
@@ -30,6 +47,9 @@
 		<div class="row d-flex mb-5 contact-info">
 			<div class="col-md-12 mb-4" align="center">
 				<h2 class="h3">객실 등록</h2>
+			</div>
+			<div class="tagcloud">
+				<a href="javascript:gerateGoodsExcelExport();"><font size="+1" color="red">Excel</font></a>
 			</div>
 		</div>
 		<div align="center">
@@ -67,7 +87,7 @@
 									<td><fmt:formatDate value="${roomsDto.enrollDt }" pattern="yyyy-MM-dd"/></td>
 									<td>
 										&emsp;<a href="${contextPath }/admin/rooms/adminRoomsModify?roomsCd=${roomsDto.roomsCd}"><span class="icon-pencil"></span></a>&emsp;
-										<a href="${contextPath }/admin/rooms/adminRoomsRemove?roomsCd=${roomsDto.roomsCd}"><span class="icon-trash-o"></span></a>
+											  <a href="javascript:adminRoomsRemove(${roomsDto.roomsCd} );"><span class="icon-trash-o"></span></a>
 									</td>
 								</tr>
 							</c:forEach>

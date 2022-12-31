@@ -6,7 +6,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<script>
+	
+	function gerateGoodsExcelExport(){
+		location.href = "${contextPath}/admin/member/memberExcelExport";
+	}
+	
+</script>
 </head>
 <body>
 
@@ -35,6 +41,9 @@
 		<div class="row d-flex mb-5 contact-info">
 			<div class="col-md-12 mb-4" align="center">
 				<h2 class="h3">회원 리스트</h2>
+			</div>
+			<div class="tagcloud">
+				<a href="javascript:gerateGoodsExcelExport();"><font size="+1" color="red">Excel</font></a>
 			</div>
 		</div>
 		<div align="center">
@@ -80,6 +89,5 @@
 		</div>
 	</div>
 </section>
-</body>
 </body>
 </html>

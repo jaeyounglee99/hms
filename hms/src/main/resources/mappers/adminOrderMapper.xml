@@ -8,6 +8,8 @@
 		<result column="CHECK_IN" 			property="checkIn"/>
 		<result column="CHECK_OUT" 			property="checkOut"/>
 		<result column="PERSONNEL" 			property="personnel"/>
+		<result column="BREAKFAST" 			property="breakfast"/>
+		<result column="SWIMMING_POOL" 		property="swimmingPool"/>
 		<result column="PAYMENT_AMT" 		property="paymentAmt"/>
 		<result column="ROOMS_CD" 			property="roomsCd"/>
 		<result column="ROOMS_NM" 			property="roomsNm"/>
@@ -23,6 +25,8 @@
 				O.CHECK_IN			AS	CHECK_IN,
 				O.CHECK_OUT			AS	CHECK_OUT,
 				O.PERSONNEL			AS	PERSONNEL,
+				O.BREAKFAST			AS	BREAKFAST,
+				O.SWIMMING_POOL		AS 	SWIMMING_POOL,
 				O.PAYMENT_AMT		AS	PAYMENT_AMT,
 				R.ROOMS_CD			AS	ROOMS_CD,
 				R.ROOMS_NM			AS	ROOMS_NM,
