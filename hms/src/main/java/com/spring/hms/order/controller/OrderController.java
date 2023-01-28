@@ -100,6 +100,5 @@ public class OrderController {
 			
 		return new ResponseEntity<Object>(jsScript, responseHeaders, HttpStatus.OK);
 	}
-	
 
 }

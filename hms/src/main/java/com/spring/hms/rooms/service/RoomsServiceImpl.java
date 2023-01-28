@@ -30,5 +30,4 @@ public class RoomsServiceImpl implements RoomsService{
 		return roomsDao.selectRelatedRoomsList(roomsMap);
 	}
 
-
 }

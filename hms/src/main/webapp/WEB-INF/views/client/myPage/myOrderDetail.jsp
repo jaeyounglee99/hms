@@ -5,29 +5,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
 </head>
-<div class="hero-wrap"
-	style="background-image: url('${contextPath }/resources/bootstrap/images/main.header.jpeg');">
-	<div class="overlay"></div>
-	<div class="container">
-		<div
-			class="row no-gutters slider-text d-flex align-itemd-end justify-content-center">
+<body>
+
+	<div class="hero-wrap"
+		style="background-image: url('${contextPath }/resources/bootstrap/images/main.header.jpeg');">
+		<div class="overlay"></div>
+		<div class="container">
 			<div
-				class="col-md-9 ftco-animate text-center d-flex align-items-end justify-content-center">
-				<div class="text">
-					<p class="breadcrumbs mb-2">
-						<span class="mr-2"><a href="${contextPath }/index">Home</a></span>
-						<span>orderDetail</span>
-					</p>
-					<h1 class="mb-4 bread">orderDetail</h1>
+				class="row no-gutters slider-text d-flex align-itemd-end justify-content-center">
+				<div
+					class="col-md-9 ftco-animate text-center d-flex align-items-end justify-content-center">
+					<div class="text">
+						<p class="breadcrumbs mb-2">
+							<span class="mr-2"><a href="${contextPath }/index">Home</a></span>
+							<span>orderDetail</span>
+						</p>
+						<h1 class="mb-4 bread">orderDetail</h1>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
-<body>
+	
 	<section class="ftco-section contact-section bg-light">
 		<div class="container">
 		<h3>your order</h3><hr>

@@ -8,43 +8,43 @@
 <head>
 <script>
 
-function processToOrder(roomsCd) {
-	
-	if("${sessionId == null}" == "true") {
-		alert("로그인 후 이용해 주세요");
-		location.href = "${contextPath}/member/login";
-	}
-	
-	else {
+	function processToOrder(roomsCd) {
 		
-	var checkInYMD = $("[name='checkIn']").val();
-	var checkInArray = checkInYMD.split("/");
-	var checkIn = checkInArray[2] + "-" + checkInArray[0] + "-" + checkInArray[1];
-	
-	var checkOutYMD = $("[name='checkOut']").val();
-	var checkOutArray = checkOutYMD.split("/");
-	var checkOut = checkOutArray[2] + "-" + checkOutArray[0] +  "-" + checkOutArray[1];
-	
-	var date1 = new Date(checkInArray[2] , checkInArray[0] , checkInArray[1]);
-	var date2 = new Date(checkOutArray[2] , checkOutArray[0] , checkOutArray[1]);
-	
-	var diff = date2 - date1;
-	var currDay = 24 * 60 * 60 * 1000;// 시 * 분 * 초 * 밀리세컨
-	var currMonth = currDay * 30;// 월 만듬
-	var currYear = currMonth * 12; // 년 만듬
-	
-	var stayPeriod = parseInt(diff/currDay);
-	
-	var personnel = $("[name='personnel']").val();
-	location.href = "${contextPath}/order/checkRoomsOption?roomsCd="+roomsCd+"&checkIn="+checkIn+"&checkOut="+checkOut+"&stayPeriod="+stayPeriod+"&personnel="+personnel;
-	
+		if("${sessionId == null}" == "true") {
+			alert("로그인 후 이용해 주세요");
+			location.href = "${contextPath}/member/login";
+		}
+		
+		else {
+			
+		var checkInYMD = $("[name='checkIn']").val();
+		var checkInArray = checkInYMD.split("/");
+		var checkIn = checkInArray[2] + "-" + checkInArray[0] + "-" + checkInArray[1];
+		
+		var checkOutYMD = $("[name='checkOut']").val();
+		var checkOutArray = checkOutYMD.split("/");
+		var checkOut = checkOutArray[2] + "-" + checkOutArray[0] +  "-" + checkOutArray[1];
+		
+		var date1 = new Date(checkInArray[2] , checkInArray[0] , checkInArray[1]);
+		var date2 = new Date(checkOutArray[2] , checkOutArray[0] , checkOutArray[1]);
+		
+		var diff = date2 - date1;
+		var currDay = 24 * 60 * 60 * 1000;// 시 * 분 * 초 * 밀리세컨
+		var currMonth = currDay * 30;// 월 만듬
+		var currYear = currMonth * 12; // 년 만듬
+		
+		var stayPeriod = parseInt(diff/currDay);
+		
+		var personnel = $("[name='personnel']").val();
+		location.href = "${contextPath}/order/checkRoomsOption?roomsCd="+roomsCd+"&checkIn="+checkIn+"&checkOut="+checkOut+"&stayPeriod="+stayPeriod+"&personnel="+personnel;
+		
+		}
 	}
-}
 
 </script>
-
 </head>
 <body>
+
 	<div class="hero-wrap"
 		style="background-image: url('${contextPath }/resources/bootstrap/images/deluxe.jpeg');">
 		<div class="overlay"></div>
@@ -128,10 +128,6 @@ function processToOrder(roomsCd) {
 							</div>
 						</div>
 	
-	
-	
-	
-	
 						<div class="col-md-12 room-single ftco-animate mb-5 mt-5">
 							<h4 class="mb-4">Available Room</h4>
 							<div class="row">
@@ -208,7 +204,6 @@ function processToOrder(roomsCd) {
 			</div>
 	</section>
 	<!-- .section -->
-	
 	
 	<section class="instagram pt-5">
 		<div class="container-fluid">

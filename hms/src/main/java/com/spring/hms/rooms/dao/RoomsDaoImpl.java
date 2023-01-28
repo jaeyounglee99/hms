@@ -30,6 +30,4 @@ public class RoomsDaoImpl implements RoomsDao{
 		return sqlSession.selectList("rooms.selectListRelatedRooms" , roomsMap);
 	}
 
-
-
 }

@@ -27,6 +27,4 @@ public class MemberDaoImpl implements MemberDao {
 		return sqlSession.selectOne("member.selectDuplicatedId" , memberId);
 	}
 
-	
-	
 }

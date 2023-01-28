@@ -4,7 +4,11 @@
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <c:set var="sessionId" value="${sessionScope.memberId }"/>	
 <!DOCTYPE html>
-
+<html>
+<head>
+</head>
+<body>
+   
     <div class="hero-wrap" style="background-image: url('${contextPath }/resources/bootstrap/images/main.header.jpeg');">
       <div class="overlay"></div>
       <div class="container">
@@ -19,7 +23,6 @@
       </div>
     </div>
 
-
     <section class="ftco-section bg-light">
     	<div class="container">
     		<div class="text">
@@ -33,15 +36,15 @@
             </div>
     		<div class="row">
 	        <div class="col-lg-9">
-		    		<div class="row">
-		    		<c:choose>
-		    			<c:when test="${empty roomsList }">
-		    				<div class="btn-custom">
-		    					<h3>등록된 객실이 없습니다.</h3>	
-		    				</div>
-		    			</c:when>
-		    			<c:otherwise>
-		    				<c:forEach var="roomsDto" items="${roomsList }">
+	    		<div class="row">
+	    		<c:choose>
+	    			<c:when test="${empty roomsList }">
+	    				<div class="btn-custom">
+	    					<h3>등록된 객실이 없습니다.</h3>	
+	    				</div>
+	    			</c:when>
+	    			<c:otherwise>
+	    				<c:forEach var="roomsDto" items="${roomsList }">
 		    			<div class="col-sm col-md-6 col-lg-4 ftco-animate">
 		    				<div class="room">
 		    					<a href="${contextPath }/rooms/roomsDetail?roomsCd=${roomsDto.roomsCd}" class="img d-flex justify-content-center align-items-center" style="background-image: url(${contextPath}/thumbnails?roomsFileName=${roomsDto.roomsFileName1});">
@@ -62,11 +65,11 @@
 		    				</div>
 		    			</div>
 		    			</c:forEach>
-		    			</c:otherwise>
-		    		</c:choose>	
-		    		</div>
-		    	</div>
-    </section>
+	    			</c:otherwise>
+	    		</c:choose>	
+	    		</div>
+		    </div>
+	</section>
 
     <section class="instagram pt-5">
 		<div class="container-fluid">
@@ -126,3 +129,5 @@
 			</div>
 		</div>
 	</section>
+</body>
+</html>

@@ -62,7 +62,6 @@
 				 }
 		});
 		
-		
 		$("#confirmPw").keyup(function(){
 			$("#confirmPwValid").html("");
 			
@@ -173,6 +172,7 @@
 </script>
 </head>
 <body>
+
 	<div class="hero-wrap"
 		style="background-image: url('${contextPath}/resources/bootstrap/images/main.header.jpeg');">
 		<div class="overlay"></div>

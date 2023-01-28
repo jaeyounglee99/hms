@@ -34,5 +34,4 @@ public class  AdminRoomsDaoImpl implements AdminRoomsDao{
 		sqlSession.delete("admin.rooms.deleteRooms" , roomsCd);
 	}
 
-
 }

@@ -80,7 +80,7 @@ public class MemberController {
 			message += " alert('아이디와 비밀번호를 확인하세요.');";
 			message += " history.go(-1);";
 			message += " </script>";
-			}
+		}
 		
 		 HttpHeaders responseHeaders = new HttpHeaders();
 		    responseHeaders.add("Content-Type", "text/html; charset=utf-8");
@@ -106,6 +106,3 @@ public class MemberController {
 	
 	}
 }
-
-
-

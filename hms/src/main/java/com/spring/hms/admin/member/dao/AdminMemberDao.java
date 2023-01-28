@@ -10,5 +10,4 @@ public interface AdminMemberDao {
 	public AdminDto selectAdminLogin(AdminDto adminDto) throws Exception;
 	public List<MemberDto> selectListMember() throws Exception;
 	
-
 }

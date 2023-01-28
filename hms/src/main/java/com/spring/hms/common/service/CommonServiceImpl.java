@@ -35,7 +35,4 @@ public class CommonServiceImpl implements CommonService {
 		return commonDao.selectOneContact(contactCd);
 	}
 
-
-	
-
 }

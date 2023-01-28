@@ -7,4 +7,5 @@ public interface MemberDao {
 	public void insertMember(MemberDto memberDto);
 	public String selectDupliatedId(String memberId);
 	public MemberDto selectLogin(MemberDto memberDto);
+	
 }
